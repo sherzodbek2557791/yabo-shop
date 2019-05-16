@@ -4,22 +4,23 @@ spring:
   jackson.serialization.FAIL_ON_EMPTY_BEANS: false
   jpa.open-in-view: false
   jpa.show-sql: false
+  jpa.properties.hibernate.jdbc.lob.non_contextual_creation: true
   #  #Flyway
   flyway:
-    url: jdbc:postgresql://localhost:5432/mydatabase
-    user: justauser
-    password: justapassword
+    url: jdbc:postgresql://localhost:5432/postgres
+    user: postgres
+    password: password
     baseline-on-migrate: true
     baseline-version: 0
-    enabled: false
+    enabled: true
 
   datasource:
     platform: postgres
     name: mydatasource
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/mydatabase
-    username: justauser
-    password: justapassword
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
 #    driver-class-name: oracle.jdbc.driver.OracleDriver
 #    url: jdbc:oracle:thin:@10.0.23.124:1521:appeal
 #    username: appeal
