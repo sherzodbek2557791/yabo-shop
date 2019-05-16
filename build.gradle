@@ -1,0 +1,10 @@
+group 'uz.kvikk'
+version '1.0.0.0'
+
+subprojects {
+    //Add common configuration here
+}
+
+allprojects {
+    //Add configuration here
+}
