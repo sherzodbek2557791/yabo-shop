@@ -6,9 +6,21 @@
         <div class="col-xs-12 col-sm-6 no-margin">
           <ul>
             <li><router-link to='/'>Home</router-link></li>
-            <li class="dropdown">
+           <!-- todo add here drop down -->
+           <!-- <li class="dropdown">
+              <el-dropdown trigger="click">
+                <span class="dropdown-toggle" href="#">
+                  Change Colors
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item>Action 1</el-dropdown-item>
+                  <el-dropdown-item>Action 2</el-dropdown-item>
+                  <el-dropdown-item>Action 3</el-dropdown-item>
+                  <el-dropdown-item disabled>Action 4</el-dropdown-item>
+                  <el-dropdown-item divided>Action 5</el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
               <a class="dropdown-toggle"  data-toggle="dropdown" href="#change-colors">Change Colors</a>
-
               <ul class="dropdown-menu" role="menu" >
                 <li role="presentation"><a role="menuitem" class="changecolor green-text" tabindex="-1" href="#" title="Green color">Green</a></li>
                 <li role="presentation"><a role="menuitem" class="changecolor blue-text" tabindex="-1" href="#" title="Blue color">Blue</a></li>
@@ -17,34 +29,59 @@
                 <li role="presentation"><a role="menuitem" class="changecolor navy-text" tabindex="-1" href="#" title="Navy color">Navy</a></li>
                 <li role="presentation"><a role="menuitem" class="changecolor dark-green-text" tabindex="-1" href="#" title="Darkgreen color">Dark Green</a></li>
               </ul>
-            </li>
+            </li>-->
             <li><router-link to='/blog'>Blog</router-link></li>
             <li><router-link to='/faq'>Faq</router-link></li>
             <li><router-link to='/contact'>Contact</router-link></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#pages">Pages</a>
+              <el-dropdown trigger="click">
+                <span class="dropdown-toggle">Pages</span>
+                <el-dropdown-menu slot="dropdown">
+                  <router-link to="/blog"><el-dropdown-item>Home</el-dropdown-item></router-link>
+                  <el-dropdown-item>Home Alt</el-dropdown-item>
+                  <el-dropdown-item>Category - Grid/List</el-dropdown-item>
+                  <el-dropdown-item>Category 2 - Grid/List</el-dropdown-item>
+                  <el-dropdown-item>Single Product</el-dropdown-item>
+                  <el-dropdown-item>Single Product with Sidebar</el-dropdown-item>
+                  <el-dropdown-item>Shopping Cart</el-dropdown-item>
+                  <el-dropdown-item>Checkout</el-dropdown-item>
+                  <el-dropdown-item>About Us</el-dropdown-item>
+                  <el-dropdown-item>Contact Us</el-dropdown-item>
+                  <el-dropdown-item>Blog</el-dropdown-item>
+                  <el-dropdown-item>Blog Full Width</el-dropdown-item>
+                  <el-dropdown-item>Blog Post</el-dropdown-item>
+                  <el-dropdown-item>FAQ</el-dropdown-item>
+                  <el-dropdown-item>Terms & Conditions</el-dropdown-item>
+                  <el-dropdown-item>Login/Register</el-dropdown-item>
+                  <el-dropdown-item>404</el-dropdown-item>
+                  <el-dropdown-item>Wishlist</el-dropdown-item>
+                  <el-dropdown-item>Product Comparison</el-dropdown-item>
+                  <el-dropdown-item>Track your Order</el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
+              <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#pages">Pages</a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="index-2.html">Home</a></li>
-                <li><a href="index-3.html">Home Alt</a></li>
-                <li><a href="category-grid.html">Category - Grid/List</a></li>
-                <li><a href="category-grid-2.html">Category 2 - Grid/List</a></li>
-                <li><a href="single-product.html">Single Product</a></li>
-                <li><a href="single-product-sidebar.html">Single Product with Sidebar</a></li>
-                <li><a href="cart.html">Shopping Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="blog-fullwidth.html">Blog Full Width</a></li>
-                <li><a href="blog-post.html">Blog Post</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="terms.html">Terms & Conditions</a></li>
-                <li><a href="authentication.html">Login/Register</a></li>
-                <li><a href="404.html">404</a></li>
-                <li><a href="wishlist.html">Wishlist</a></li>
-                <li><a href="compare.html">Product Comparison</a></li>
-                <li><a href="track-your-order.html">Track your Order</a></li>
-              </ul>
+                index-2.html">
+                index-3.html">
+                category-grid.html">
+                category-grid-2.html">
+                single-product.html">
+                single-product-sidebar.html">
+                cart.html">
+                checkout.html">
+                about.html">
+                contact.html">
+                blog.html">
+                blog-fullwidth.html">
+                blog-post.html">
+                faq.html">
+                terms.html">
+                authentication.html">
+                404.html">
+                wishlist.html">
+                compare.html">
+                track-your-order.html">
+              </ul>-->
             </li>
           </ul>
         </div><!-- /.col -->

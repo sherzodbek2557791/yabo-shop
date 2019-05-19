@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5 {
   margin: 0;
   font-weight: 600 !important; }
 
-.capital, .h1, h1, h2, .iconic-link, .btn-add-to-compare, .btn-add-to-wishlist, .availability, .availability .available, .availability .not-available, .section-title, .pagination a, .inline-input .placeholder, .simple-link, .top-bar ul > li a, header .top-cart-row .wishlist-compare-holder, header .top-cart-row .top-cart-holder .total-price-basket, .categories-filter, .breadcrumb-nav-holder .breadcrumb-item > a, .le-links li a, .accordion-widget .accordion .accordion-inner li a, .accordion-widget .accordion, .le-button, .le-dropdown .dropdown-toggle, .carousel-holder .title-nav h1, .carousel-holder .title-nav h2, .product-item-holder .body .title, #owl-main .caption .small, .banner .banner-text h1, .banner .banner-text .tagline, .nav-tabs li a, .nav-tabs li.active a, .btn-loadmore, .meta-row label, .meta-row span, .meta-row span a, #single-product-tab .new-review-form h2, .tabled-data li label, .tabled-data li .value, .field-row label, .comment-item .comment-body .author, #cart-page .widget .buttons-holder .simple-link, #checkout-page .billing-address .placeholder, #checkout-page #your-order .order-item .title, #payment-method-options .payment-method-option .radio-label, #payment-method-options .payment-method-option .value, .sidebar .price-range-holder .filter-button a, .sidebar .widget .product-list li a, .sidebar .widget .category-filter ul label, #footer h2, #footer h3, #footer .widget .body li a, #footer .link-list-row .contact-info, #footer .link-list-row .link-widget li a, #footer .copyright-bar {
+.capital, .h1, h1, h2, .iconic-link, .btn-add-to-compare, .btn-add-to-wishlist, .availability, .availability .available, .availability .not-available, .section-title, .pagination a, .inline-input .placeholder, .simple-link, .top-bar ul > li a, .top-bar ul > li span, header .top-cart-row .wishlist-compare-holder, header .top-cart-row .top-cart-holder .total-price-basket, .categories-filter, .breadcrumb-nav-holder .breadcrumb-item > a, .le-links li a, .accordion-widget .accordion .accordion-inner li a, .accordion-widget .accordion, .le-button, .le-dropdown .dropdown-toggle, .carousel-holder .title-nav h1, .carousel-holder .title-nav h2, .product-item-holder .body .title, #owl-main .caption .small, .banner .banner-text h1, .banner .banner-text .tagline, .nav-tabs li a, .nav-tabs li.active a, .btn-loadmore, .meta-row label, .meta-row span, .meta-row span a, #single-product-tab .new-review-form h2, .tabled-data li label, .tabled-data li .value, .field-row label, .comment-item .comment-body .author, #cart-page .widget .buttons-holder .simple-link, #checkout-page .billing-address .placeholder, #checkout-page #your-order .order-item .title, #payment-method-options .payment-method-option .radio-label, #payment-method-options .payment-method-option .value, .sidebar .price-range-holder .filter-button a, .sidebar .widget .product-list li a, .sidebar .widget .category-filter ul label, #footer h2, #footer h3, #footer .widget .body li a, #footer .link-list-row .contact-info, #footer .link-list-row .link-widget li a, #footer .copyright-bar {
   text-transform: capitalize; }
 
 #loading {
@@ -647,7 +647,7 @@ img[src="assets/images/blank.gif"] {
         padding: 0 16px 0 0; }
       .top-bar ul > li:last-child a {
         border: none; }
-      .top-bar ul > li a {
+      .top-bar ul > li a, .top-bar ul > li span {
         padding: 0 13px;
         border-right: 1px solid #e0e0e0;
         color: #3D3D3D;
