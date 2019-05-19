@@ -1,15 +1,12 @@
 <template>
   <div class="hello">
-    Blog
-    FAQ
     Contact
-    Pages
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld'
+  name: 'Contact'
 }
 </script>
 

@@ -18,10 +18,9 @@
                 <li role="presentation"><a role="menuitem" class="changecolor dark-green-text" tabindex="-1" href="#" title="Darkgreen color">Dark Green</a></li>
               </ul>
             </li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><router-link to='/hello_world'>hello_world</router-link></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><router-link to='/blog'>Blog</router-link></li>
+            <li><router-link to='/faq'>Faq</router-link></li>
+            <li><router-link to='/contact'>Contact</router-link></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#pages">Pages</a>
               <ul class="dropdown-menu" role="menu">

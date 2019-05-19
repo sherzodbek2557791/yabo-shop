@@ -1,16 +1,13 @@
 <template>
   <div class="hello">
-    Blog
     FAQ
-    Contact
-    Pages
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld'
-}
+  name: "Faq"
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

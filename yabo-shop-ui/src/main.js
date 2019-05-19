@@ -1,6 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
 import VueRouter from "vue-router";
+import ElementUI from 'element-ui';
+;
 
 /**
  * Styles imported
@@ -19,13 +21,15 @@ import "./assets/css/colors/navy.css";
 import "./assets/css/colors/orange.css";
 import "./assets/css/colors/red.css";
 
+import './assets/css/element.css'
 
 import routes from "./routes";
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
+Vue.use(ElementUI);
 
-const router = new VueRouter({ routes });
+const router = new VueRouter({ mode: "history", routes });
 
 new Vue({
   router,
