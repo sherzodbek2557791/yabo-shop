@@ -1,3 +1,46 @@
+-- Warning: You can generate script only for two tables at a time in your Free plan
+CREATE TABLE `SampleDb`.`product`
+(
+ `id`             bigint NOT NULL ,
+ `title`          varchar(512) NOT NULL ,
+ `description`    varchar(1024) ,
+ `product_status` varchar(100) NOT NULL ,
+ `created_date`   date NOT NULL ,
+PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `SampleDb`.`order`
+(
+ `id`           bigint NOT NULL ,
+ `phone_number` varchar(100) NOT NULL ,
+ `email`        varchar(45) NOT NULL ,
+ `first_name`   varchar(45) NOT NULL ,
+ `last_name`    varchar(45) ,
+ `order_status` varchar(45) NOT NULL ,
+ `careted_date` date NOT NULL ,
+PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `SampleDb`.`order_item`
+(
+ `id`         bigint NOT NULL ,
+ `order_id`   bigint NOT NULL ,
+ `product_id` bigint NOT NULL ,
+ `count`      double NOT NULL ,
+ `price`      double NOT NULL ,
+PRIMARY KEY (`id`),
+KEY `fkIdx_151` (`order_id`),
+CONSTRAINT `FK_151` FOREIGN KEY `fkIdx_151` (`order_id`) REFERENCES `SampleDb`.`order` (`id`),
+KEY `fkIdx_154` (`product_id`),
+CONSTRAINT `FK_154` FOREIGN KEY `fkIdx_154` (`product_id`) REFERENCES `SampleDb`.`product` (`id`)
+);
+
+
+
+
+
+
+
 -- Create table
 create table AP_REGION
 (
