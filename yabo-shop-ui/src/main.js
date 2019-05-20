@@ -1,8 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
 import VueRouter from "vue-router";
-import ElementUI from 'element-ui';
-;
+import ElementUI from "element-ui";
+import i18n from "@/plugins/i18n";
 
 /**
  * Styles imported
@@ -21,17 +21,19 @@ import "./assets/css/colors/navy.css";
 import "./assets/css/colors/orange.css";
 import "./assets/css/colors/red.css";
 
-import './assets/css/element.css'
+import "./assets/css/element.css";
 
 import routes from "./routes";
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(ElementUI);
+Vue.prototype.$locale = i18n;
 
 const router = new VueRouter({ mode: "history", routes });
 
 new Vue({
+  i18n: i18n.plugin,
   router,
   render: h => h(App)
 }).$mount("#app");

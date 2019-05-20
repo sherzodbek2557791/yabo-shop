@@ -89,13 +89,16 @@
         <div class="col-xs-12 col-sm-6 no-margin">
           <ul class="right">
             <li class="dropdown">
-              <a class="dropdown-toggle"  data-toggle="dropdown" href="#change-language">English</a>
-              <ul class="dropdown-menu" role="menu" >
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Turkish</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tamil</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">French</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Russian</a></li>
-              </ul>
+              <el-dropdown trigger="click" @command="(code) => $locale.plugin.locale = code">
+                <span class="dropdown-toggle">
+                  <flag :iso="$locale.localeFlag($locale.plugin.locale)" :squared=false style="border-right: none;"/> {{ $locale.localeTitle($locale.plugin.locale) }}
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item v-for="lang in $locale.languages" :key="lang.code" :command="lang.code">
+                    <flag :iso="lang.flag" :squared=false /> {{lang.title}}
+                  </el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
             </li>
             <li class="dropdown">
               <a class="dropdown-toggle"  data-toggle="dropdown" href="#change-currency">Dollar (US)</a>
@@ -207,6 +210,7 @@
                   </div>
 
                   <div class="total-price-basket">
+                    <span>{{ $t('welcomeMsg') }}</span>
                     <span class="lbl">your cart:</span>
                     <span class="total-price">
                                                 <span class="sign">$</span><span class="value">3219,00</span>
