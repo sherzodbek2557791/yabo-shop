@@ -1,10 +1,9 @@
 export default {
-  get app(){
+  get app() {
     return {
-      get supportPhone() {
-        return "(+800) 123 456 7890";
-      }
-    }
+      supportPhone: "+998 97 922 50 00",
+      supportEmail: "support@yabo.uz",
+      currencies: [{ currency: "USD", title: "Dollar" }, { currency: "SUM", title: "So'm" }]
+    };
   }
-
 };

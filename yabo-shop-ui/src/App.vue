@@ -55,13 +55,16 @@
               </el-dropdown>
             </li>
             <li class="dropdown">
-              <a class="dropdown-toggle"  data-toggle="dropdown" href="#change-currency">Dollar (US)</a>
-              <ul class="dropdown-menu" role="menu">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Euro (EU)</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Turkish Lira (TL)</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Indian Rupee (INR)</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dollar (US)</a></li>
-              </ul>
+              <el-dropdown trigger="click" @command="(currencyItem) => currencyIndex = app.currencies.indexOf(currencyItem)">
+                <span class="dropdown-toggle">
+                   {{ `${app.currencies[currencyIndex].title}(${app.currencies[currencyIndex].currency})` }}
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item v-for="(item, index) in app.currencies" :key="item.currency" :command="item">
+                    {{ `${item.title}(${item.currency})` }}
+                  </el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
             </li>
             <li><a href="authentication.html">{{ $t('navigation.register') }}</a></li>
             <li><a href="authentication.html">{{ $t('navigation.login') }}</a></li>
@@ -108,10 +111,10 @@
         <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder no-margin">
           <div class="contact-row">
             <div class="phone inline">
-              <i class="fa fa-phone"></i> {{ app.supportPhone }}
+              <i class="fa fa-phone"></i><a :href="`tel:${app.supportPhone.replace(/\s/g, '')}`">{{ app.supportPhone }}</a>
             </div>
             <div class="contact inline">
-              <i class="fa fa-envelope"></i> contact@<span class="le-color">oursupport.com</span>
+              <i class="fa fa-envelope"></i><a :href="`mailto:${app.supportEmail.replace(/\s/g, '')}`">{{ app.supportEmail}}</a>
             </div>
           </div><!-- /.contact-row -->
           <!-- ============================================================= SEARCH AREA ============================================================= -->
@@ -122,21 +125,16 @@
 
                 <ul class="categories-filter animate-dropdown">
                   <li class="dropdown">
-
                     <a class="dropdown-toggle"  data-toggle="dropdown" href="category-grid.html">all categories</a>
-
                     <ul class="dropdown-menu" role="menu" >
                       <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">laptops</a></li>
                       <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">tv & audio</a></li>
                       <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">gadgets</a></li>
                       <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">cameras</a></li>
-
                     </ul>
                   </li>
                 </ul>
-
                 <a class="search-button" href="#" ></a>
-
               </div>
             </form>
           </div><!-- /.search-area -->
@@ -603,12 +601,14 @@
   </div>-->
 </template>
 
-<script>
+<script>var currencyIndex;
+
 
 export default {
   name: "app",
   data() {
     return {
+      currencyIndex: 0,
       window: {
         width: 0,
         height: 0
