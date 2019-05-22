@@ -25,8 +25,8 @@ export default {
     return code;
   },
   languages: [
-    { flag: "ru", code: "ru", title: "Русский" },
-    { flag: "uz", code: "uz", title: "O'zbek" },
-    { flag: "us", code: "en", title: "English" }
+    { flag: "ru", code: "ru", title: "Русский" }
+    // { flag: "uz", code: "uz", title: "O'zbek" },
+    // { flag: "us", code: "en", title: "English" }
   ]
 };

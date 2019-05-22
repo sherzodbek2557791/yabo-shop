@@ -24,11 +24,15 @@ import "./assets/css/colors/red.css";
 import "./assets/css/element.css";
 
 import routes from "./routes";
+import globals from "./globals";
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(ElementUI);
 Vue.prototype.$locale = i18n;
+
+// This is a global mixin, it is applied to every vue instance
+Vue.mixin({data: () => globals});
 
 const router = new VueRouter({ mode: "history", routes });
 

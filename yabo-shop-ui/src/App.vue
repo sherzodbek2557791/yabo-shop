@@ -5,37 +5,14 @@
       <div class="container">
         <div class="col-xs-12 col-sm-6 no-margin">
           <ul>
-            <li><router-link to='/'>Home</router-link></li>
+            <li><router-link to='/'>{{ $t('navigation.home') }}</router-link></li>
            <!-- todo add here drop down -->
-           <!-- <li class="dropdown">
-              <el-dropdown trigger="click">
-                <span class="dropdown-toggle" href="#">
-                  Change Colors
-                </span>
-                <el-dropdown-menu slot="dropdown">
-                  <el-dropdown-item>Action 1</el-dropdown-item>
-                  <el-dropdown-item>Action 2</el-dropdown-item>
-                  <el-dropdown-item>Action 3</el-dropdown-item>
-                  <el-dropdown-item disabled>Action 4</el-dropdown-item>
-                  <el-dropdown-item divided>Action 5</el-dropdown-item>
-                </el-dropdown-menu>
-              </el-dropdown>
-              <a class="dropdown-toggle"  data-toggle="dropdown" href="#change-colors">Change Colors</a>
-              <ul class="dropdown-menu" role="menu" >
-                <li role="presentation"><a role="menuitem" class="changecolor green-text" tabindex="-1" href="#" title="Green color">Green</a></li>
-                <li role="presentation"><a role="menuitem" class="changecolor blue-text" tabindex="-1" href="#" title="Blue color">Blue</a></li>
-                <li role="presentation"><a role="menuitem" class="changecolor red-text" tabindex="-1" href="#" title="Red color">Red</a></li>
-                <li role="presentation"><a role="menuitem" class="changecolor orange-text" tabindex="-1" href="#" title="Orange color">Orange</a></li>
-                <li role="presentation"><a role="menuitem" class="changecolor navy-text" tabindex="-1" href="#" title="Navy color">Navy</a></li>
-                <li role="presentation"><a role="menuitem" class="changecolor dark-green-text" tabindex="-1" href="#" title="Darkgreen color">Dark Green</a></li>
-              </ul>
-            </li>-->
-            <li><router-link to='/blog'>Blog</router-link></li>
-            <li><router-link to='/faq'>Faq</router-link></li>
-            <li><router-link to='/contact'>Contact</router-link></li>
+            <li><router-link to='/blog'>{{ $t('navigation.blog') }}</router-link></li>
+            <li><router-link to='/faq'>{{ $t('navigation.faq') }}</router-link></li>
+            <li><router-link to='/contact'>{{ $t('navigation.contact') }}</router-link></li>
             <li class="dropdown">
               <el-dropdown trigger="click">
-                <span class="dropdown-toggle">Pages</span>
+                <span class="dropdown-toggle">{{ $t('navigation.pages') }}</span>
                 <el-dropdown-menu slot="dropdown">
                   <router-link to="/blog"><el-dropdown-item>Home</el-dropdown-item></router-link>
                   <el-dropdown-item>Home Alt</el-dropdown-item>
@@ -59,29 +36,6 @@
                   <el-dropdown-item>Track your Order</el-dropdown-item>
                 </el-dropdown-menu>
               </el-dropdown>
-              <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#pages">Pages</a>
-              <ul class="dropdown-menu" role="menu">
-                index-2.html">
-                index-3.html">
-                category-grid.html">
-                category-grid-2.html">
-                single-product.html">
-                single-product-sidebar.html">
-                cart.html">
-                checkout.html">
-                about.html">
-                contact.html">
-                blog.html">
-                blog-fullwidth.html">
-                blog-post.html">
-                faq.html">
-                terms.html">
-                authentication.html">
-                404.html">
-                wishlist.html">
-                compare.html">
-                track-your-order.html">
-              </ul>-->
             </li>
           </ul>
         </div><!-- /.col -->
@@ -109,8 +63,8 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dollar (US)</a></li>
               </ul>
             </li>
-            <li><a href="authentication.html">Register</a></li>
-            <li><a href="authentication.html">Login</a></li>
+            <li><a href="authentication.html">{{ $t('navigation.register') }}</a></li>
+            <li><a href="authentication.html">{{ $t('navigation.login') }}</a></li>
           </ul>
         </div><!-- /.col -->
       </div><!-- /.container -->
@@ -154,7 +108,7 @@
         <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder no-margin">
           <div class="contact-row">
             <div class="phone inline">
-              <i class="fa fa-phone"></i> (+800) 123 456 7890
+              <i class="fa fa-phone"></i> {{ app.supportPhone }}
             </div>
             <div class="contact inline">
               <i class="fa fa-envelope"></i> contact@<span class="le-color">oursupport.com</span>
