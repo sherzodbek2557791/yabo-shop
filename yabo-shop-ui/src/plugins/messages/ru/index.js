@@ -7,5 +7,8 @@ export default {
     pages: "Страницы",
     register: "Регистрация",
     login: "Вход"
+  },
+  index:{
+    allDepartments: "Все разделы"
   }
 };

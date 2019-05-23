@@ -6,7 +6,7 @@
         <div class="col-xs-12 col-sm-4 col-md-3 sidemenu-holder">
           <!-- ================================== TOP NAVIGATION ================================== -->
           <div class="side-menu animate-dropdown">
-            <div class="head"><i class="fa fa-list"></i> all departments</div>
+            <div class="head"><i class="fa fa-list"></i> {{ $t('index.allDepartments') }}</div>
             <nav class="yamm megamenu-horizontal" role="navigation">
               <ul class="nav">
                 <li class="dropdown menu-item">
