@@ -552,7 +552,7 @@
         <div class="container">
           <div class="col-xs-12 col-sm-6 no-margin">
             <div class="copyright">
-              &copy; <a href="index-2.html">Media Center</a> - all rights reserved
+              &copy; <router-link to="/">yabo.uz</router-link> - all rights reserved
             </div><!-- /.copyright -->
           </div>
           <div class="col-xs-12 col-sm-6 no-margin">
