@@ -8,7 +8,11 @@ export default {
     register: "Регистрация",
     login: "Вход"
   },
-  index:{
+  app: {
+    search: "Поиск",
+    allCategories: "Все категории"
+  },
+  index: {
     allDepartments: "Все разделы"
   }
 };
