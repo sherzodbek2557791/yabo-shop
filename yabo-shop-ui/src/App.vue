@@ -143,11 +143,10 @@
                   </div>
 
                   <div class="total-price-basket">
-                    <span>{{ $t('welcomeMsg') }}</span>
                     <span class="lbl">your cart:</span>
                     <span class="total-price">
-                                                <span class="sign">$</span><span class="value">3219,00</span>
-                                            </span>
+                      <span class="sign">$</span><span class="value">3219,00</span>
+                    </span>
                   </div>
                 </a>
 

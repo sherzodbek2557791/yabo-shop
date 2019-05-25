@@ -9,53 +9,16 @@
             <div class="head"><i class="fa fa-list"></i> {{ $t('index.allDepartments') }}</div>
             <nav class="yamm megamenu-horizontal" role="navigation">
               <ul class="nav">
-                <li class="dropdown menu-item">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages</a>
-                  <ul class="dropdown-menu mega-menu">
-                    <li class="yamm-content">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <ul class="list-unstyled">
-                            <li><a href="index-2.html">Home</a></li>
-                            <li><a href="index-3.html">Home Alt</a></li>
-                            <li><a href="category-grid.html">Category - Grid/List</a></li>
-                            <li><a href="category-grid-2.html">Category 2 - Grid/List</a></li>
-                            <li><a href="single-product.html">Single Product</a></li>
-                            <li><a href="single-product-sidebar.html">Single Product with Sidebar</a></li>
-                          </ul>
-                        </div>
-
-                        <div class="col-md-4">
-                          <ul class="list-unstyled">
-                            <li><a href="cart-2.html">Shopping Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-fullwidth.html">Blog Full Width</a></li>
-                          </ul>
-                        </div>
-
-                        <div class="col-md-4">
-                          <ul class="list-unstyled">
-                            <li><a href="blog-post.html">Blog Post</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="terms.html">Terms & Conditions</a></li>
-                            <li><a href="authentication.html">Login/Register</a></li>
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </li><!-- /.menu-item -->
-
-                <li class="dropdown menu-item">
+                <li class="dropdown menu-item" v-for="(item, index) in app.allDepartments">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ item.name }}</a>
+                  <ul class="dropdown-menu mega-menu"></ul>
+                </li><!--.menu-item -->
+                <!-- todo open menu-->
+                <!-- <li class="dropdown menu-item">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Value of the Day</a>
                   <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                       <div class="row">
                         <div class="col-xs-12 col-lg-4">
                           <ul>
@@ -86,16 +49,16 @@
                           <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
                         </div>
                       </div>
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                     </li>
                   </ul>
-                </li><!-- /.menu-item -->
+                </li>&lt;!&ndash; /.menu-item &ndash;&gt;
 
                 <li class="dropdown menu-item">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Laptops &amp; Computers</a>
                   <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                       <div class="row">
                         <div class="col-xs-12 col-lg-4">
                           <ul>
@@ -126,16 +89,16 @@
                           <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
                         </div>
                       </div>
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                     </li>
                   </ul>
-                </li><!-- /.menu-item -->
+                </li>&lt;!&ndash; /.menu-item &ndash;&gt;
 
                 <li class="dropdown menu-item">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cameras &amp; Photography</a>
                   <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                       <div class="row">
                         <div class="col-xs-12 col-lg-4">
                           <ul>
@@ -166,16 +129,16 @@
                           <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
                         </div>
                       </div>
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                     </li>
                   </ul>
-                </li><!-- /.menu-item -->
+                </li>&lt;!&ndash; /.menu-item &ndash;&gt;
 
                 <li class="dropdown menu-item">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Smart Phones &amp; Tablets</a>
                   <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                       <div class="row">
                         <div class="col-xs-12 col-lg-4">
                           <ul>
@@ -206,16 +169,16 @@
                           <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
                         </div>
                       </div>
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                     </li>
                   </ul>
-                </li><!-- /.menu-item -->
+                </li>&lt;!&ndash; /.menu-item &ndash;&gt;
 
                 <li class="dropdown menu-item">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Video Games &amp; Consoles</a>
                   <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                       <div class="row">
                         <div class="col-xs-12 col-lg-4">
                           <ul>
@@ -246,16 +209,16 @@
                           <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
                         </div>
                       </div>
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                     </li>
                   </ul>
-                </li><!-- /.menu-item -->
+                </li>&lt;!&ndash; /.menu-item &ndash;&gt;
 
                 <li class="dropdown menu-item">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">TV &amp; Audio</a>
                   <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                       <div class="row">
                         <div class="col-xs-12 col-lg-4">
                           <ul>
@@ -286,16 +249,16 @@
                           <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
                         </div>
                       </div>
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                     </li>
                   </ul>
-                </li><!-- /.menu-item -->
+                </li>&lt;!&ndash; /.menu-item &ndash;&gt;
 
                 <li class="dropdown menu-item">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gadgets</a>
                   <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                       <div class="row">
                         <div class="col-xs-12 col-lg-4">
                           <ul>
@@ -326,16 +289,16 @@
                           <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
                         </div>
                       </div>
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                     </li>
                   </ul>
-                </li><!-- /.menu-item -->
+                </li>&lt;!&ndash; /.menu-item &ndash;&gt;
 
                 <li class="dropdown menu-item">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Car Electronic &amp; GPS</a>
                   <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                       <div class="row">
                         <div class="col-xs-12 col-lg-4">
                           <ul>
@@ -366,16 +329,16 @@
                           <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
                         </div>
                       </div>
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                     </li>
                   </ul>
-                </li><!-- /.menu-item -->
+                </li>&lt;!&ndash; /.menu-item &ndash;&gt;
 
                 <li class="dropdown menu-item">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accessories</a>
                   <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                       <div class="row">
                         <div class="col-xs-12 col-lg-4">
                           <ul>
@@ -406,12 +369,12 @@
                           <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
                         </div>
                       </div>
-                      <!-- ================================== MEGAMENU VERTICAL ================================== -->
+                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;
                     </li>
                   </ul>
-                </li><!-- /.menu-item -->
+                </li>&lt;!&ndash; /.menu-item &ndash;&gt;
 
-                <li><a href="http://themeforest.net/item/media-center-electronic-ecommerce-html-template/8178892?ref=shaikrilwan">Buy this Theme</a></li>
+                <li><a href="http://themeforest.net/item/media-center-electronic-ecommerce-html-template/8178892?ref=shaikrilwan">Buy this Theme</a></li>-->
               </ul><!-- /.nav -->
             </nav><!-- /.megamenu-horizontal -->
           </div><!-- /.side-menu -->
