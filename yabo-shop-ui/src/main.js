@@ -3,6 +3,7 @@ import App from "./App.vue";
 import VueRouter from "vue-router";
 import ElementUI from "element-ui";
 import i18n from "@/plugins/i18n";
+import directives from "@/plugins/directives";
 
 /**
  * Styles imported
@@ -32,7 +33,8 @@ Vue.use(ElementUI);
 Vue.prototype.$locale = i18n;
 
 // This is a global mixin, it is applied to every vue instance
-Vue.mixin({data: () => globals});
+Vue.mixin({ data: () => globals });
+directives.load();
 
 const router = new VueRouter({ mode: "history", routes });
 
