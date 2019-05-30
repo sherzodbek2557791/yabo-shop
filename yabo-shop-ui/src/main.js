@@ -4,6 +4,8 @@ import VueRouter from "vue-router";
 import ElementUI from "element-ui";
 import i18n from "@/plugins/i18n";
 import directives from "@/plugins/directives";
+import store from "@/plugins/store";
+import { sync } from "vuex-router-sync";
 
 /**
  * Styles imported
@@ -37,9 +39,11 @@ Vue.mixin({ data: () => globals });
 directives.load();
 
 const router = new VueRouter({ mode: "history", routes });
+sync(store, router);
 
 new Vue({
   i18n: i18n.plugin,
   router,
+  store,
   render: h => h(App)
 }).$mount("#app");

@@ -137,12 +137,14 @@
             <div class="top-cart-holder dropdown animate-dropdown">
               <div class="basket">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                  <div class="basket-item-count">
-                    <span class="count">3</span>
-                    <img src="assets/images/icon-cart.png" alt="" />
+                  <div class="basket-item-count" @click="$store.commit('setCartClear')">
+                    <span class="count"> {{ $store.state.cart.count }}</span>
+                    <img src="./assets/images/icon-cart.png" alt="" />
                   </div>
 
-                  <div class="total-price-basket">
+
+
+                  <div class="total-price-basket" @click="$store.commit('setCartProduct', {key:'test', count: 3 })">
                     <span class="lbl">your cart:</span>
                     <span class="total-price">
                       <span class="sign">$</span><span class="value">3219,00</span>
