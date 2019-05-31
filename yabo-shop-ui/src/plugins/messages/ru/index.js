@@ -10,7 +10,8 @@ export default {
   },
   app: {
     search: "Поиск",
-    allCategories: "Все категории"
+    allCategories: "Все категории",
+    yourCart: "Корзинка"
   },
   index: {
     allDepartments: "Все разделы"

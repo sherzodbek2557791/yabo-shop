@@ -55,7 +55,7 @@
               </el-dropdown>
             </li>
             <li class="dropdown">
-              <el-dropdown trigger="click" @command="(currencyItem) => currencyIndex = app.currencies.indexOf(currencyItem)">
+              <el-dropdown trigger="click" @command="(currencyItem) => $store.commit('setCurrency', {index : app.currencies.indexOf(currencyItem), code: currencyItem.currency })">
                 <span class="dropdown-toggle">
                    {{ `${app.currencies[currencyIndex].title}(${app.currencies[currencyIndex].currency})` }}
                 </span>
@@ -124,8 +124,8 @@
 
         <div class="col-xs-12 col-sm-12 col-md-3 top-cart-row no-margin">
           <div class="top-cart-row-container">
-            <div class="wishlist-compare-holder">
-              <div class="wishlist ">
+            <div class="wishlist-compare-holder" style="opacity: 0; display: none;">
+              <div class="wishlist">
                 <a href="#"><i class="fa fa-heart"></i> wishlist <span class="value">(21)</span> </a>
               </div>
               <div class="compare">
@@ -144,10 +144,11 @@
 
 
 
-                  <div class="total-price-basket" @click="$store.commit('setCartProduct', {key:'test', count: 3 })">
-                    <span class="lbl">your cart:</span>
+                  <div class="total-price-basket" @click="$store.commit('setCartProduct', {key:'test', count: 3, amount: 1050 })">
+                    <span class="lbl">{{ $t('app.yourCart') }}:</span>
                     <span class="total-price">
-                      <span class="sign">$</span><span class="value">3219,00</span>
+                      {{ currencyFormatAmount }}
+<!--                      <span class="sign">$</span><span class="value">3219,00</span>-->
                     </span>
                   </div>
                 </a>
@@ -583,14 +584,11 @@
   </div>-->
 </template>
 
-<script>var currencyIndex;
-
-
+<script>
 export default {
   name: "app",
   data() {
     return {
-      currencyIndex: 0,
       window: {
         width: 0,
         height: 0
@@ -600,6 +598,14 @@ export default {
   created() {
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
+  },
+  computed: {
+    currencyIndex(){
+      return this.$store.state.uiState.currency.index;
+    },
+    currencyFormatAmount(){
+      return this.app.currencies[this.currencyIndex].format(this.$store.state.cart.amount);
+    }
   },
   destroyed() {
     window.removeEventListener("resize", this.handleResize);

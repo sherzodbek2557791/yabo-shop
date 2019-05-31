@@ -3,7 +3,7 @@ export default {
     return {
       supportPhone: "+998 97 922 50 00",
       supportEmail: "support@yabo.uz",
-      currencies: [{ currency: "USD", title: "Dollar" }, { currency: "SUM", title: "So'm" }],
+      currencies: [{ currency: "USD", title: "Dollar", format(amount){ return `$ ${amount}`;} }, { currency: "SUM", title: "So'm", format(amount){ return `${amount} so'm`;} }],
       allDepartments: [
         { name: "Pages" },
         { name: "Value of the Day" },
