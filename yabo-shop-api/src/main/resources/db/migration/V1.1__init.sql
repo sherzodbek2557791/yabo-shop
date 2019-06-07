@@ -1,80 +1,66 @@
--- Warning: You can generate script only for two tables at a time in your Free plan
-CREATE TABLE `product`
+-- create tables and sequences
+CREATE SEQUENCE PRODUCT_SEQ START 1;
+CREATE TABLE PRODUCT
 (
- `id`             bigint NOT NULL ,
- `title`          varchar(512) NOT NULL ,
- `description`    varchar(1024) ,
- `product_status` varchar(100) NOT NULL ,
- `created_date`   date NOT NULL ,
-PRIMARY KEY (`id`)
+ ID             BIGINT NOT NULL default nextval('PRODUCT_SEQ'),
+ CODE           VARCHAR(512) NOT NULL ,
+ TITLE          VARCHAR(512) NOT NULL ,
+ DESCRIPTION    VARCHAR(1024) ,
+ PRODUCT_STATUS VARCHAR(100) NOT NULL ,
+ PRICE          DOUBLE PRECISION NOT NULL,
+ CURRENCY       VARCHAR(50) NOT NULL,
+ IMAGE          VARCHAR(512),
+ CREATED_DATE   DATE NOT NULL
 );
+comment on table PRODUCT   is 'Product for sale';
+alter table PRODUCT add constraint PRODUCT_PK primary key (ID);
+alter table PRODUCT add constraint PRODUCT_UK1 unique (CODE);
 
-CREATE TABLE `order`
+
+CREATE SEQUENCE ORDERS_SEQ START 1;
+CREATE TABLE ORDERS
 (
- `id`           bigint NOT NULL ,
- `phone_number` varchar(100) NOT NULL ,
- `email`        varchar(45) NOT NULL ,
- `first_name`   varchar(45) NOT NULL ,
- `last_name`    varchar(45) ,
- `order_status` varchar(45) NOT NULL ,
- `careted_date` date NOT NULL ,
-PRIMARY KEY (`id`)
+ ID            BIGINT NOT NULL default nextval('ORDERS_SEQ'),
+ CODE          VARCHAR(512) NOT NULL ,
+ PHONE_NUMBER  VARCHAR(100) NOT NULL ,
+ EMAIL         VARCHAR(45) NOT NULL ,
+ FIRST_NAME    VARCHAR(45) NOT NULL ,
+ LAST_NAME     VARCHAR(45) ,
+ ORDER_STATUS  VARCHAR(45) NOT NULL ,
+ CREATED_DATE  DATE NOT NULL
 );
+comment on table ORDERS   is 'Products order';
+alter table ORDERS add constraint ORDERS_PK primary key (ID);
+alter table ORDERS add constraint ORDERS_UK1 unique (CODE);
 
-CREATE TABLE `order_item`
+CREATE SEQUENCE ORDER_ITEM_SEQ START 1;
+CREATE TABLE ORDER_ITEM
 (
- `id`         bigint NOT NULL ,
- `order_id`   bigint NOT NULL ,
- `product_id` bigint NOT NULL ,
- `count`      double NOT NULL ,
- `price`      double NOT NULL ,
-PRIMARY KEY (`id`),
-KEY `fkIdx_151` (`order_id`),
-CONSTRAINT `FK_151` FOREIGN KEY `fkIdx_151` (`order_id`) REFERENCES `order` (`id`),
-KEY `fkIdx_154` (`product_id`),
-CONSTRAINT `FK_154` FOREIGN KEY `fkIdx_154` (`product_id`) REFERENCES `product` (`id`)
+ ID         BIGINT NOT NULL default nextval('ORDER_ITEM_SEQ'),
+ ORDER_ID   BIGINT NOT NULL ,
+ PRODUCT_ID BIGINT NOT NULL ,
+ COUNT      DOUBLE PRECISION NOT NULL ,
+ PRICE      DOUBLE PRECISION NOT NULL
 );
-
-
-
-
-
-
+comment on table ORDER_ITEM   is 'Order items';
+alter table ORDER_ITEM add constraint ORDER_ITEM_PK primary key (ID);
+alter table ORDER_ITEM add constraint ORDER_ITEM_FK1 FOREIGN KEY (ORDER_ID) REFERENCES ORDERS(ID);
+alter table ORDER_ITEM add constraint ORDER_ITEM_FK2 FOREIGN KEY (PRODUCT_ID) REFERENCES PRODUCT(ID);
 
 -- Create table
-create table AP_REGION
+CREATE SEQUENCE REGION_SEQ START 101;
+create table REGION
 (
-    id            NUMBER not null,
-    ordered       NUMBER not null,
-    ap_country_id NUMBER default 1 not null,
-    name_us_en    VARCHAR2(128) not null,
-    name_ru_ru    VARCHAR2(128) not null,
-    name_uz_uz    VARCHAR2(128) not null,
-    name_uz_cyr   VARCHAR2(128) not null,
-    name_uz_kk    VARCHAR2(128) not null,
-    description   VARCHAR2(512),
-    soato         VARCHAR2(128)
+    ID                        BIGINT NOT NULL DEFAULT NEXTVAL('REGION_SEQ'),
+    SOATO                     VARCHAR(128) NOT NULL,
+    NAME_UZ_UZ                VARCHAR(512) NOT NULL,
+    NAME_RU_RU                VARCHAR(512) NOT NULL,
+    CENTER_REGION_ID          BIGINT,
+    CENTER_REGION_NAME_UZ_UZ  VARCHAR(512),
+    CENTER_REGION_NAME_RU_RU  VARCHAR(512)
 );
-
-comment on table AP_REGION   is 'Viloyatlar';
-alter table AP_REGION add constraint AP_REGION_PK primary key (ID);
-
--- Create table
-create table AP_AREA
-(
-    id           NUMBER not null,
-    ordered      NUMBER not null,
-    ap_region_id NUMBER not null,
-    name_us_en   VARCHAR2(128) not null,
-    name_ru_ru   VARCHAR2(128) not null,
-    name_uz_uz   VARCHAR2(128) not null,
-    name_uz_cyr  VARCHAR2(128) not null,
-    name_uz_kk   VARCHAR2(128) not null,
-    description  VARCHAR2(512),
-    soato        VARCHAR2(128)
-);
--- Add comments to the table
-comment on table AP_AREA is 'Viloyat Tumanlari';
--- Create/Recreate primary, unique and foreign key constraints
-alter table AP_AREA add constraint AP_AREA_PK primary key (ID);
-alter table AP_AREA add constraint AP_AREA_FK1 foreign key (AP_REGION_ID) references AP_REGION (ID);
+comment on table REGION   is 'regions with soato';
+alter table REGION add constraint REGION_PK primary key (ID);
+alter table REGION add constraint REGION_UK1 unique (SOATO);
+alter table REGION add constraint REGION_FK1 FOREIGN KEY (CENTER_REGION_ID) REFERENCES REGION(ID);
+alter table REGION add constraint REGION_CH1 CHECK (CENTER_REGION_ID!=ID);

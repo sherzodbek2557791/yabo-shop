@@ -13,39 +13,25 @@
                                 <li :class="`dropdown menu-item ${item.expand ? 'open' : ''}`"
                                         v-for="item in app.allDepartments"
                                         @click="departmentItemClick(item)"
+                                        v-if="item.links && item.links.length > 0"
                                         v-click-outside="e => departmentItemOutClick(e, item)">
                                     <a href="javascript:void(0)"
                                        class="dropdown-toggle"
                                        data-toggle="dropdown"
-                                       :aria-expanded="item.expand">{{ item.name }}</a>
+                                       :aria-expanded="item.expand">{{ item.title }}</a>
                                     <ul class="dropdown-menu mega-menu">
                                         <li class="yamm-content">
                                             <!--                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;-->
                                             <div class="row">
                                                 <div class="col-xs-12 col-lg-4">
                                                     <ul>
-                                                        <li>
-                                                            <a href="javascript:void(0)">Computer Cases &amp; Accessories</a>
-                                                        </li>
-                                                        <li><a href="javascript:void(0)">CPUs, Processors</a></li>
-                                                        <li>
-                                                            <a href="javascript:void(0)">Fans, Heatsinks &amp; Cooling</a>
-                                                        </li>
-                                                        <li><a href="javascript:void(0)">Graphics, Video Cards</a></li>
-                                                        <li><a href="javascript:void(0)">Interface, Add-On Cards</a></li>
-                                                        <li><a href="javascript:void(0)">Laptop Replacement Parts</a></li>
-                                                        <li><a href="javascript:void(0)">Memory (RAM)</a></li>
-                                                        <li><a href="javascript:void(0)">Motherboards</a></li>
-                                                        <li>
-                                                            <a href="javascript:void(0)">Motherboard &amp; CPU Combos</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="javascript:void(0)">Motherboard Components &amp; Accs</a>
+                                                        <li v-for="link in item.links">
+                                                            <a href="javascript:void(0)" @click="$router.push({path: '/category_grid?test=test'})">{{ link.title }}</a>
                                                         </li>
                                                     </ul>
                                                 </div>
 
-                                                <div class="col-xs-12 col-lg-4">
+                                                <!--<div class="col-xs-12 col-lg-4">
                                                     <ul>
                                                         <li><a href="javascript:void(0)">Power Supplies Power</a></li>
                                                         <li><a href="javascript:void(0)">Power Supply Testers Sound</a></li>
@@ -63,7 +49,7 @@
                                                             alt=""
                                                             src="assets/images/banners/banner-side.png"
                                                     /></a>
-                                                </div>
+                                                </div>-->
                                             </div>
                                             <!--                      &lt;!&ndash; ================================== MEGAMENU VERTICAL ================================== &ndash;&gt;-->
                                         </li>
