@@ -2,355 +2,223 @@
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (1, '17', 'O`ZBEKISTON RESPUBLIKASI', 'РЕСПУБЛИКА УЗБЕКИСТАН', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (2, '1703', 'ANDIJON VILOYATI', 'АНДИЖАНСКАЯ ОБЛАСТЬ', 'Andijon sh.', 'г. Андижан');
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (3, '1703202', 'OLTINKO`L TUMANI', 'АЛТЫНКУЛЬСКИЙ РАЙОН', 'Oltinko`l a.p.', 'нп Алтынкуль');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (4, '1703202552', 'Bo`ston shaharchasi', 'Городской поселок Бустон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (5, '1703202554', 'Dalvarzin shaharchasi', 'Городской поселок Далварзин', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (6, '1703202556', 'Jalabek shaharchasi', 'Городской поселок Жалабек', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (7, '1703202558', 'Ijtimoiyat shaharchasi', 'Городской поселок Ижтимоият', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (8, '1703202562', 'Kumakay shaharchasi', 'Городской поселок Кумакай', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (9, '1703202564', 'Qo`shtepa shaharchasi', 'Городской поселок Куштепа', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (10, '1703202566', 'Madaniy mehnat shaharchasi', 'Городской поселок Маданий мехнат', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (11, '1703202568', 'Markaz shaharchasi', 'Городской поселок Марказ', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (12, '1703202572', 'Maslahat shaharchasi', 'Городской поселок Маслахат', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (13, '1703202574', 'Namuna shaharchasi', 'Городской поселок Намуна', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (14, '1703202576', 'Xondibog`i shaharchasi', 'Городской поселок Хондибоги', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (15, '1703202804', 'Oltinko`l QFY', 'ССГ Алтынкуль', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (16, '1703202807', 'Oxunboboyev nomli QFY', 'ССГ им. Ахунбабаева', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (17, '1703202820', 'Qo`shtepasaroy QFY', 'ССГ Коштепасарай', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (18, '1703202825', 'Kumakay QFY', 'ССГ Кумакай', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (19, '1703202830', 'Maslahat QFY', 'ССГ Маслахат', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (20, '1703202834', 'Oraziy QFY', 'ССГ им. Орази', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (21, '1703202840', 'Suvyulduz QFY', 'ССГ Сувюлдуз', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (22, '1703203', 'ANDIJON TUMANI', 'АНДИЖАНСКИЙ РАЙОН', 'Kuyganyor shaharchasi', 'гп Куйган - яр');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (23, '1703203551', 'Kuyganyor shaharchasi', 'Городской поселок Куйган - яр', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (24, '1703203553', 'Ayrilish shaharchasi', 'Городской поселок Айрилиш', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (25, '1703203555', 'Butaqora shaharchasi', 'Городской поселок Бутакора', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (26, '1703203557', 'Guliston shaharchasi', 'Городской поселок Гулистон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (27, '1703203559', 'Gumbaz shaharchasi', 'Городской поселок Гумбаз', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (28, '1703203561', 'Zavroq shaharchasi', 'Городской поселок Заврок', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (29, '1703203563', 'Qoraqalpoq shaharchasi', 'Городской поселок Каракалпак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (30, '1703203567', 'Kunji shaharchasi', 'Городской поселок Кунжи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (31, '1703203569', 'Qo`shariq shaharchasi', 'Городской поселок Кушарик', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (32, '1703203571', 'Namuna shaharchasi', 'Городской поселок Намуна', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (33, '1703203573', 'Og`ullik shaharchasi', 'Городской поселок Огуллик', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (34, '1703203575', 'Oq-yor shaharchasi', 'Городской поселок Ок-ер', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (35, '1703203577', 'Rovvot shaharchasi', 'Городской поселок Роввот', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (36, '1703203579', 'Xartum shaharchasi', 'Городской поселок Хартум', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (37, '1703203581', 'Chilon shaharchasi', 'Городской поселок Чилон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (38, '1703203583', 'Chumbog`ich shaharchasi', 'Городской поселок Чумбогич', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (39, '1703203585', 'Ekin tikin shaharchasi', 'Городской поселок Экин-тикин', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (40, '1703203587', 'Yangiobod shaharchasi', 'Городской поселок Янгиабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (41, '1703203589', 'Gulobod shaharchasi', 'Городской поселок Гулобод', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (42, '1703203803', 'Oq-Yor QFY', 'ССГ Ак-яр', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (43, '1703203813', 'Bo`taqora QFY', 'ССГ Бутакара', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (44, '1703203829', 'Qo`nji QFY', 'ССГ Кунджи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (45, '1703203838', 'Nayman QFY', 'ССГ Найман', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (46, '1703203849', 'Xakan QFY', 'ССГ Хакан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (47, '1703203863', 'Xrabek QFY', 'ССГ Хирабек', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (48, '1703203866', 'Xartum QFY', 'ССГ Хартум', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (49, '1703203874', 'Orol QFY', 'ССГ Аpал', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (50, '1703203885', 'Yorboshi QFY', 'ССГ Ярбаши', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (51, '1703206', 'BALIQCHI TUMANI', 'БАЛЫКЧИНСКИЙ РАЙОН', 'Baliqchi shaharchasi', 'гп Баликчи');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (52, '1703206551', 'Baliqchi shaharchasi', 'Городской поселок Баликчи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (53, '1703206554', 'Xo`jaobod shaharchasi', 'Городской поселок Хужаабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (54, '1703206558', 'Chinobod markaz shaharchasi', 'Городской поселок Чинобод марказ', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (55, '1703206803', 'Olimbek QFY', 'ССГ Алимбек', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (56, '1703206807', 'Oxunboboyev nomli QFY', 'ССГ им. Ахунбабаева', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (57, '1703206813', 'Baliqchi QFY', 'ССГ Балыкчи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (58, '1703206824', 'Guliston QFY', 'ССГ Гулистан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (59, '1703206831', 'Bo`ston QFY', 'ССГ Бустан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (60, '1703206846', 'Siza QFY', 'ССГ Сиза', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (61, '1703206857', 'O`rmonbek QFY', 'ССГ Урманбек', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (62, '1703206868', 'Xo`jaobod QFY', 'ССГ Ходжаабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (63, '1703206879', 'Eskixaqqulobod QFY', 'ССГ Эски Хаккулабад', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (64, '1703209', 'BO`Z TUMANI', 'БОЗСКИЙ РАЙОН', 'Bo`z shaharchasi', 'гп Боз');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (65, '1703209551', 'Bo`z shaharchasi', 'Городской поселок Боз', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (66, '1703209555', 'M.Jalolov nomli shaharchasi', 'Городской поселок М.Жалолов', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (67, '1703209559', 'Xoldevonbek shaharchasi', 'Городской поселок Холдевонбек', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (68, '1703209811', 'Xoldevonbek QFY', 'ССГ Халдеванбек', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (69, '1703209846', 'M.Jalolov nomli QFY', 'ССГ им. М. Джалалова', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (70, '1703209857', 'Xovos QFY', 'ССГ Хавас', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (71, '1703210', 'BULOQBOSHI TUMANI', 'БУЛАКБАШИНСКИЙ РАЙОН', 'Buloqboshi shaharchasi', 'гп Булокбоши');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (72, '1703210551', 'Buloqboshi shaharchasi', 'Городской поселок Булокбоши', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (73, '1703210554', 'Andijon shaharchasi', 'Городской поселок Андижан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (74, '1703210561', 'Uchtepa shaharchasi', 'Городской поселок Учтепа', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (75, '1703210564', 'Shirmonbuloq shaharchasi', 'Городской поселок Ширмонбулок', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (76, '1703210812', 'Buloqboshi QFY', 'ССГ Булакбаши', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (77, '1703210832', 'Kulla QFY', 'ССГ Кулла', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (78, '1703210838', 'Mayariq QFY', 'ССГ Майарык', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (79, '1703210850', 'Nayman QFY', 'ССГ Найман', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (80, '1703210894', 'Shirmonbuloq QFY', 'ССГ Ширманбулак', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (81, '1703211', 'JALAQUDUQ TUMANI', 'ЖАЛАКУДУКСКИЙ РАЙОН', 'Jalaquduq sh.', 'г. Жалакудук');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (82, '1703211501', 'Jalaquduq shahari', 'Город Жалакудук', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (83, '1703211554', 'Janubiy olamushuk shaharchasi', 'Городской поселок Южный Аламышик', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (84, '1703211556', 'Beshtol shaharchasi', 'Городской поселок Бештол', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (85, '1703211558', 'Yorqishloq shaharchasi', 'Городской поселок Еркишлок', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (86, '1703211562', 'Jalaquduq shaharchasi', 'Городской поселок Жалакудук', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (87, '1703211564', 'Ko`kalam shaharchasi', 'Городской поселок Кукалам', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (88, '1703211566', 'Qo`shtepa shaharchasi', 'Городской поселок Куштепа', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (89, '1703211568', 'Oyim shaharchasi', 'Городской поселок Ойим', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (90, '1703211804', 'Abdullabiy QFY', 'ССГ Абдуллабий', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (91, '1703211807', 'Oyim QFY', 'ССГ Аим', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (92, '1703211814', 'Beshtal QFY', 'ССГ Бештал', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (93, '1703211818', 'Jalolquduq QFY', 'ССГ Джалалкудук', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (94, '1703211824', 'Qatortol QFY', 'ССГ Катартал', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (95, '1703211830', 'Guliston QFY', 'ССГ Гулистан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (96, '1703211834', 'Teshiktosh QFY', 'ССГ Тешикташ', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (97, '1703211841', 'Yorqishloq QFY', 'ССГ Яркишлак', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (98, '1703214', 'IZBOSKAN TUMANI', 'ИЗБАСКАНСКИЙ РАЙОН', 'Paytug sh.', 'г. Пайтуг');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (99, '1703214501', 'Paytug shahari', 'Город Пайтуг', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (100, '1703214553', 'Gurkirov shaharchasi', 'Городской поселок Гуркиров', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (101, '1703214556', 'Maygir shaharchasi', 'Городской поселок Майгир', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (102, '1703214559', 'To`rtko`l shaharchasi', 'Городской поселок Турткул', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (103, '1703214563', 'Uzun ko`cha shaharchasi', 'Городской поселок Узун куча', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (104, '1703214811', 'Izboskan QFY', 'ССГ Избаскан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (105, '1703214822', 'Maygir QFY', 'ССГ Майгир', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (106, '1703214833', 'Namuna QFY', 'ССГ Намуна', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (107, '1703214844', 'O`rtoqlar QFY', 'ССГ Уртаклар', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (108, '1703214855', 'Shermatobod QFY', 'ССГ Шерматабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (109, '1703214860', 'Erkin QFY', 'ССГ Эркин', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (110, '1703214866', 'Yangizamon QFY', 'ССГ Янгизамон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (111, '1703214877', 'Yangi qishloq QFY', 'ССГ Янгикишлак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (112, '1703214885', 'Yakkatut QFY', 'ССГ Яккатут', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (113, '1703217', 'ULUG`NOR TUMANI', 'УЛУГНОPСКИЙ РАЙОН', 'Oq oltin shaharchasi', 'гп Ок-олтин');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (114, '1703217551', 'Oq oltin shaharchasi', 'Городской поселок Ок-олтин', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (115, '1703217810', 'Oq oltin QFY', 'ССГ Акалтын', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (116, '1703217815', 'Mingchinor QFY', 'ССГ Мингчинаp', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (117, '1703217820', 'Mingbuloq QFY', 'ССГ Мингбулак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (118, '1703217830', 'Navoiy nomli QFY', 'ССГ им. Навои', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (119, '1703220', 'QO`RG`ONTEPA TUMANI', 'КУРГАНТЕПИНСКИЙ РАЙОН', 'Qo`rg`ontepa sh.', 'г. Кургантепа');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (120, '1703220501', 'Qo`rg`ontepa shahari', 'Город Кургантепа', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (121, '1703220505', 'Qorasuv shahari', 'Город Карасу', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (122, '1703220553', 'Sultonobod shaharchasi', 'Городской поселок Султонабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (123, '1703220813', 'Dardok QFY', 'ССГ Дардак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (124, '1703220836', 'Qo`rg`ontepa QFY', 'ССГ Кургантепа', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (125, '1703220847', 'Savay QFY', 'ССГ Савай', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (126, '1703220858', 'Sultonobod QFY', 'ССГ Султанабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (127, '1703220872', 'Chimyon QFY', 'ССГ Чимион', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (128, '1703224', 'ASAKA TUMANI', 'АСАКИНСКИЙ РАЙОН', 'Asaka sh.', 'г. Асака');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (129, '1703224501', 'Asaka shahari', 'Город Асака', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (130, '1703224552', 'Kujgan shaharchasi', 'Городской поселок Кужган', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (131, '1703224554', 'Navkan shaharchasi', 'Городской поселок Навкан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (132, '1703224556', 'Oqbo`yra shaharchasi', 'Городской поселок Окбуйра', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (133, '1703224558', 'T.Aliyev shaharchasi', 'Городской поселок Т.Алиев', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (134, '1703224811', 'Zarbdor QFY', 'ССГ Зарбдар', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (135, '1703224822', 'Ilg`or QFY', 'ССГ Илгар', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (136, '1703224833', 'Qoratepa QFY', 'ССГ Каpатепа', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (137, '1703224844', 'Kujgan QFY', 'ССГ Кужган', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (138, '1703224855', 'Qadim QFY', 'ССГ Кадим', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (139, '1703224866', 'Mustahkam QFY', 'ССГ Мустахкам', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (140, '1703224877', 'O`zbekiston QFY', 'ССГ Узбекистан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (141, '1703224885', 'Niyozbotir QFY', 'ССГ Ниязбатыр', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (142, '1703227', 'MARXAMAT TUMANI', 'МАРХАМАТСКИЙ РАЙОН', 'Marxamat sh.', 'г. Мархамат');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (143, '1703227501', 'Marxamat shahari', 'Город Мархамат', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (144, '1703227554', 'Polvontosh shaharchasi', 'Городской поселок Палванташ', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (145, '1703227557', 'Boboxuroson shaharchasi', 'Городской поселок Бобохуросон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (146, '1703227561', 'Qorabog`ish shaharchasi', 'Городской поселок Корабогиш', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (147, '1703227564', 'Qoraqo`rg`on shaharchasi', 'Городской поселок Коракургон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (148, '1703227567', 'Ko`tarma shaharchasi', 'Городской поселок Кутарма', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (149, '1703227571', 'Marxamat shaharchasi', 'Городской поселок Мархамат', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (150, '1703227574', 'Rovot shaharchasi', 'Городской поселок Ровот', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (151, '1703227577', 'O`qchi shaharchasi', 'Городской поселок Укчи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (152, '1703227581', 'Xakka shaharchasi', 'Городской поселок Хакка', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (153, '1703227584', 'Xo`jaariq shaharchasi', 'Городской поселок Хужаарик', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (154, '1703227811', 'Qoraqo`rg`on QFY', 'ССГ Каракурган', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (155, '1703227816', 'Qorabog`ish QFY', 'ССГ Карабагиш', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (156, '1703227822', 'Ko`tarma QFY', 'ССГ Кутарма', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (157, '1703227833', 'Marxamat QFY', 'ССГ Мархамат', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (158, '1703227855', 'Shukurmergan QFY', 'ССГ Шукурмерган', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (159, '1703230', 'SHAXRIXON TUMANI', 'ШАХРИХАНСКИЙ РАЙОН', 'Shaxrixon sh.', 'г. Шахрихан');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (160, '1703230501', 'Shaxrixon shahari', 'Город Шахрихан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (161, '1703230552', 'Vaxim shaharchasi', 'Городской поселок Вахим', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (162, '1703230554', 'Cho`ja shaharchasi', 'Городской поселок Чужа', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (163, '1703230556', 'Segaza kum shaharchasi', 'Городской поселок Сегаза кум', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (164, '1703230811', 'Cho`ja QFY', 'ССГ Чужа', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (165, '1703230822', 'Naynavo QFY', 'ССГ Найнава', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (166, '1703230826', 'Guliston QFY', 'ССГ Гулистан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (167, '1703230835', 'Paxtaobod QFY', 'ССГ Пахтаабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (168, '1703230846', 'Toshtepa QFY', 'ССГ Таштепа', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (169, '1703230857', 'O`zbekiston QFY', 'ССГ Узбекистан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (170, '1703230862', 'O`rta Shaxrixon QFY', 'ССГ Урта Шахрихан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (171, '1703230869', 'Xaqiqat QFY', 'ССГ Хакикат', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (172, '1703230872', 'Abdubiy QFY', 'ССГ Абдубий', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (173, '1703230882', 'Yangi yo`l QFY', 'ССГ Янгиюль', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (174, '1703230890', 'Nazarmaxram QFY', 'ССГ Назармахрам', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (175, '1703230898', 'Yuqori Shaxrixon QFY', 'ССГ Юкори Шахрихан', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (176, '1703232', 'PAXTAOBOD TUMANI', 'ПАХТААБАДСКИЙ РАЙОН', 'Paxtaobod sh.', 'г. Пахтаабад');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (177, '1703232501', 'Paxtaobod shahari', 'Город Пахтаабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (178, '1703232556', 'Do`stlik shaharchasi', 'Городской поселок Дустлик', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (179, '1703232559', 'Izboskan shaharchasi', 'Городской поселок Избоскан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (180, '1703232563', 'Pushmon shaharchasi', 'Городской поселок Пушмон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (181, '1703232803', 'Bo`ston QFY', 'ССГ Бустан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (182, '1703232810', 'Ittifoq QFY', 'ССГ Иттифак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (183, '1703232820', 'Madaniyat QFY', 'ССГ Маданият', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (184, '1703232834', 'Paxtakor QFY', 'ССГ Пахтакор', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (185, '1703232845', 'Uyg`ur QFY', 'ССГ Уйгур', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (186, '1703236', 'XO`JAOBOD TUMANI', 'ХОДЖААБАДСКИЙ РАЙОН', 'Xo`jaobod sh.', 'г. Ходжаабад');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (187, '1703236501', 'Xo`jaobod shahari', 'Город Ходжаабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (188, '1703236552', 'Guliston shaharchasi', 'Городской поселок Гулистон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (189, '1703236554', 'Dilkushod shaharchasi', 'Городской поселок Дилкушод', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (190, '1703236558', 'Ko`tarma shaharchasi', 'Городской поселок Кутарма', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (191, '1703236562', 'Manak shaharchasi', 'Городской поселок Манак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (192, '1703236564', 'Xidirsha shaharchasi', 'Городской поселок Хидирша', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (193, '1703236826', 'Manak QFY', 'ССГ Манак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (194, '1703236861', 'Birlashgan QFY', 'ССГ Биpлашган', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (195, '1703236872', 'Oltin vodiy QFY', 'ССГ Олтин водий', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (196, '1703236883', 'Xo`jaobod QFY', 'ССГ Ходжаабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (197, '1703401', 'Andijon shahari', 'Город Андижан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (198, '1703408', 'Xonobod shahari', 'Город Ханабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (199, '1703408553', 'Xonobod shaharchasi', 'Городской поселок Ханабад', null, null);
+insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (197, '1703401', 'Andijon shahri', 'Город Андижан', null, null);
+insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (198, '1703408', 'Xonobod shahri', 'Город Ханабад', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (201, '1706', 'BUXORO VILOYATI', 'БУХАРСКАЯ ОБЛАСТЬ', 'Buxoro sh.', 'г. Бухара');
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (202, '1706204', 'Olot tumani', 'Алатский район', 'Olot sh.', 'г. Алат');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (203, '1706204501', 'Olot shahri', 'Город Алат', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (204, '1706204552', 'Ganchi Chandir shaharchasi', 'Городской поселок Ганчи Чандир', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (205, '1706204553', 'Kesakli shaharchasi', 'Городской поселок Кесакли', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (206, '1706204554', 'Qirtay shaharchasi', 'Городской поселок Киртай', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (207, '1706204555', 'Sola qorovul shaharchasi', 'Городской поселок Сола коровул', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (208, '1706204557', 'Jayxunobod shaharchasi', 'Городской поселок Жайхунобод', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (209, '1706204558', 'O`zbekiston shaharchasi', 'Городской поселок Узбекистан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (210, '1706204559', 'Chovdur shaharchasi', 'Городской поселок Човдур', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (211, '1706204561', 'Bo`ribek Chandir shaharchasi', 'Городской поселок Бурибек Чандир', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (212, '1706204804', 'Bahoriston QFY', 'ССГ Бахористон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (213, '1706204808', 'Guliston QFY', 'ССГ Гулистон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (214, '1706204810', 'Denov QFY', 'ССГ Денау', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (215, '1706204820', 'Jumabozor QFY', 'ССГ Джумабазар', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (216, '1706204830', 'Paxtakor QFY', 'ССГ Пахтакор', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (217, '1706204840', 'Talqon-sayyot QFY', 'ССГ Талкансаят', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (218, '1706204850', 'Chandir QFY', 'ССГ Чандиp', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (219, '1706204853', 'Chorbog` QFY', 'ССГ Чарбаг', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (220, '1706204856', 'Qirlishon QFY', 'ССГ Киpлишон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (221, '1706204860', 'Soyin-qorovul QFY', 'ССГ Соин - Коpавул', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (222, '1706207', 'BUXORO TUMANI', 'БУХАРСКИЙ РАЙОН', 'Gala Osiyo shaharchasi', 'г. Галлаасия');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (223, '1706207501', 'Gala Osiyo shahri', 'Город Галлаасия', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (224, '1706207553', 'Dexcha shaharchasi', 'Городской поселок Дехча', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (225, '1706207554', 'Podshoyi shaharchasi', 'Городской поселок Подшойи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (226, '1706207555', 'Rabotak shaharchasi', 'Городской поселок Работак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (227, '1706207557', 'O`rta Novmetan shaharchasi', 'Городской поселок Урта Новметан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (228, '1706207558', 'Xumini bolo shaharchasi', 'Городской поселок Хумини боло', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (229, '1706207561', 'Arabxona shaharchasi', 'Городской поселок Арабхона', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (230, '1706207810', 'Bog`ikalon QFY', 'ССГ Багикалан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (231, '1706207824', 'Qavola Maxmud QFY', 'ССГ Каваля Махмуд', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (232, '1706207830', 'Kunjiqal`a QFY', 'ССГ Кунжикала', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (233, '1706207835', 'Shexoncha QFY', 'ССГ Шахонча', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (234, '1706207846', 'Gulshanobod QFY', 'ССГ Гулшанобод', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (235, '1706207857', 'Rabotiqalmoq QFY', 'ССГ Рабаткалмок', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (236, '1706207860', 'Saxovat QFY', 'ССГ Саховат', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (237, '1706207880', 'Shergiron QFY', 'ССГ Шергирон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (238, '1706207882', 'Yangiobod QFY', 'ССГ Янгиобод', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (239, '1706207883', 'Yangi Turmush QFY', 'ССГ Янги Турмуш', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (240, '1706207886', 'Sohibkor QFY', 'ССГ Сохибкоp', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (241, '1706207890', 'So`fikorgar QFY', 'ССГ Суфикоpгаp', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (242, '1706207895', 'Istiqbol QFY', 'ССГ Истикбол', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (243, '1706207898', 'Ko`chko`mar QFY', 'ССГ Кучкумаp', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (244, '1706212', 'VOBKENT TUMANI', 'ВАБКЕНТСКИЙ РАЙОН', 'Vobkent sh.', 'г. Вабкент');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (245, '1706212501', 'Vobkent shahri', 'Город Вабкент', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (246, '1706212554', 'Navbahor shaharchasi', 'Городской поселок Навбахор', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (247, '1706212556', 'Shirin shaharchasi', 'Городской поселок Ширин', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (248, '1706212558', 'Kosari shaharchasi', 'Городской поселок Косари', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (249, '1706212808', 'Imomqazixon QFY', 'ССГ Имамказыхан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (250, '1706212811', 'Pirmast QFY', 'ССГ Пиpмаст', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (251, '1706212822', 'Qo`ng`irot QFY', 'ССГ Кунград', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (252, '1706212833', 'Kumushkent QFY', 'ССГ Кумушкент', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (253, '1706212844', 'Roxkent QFY', 'ССГ Рахкент', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (254, '1706212854', 'Xayrobotcha QFY', 'ССГ Хайрабатча', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (255, '1706212855', 'Xalach QFY', 'ССГ Халач', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (256, '1706212857', 'Xayrxush QFY', 'ССГ Хайрхуш', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (257, '1706212867', 'Qipchoq QFY', 'ССГ Кипчак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (258, '1706212877', 'Exson QFY', 'ССГ Эхсон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (259, '1706212887', 'Yangikent QFY', 'ССГ Янгикент', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (260, '1706215', 'G`IJDUVON TUMANI', 'ГИЖДУВАНСКИЙ РАЙОН', 'G`ijduvon sh.', 'г. Гиждуван');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (261, '1706215501', 'G`ijduvon shahri', 'Город Гиждуван', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (262, '1706215554', 'Zafarabad shaharchasi', 'Городской поселок Зафарабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (263, '1706215556', 'Abadi shaharchasi', 'Городской поселок Абади', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (264, '1706215559', 'Beshtuvo shaharchasi', 'Городской поселок Бештуво', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (265, '1706215561', 'Gajdumak shaharchasi', 'Городской поселок Гаждумак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (266, '1706215562', 'Jovgari shaharchasi', 'Городской поселок Джовгари', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (267, '1706215563', 'Ko`lijabbor shaharchasi', 'Городской поселок Кулижаббор', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (268, '1706215564', 'Mazragan shaharchasi', 'Городской поселок Мазраган', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (269, '1706215565', 'Yuqori Rostgo`y shaharchasi', 'Городской поселок Юкори Ростгуй', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (270, '1706215566', 'O`zanon shaharchasi', 'Городской поселок Узанон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (271, '1706215568', 'Xatcha shaharchasi', 'Городской поселок Хатча', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (272, '1706215569', 'Chag`dari shaharchasi', 'Городской поселок Чагдари', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (273, '1706215574', 'Dodarak shaharchasi', 'Городской поселок Додарак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (274, '1706215576', 'Namatgaron shaharchasi', 'Городской поселок Наматгарон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (275, '1706215578', 'Yuqori Qumoq shaharchasi', 'Городской поселок Юкори Кумок', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (276, '1706215803', 'Armechan QFY', 'ССГ Армечан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (277, '1706215805', 'Buktaroy QFY', 'ССГ Буктарай', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (278, '1706215810', 'G`ovshun QFY', 'ССГ Гавшун', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (279, '1706215820', 'Zarangari QFY', 'ССГ Зарангаpи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (280, '1706215827', 'Qaraxoni QFY', 'ССГ Карахани', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (281, '1706215831', 'Ko`kcha QFY', 'ССГ Кукча', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (282, '1706215836', 'Pozagari QFY', 'ССГ Позагари', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (283, '1706215840', 'Paxtaobod QFY', 'ССГ Пахтаобод', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (284, '1706215848', 'Soktari QFY', 'ССГ Соктари', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (285, '1706215849', 'Sarvari QFY', 'ССГ Сарвари', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (286, '1706215850', 'Sarmijon QFY', 'ССГ Сармиджан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (287, '1706215860', 'Ulfatbibi QFY', 'ССГ Ульфатбиби', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (288, '1706215870', 'G.Yunusov nomli QFY', 'ССГ им.Ф. Юнусова', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (289, '1706215880', 'Firishkent QFY', 'ССГ Фиришкент', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (290, '1706219', 'KOGON TUMANI', 'КАГАНСКИЙ РАЙОН', 'Kogon sh.', 'г. Каган');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (291, '1706219557', 'Sarayonobod shaharchasi', 'Городской поселок Сараенобод', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (292, '1706219559', 'Tutikunda shaharchasi', 'Городской поселок Тутикунда', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (293, '1706219811', 'Kogon QFY', 'ССГ Каган', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (294, '1706219814', 'Xo`ja Yakshaba QFY', 'ССГ Хужа Якшаба', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (295, '1706219816', 'Guliston QFY', 'ССГ Гулистон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (296, '1706219818', 'Yangi xayot QFY', 'ССГ Янги хает', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (297, '1706219822', 'Nurafshon QFY', 'ССГ Нурафшон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (298, '1706219824', 'Beklar QFY', 'ССГ Беклаp', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (299, '1706219833', 'Niyozhoji QFY', 'ССГ Ниёзхожи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (300, '1706219836', 'Sarayon QFY', 'ССГ Саpаен', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (301, '1706219844', 'B.Naqshband QFY', 'ССГ Накшбанди', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (302, '1706230', 'QORAKO`L TUMANI', 'КАРАКУЛЬСКИЙ РАЙОН', 'Qorako`l sh.', 'г. Каракуль');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (303, '1706230501', 'Qorako`l shahri', 'Город Каракуль', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (304, '1706230552', 'Bandboshi shaharchasi', 'Городской поселок Бандбоши', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (305, '1706230553', 'Darg`abog`i shaharchasi', 'Городской поселок Даргабоги', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (306, '1706230554', 'Jig`achi shaharchasi', 'Городской поселок Джигачи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (307, '1706230555', 'Qorahoji shaharchasi', 'Городской поселок Корахожи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (308, '1706230556', 'Quvvacha shaharchasi', 'Городской поселок Куввача', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (309, '1706230557', 'Mirzaqal`a shaharchasi', 'Городской поселок Мирзакалъа', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (310, '1706230558', 'Sayyod shaharchasi', 'Городской поселок Сайед', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (311, '1706230559', 'Solur shaharchasi', 'Городской поселок Солур', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (312, '1706230561', 'Chandirobod shaharchasi', 'Городской поселок Чандирабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (313, '1706230562', 'Sho`rabot shaharchasi', 'Городской поселок Шуррабад', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (314, '1706230563', 'Yakka A`lam shaharchasi', 'Городской поселок Якка Аълам', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (315, '1706230564', 'Yangiqal`a shaharchasi', 'Городской поселок Янгикалъа', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (316, '1706230806', 'Darg`ali QFY', 'ССГ Даргали', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (317, '1706230809', 'Bandboshi QFY', 'ССГ Бандбаши', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (318, '1706230813', 'Jig`achi QFY', 'ССГ Джигачи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (319, '1706230815', 'Sho`rrabot QFY', 'ССГ Шуppабот', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (320, '1706230825', 'Ziyorat QFY', 'ССГ Зиярат', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (321, '1706230827', 'Kulonchi QFY', 'ССГ Кулончи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (322, '1706230832', 'Qozon QFY', 'ССГ Казан', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (323, '1706230834', 'Quvvacha QFY', 'ССГ Куввача', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (324, '1706230847', 'Qoraun QFY', 'ССГ Караун', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (325, '1706230850', 'Qorako`l QFY', 'ССГ Каракуль', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (326, '1706230854', 'Chandir QFY', 'ССГ Чандиp', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (327, '1706230859', 'Sayyot QFY', 'ССГ Саят', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (328, '1706230862', 'Mallaishayx QFY', 'ССГ Маллаишайх', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (329, '1706230875', 'Quyi Yangibozor QFY', 'ССГ Куйи Янгибазар', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (330, '1706230880', 'Qorahoji QFY', 'ССГ Каpаходжи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (331, '1706230885', 'Chovli QFY', 'ССГ Човли', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (332, '1706232', 'QOROVULBOZOR TUMANI', 'КАРАУЛБАЗАРСКИЙ РАЙОН', 'Qorovulbozor sh.', 'г. Каpаулбазаp');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (333, '1706232501', 'Qorovulbozor shahri', 'Город Караулбазар', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (334, '1706232803', 'Navbahor QFY', 'ССГ Навбахор', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (335, '1706232807', 'Bo`ston QFY', 'ССГ Бустон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (336, '1706232810', 'Buzachi QFY', 'ССГ Бузачи', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706232815', 'Jarqoq QFY', 'ССГ Жаркок', null, null);
 insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (332, '1706240', 'PESHKU TUMANI', 'ПЕШКУНСКИЙ РАЙОН', 'Yangibozor shaharchasi', 'гп Янгибозор');
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240551', 'Yangibozor shaharchasi', 'Городской поселок Янгибозор', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240553', 'Peshku shaharchasi', 'Городской поселок Пешку', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240555', 'Shavgon shaharchasi', 'Городской поселок Шавгон', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240557', 'Mahallai-Mirishkor shaharchasi', 'Городской поселок Махаллаи-Миришкор', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240802', 'Ibn Sino nomli QFY', 'ССГ им. Абу-Али-Ибн-Сино', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240805', 'Varaxsho QFY', 'ССГ Варахша', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240807', 'Jonkeldi QFY', 'ССГ Джангельды', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240810', 'Zandani QFY', 'ССГ Зандани', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240821', 'Qal`ai Mirishkor QFY', 'ССГ Калаймиришкар', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240832', 'Peshku QFY', 'ССГ Пешку', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240854', 'Yangibozor QFY', 'ССГ Янгибазар', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240860', 'Bog`imuso QFY', 'ССГ Богимуссо', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240865', 'Qoraqalpoq QFY', 'ССГ Каpакалпак', null, null);
-insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (337, '1706240870', 'Chibog`oni QFY', 'ССГ Чибогони', null, null);
+insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (332, '1706242', 'ROMITAN TUMANI', 'РОМИТАНСКИЙ РАЙОН', 'Romitan sh.', 'г. Ромитан');
+insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (332, '1706246', 'JONDOR TUMANI', 'ЖОНДОPСКИЙ РАЙОН', 'Jondor shaharchasi', 'гп Жондор');
+insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (332, '1706258', 'SHOFIRKON TUMANI', 'ШАФИРКАНСКИЙ РАЙОН', 'Shofirkon sh.', 'г. Шафиркан');
+insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (332, '1706401', 'Buxoro shahri', 'Город Бухара', null, null);
+insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (332, '1706403', 'Kogon shahri', 'Город Каган', null, null);
 
+
+
+
+
+
+
+1708	JIZZAX VILOYATI	Jizzax sh.	ДЖИЗАКСКАЯ ОБЛАСТЬ	г. Джизак
+1708201	ARNASOY TUMANI	G`oliblar shaharchasi	АРНАСАЙСКИЙ РАЙОН	гп Голиблаp
+1708204	BAXMAL TUMANI	O`smat shaharchasi	БАХМАЛЬСКИЙ РАЙОН	гп Усмат
+1708209	G`ALLAOROL TUMANI	G`allaorol sh.	ГАЛЛЯАРАЛЬСКИЙ РАЙОН	г. Галляарал
+1708212	SHAROF RASHIDOV TUMANI	Uchtepa shaharchasi	ШАРОФ РАШИДОВСКИЙ РАЙОН	гп Уч-тепа
+1708215	DO`STLIK TUMANI	Do`stlik sh.	ДУСТЛИКСКИЙ РАЙОН	г. Дустлик
+1708218	ZOMIN TUMANI	Zomin shaharchasi	ЗААМИНСКИЙ РАЙОН	гп Заамин
+1708220	ZARBDOR TUMANI	Zarbdor shaharchasi	ЗАРБДАРСКИЙ РАЙОН	гп Зарбдар
+1708223	MIRZACHO`L TUMANI	Gagarin sh.	МИРЗАЧУЛЬСКИЙ РАЙОН	г. Гагарин
+1708225	ZAFAROBOD TUMANI	Zafarobod shaharchasi	ЗАФАРАБАДСКИЙ РАЙОН	гп Зафарабад
+1708228	PAXTAKOR TUMANI	Paxtakor sh.	ПАХТАКОРСКИЙ РАЙОН	г. Пахтакор
+1708235	FORISH TUMANI	Bog`don shaharchasi	ФАРИШСКИЙ РАЙОН	гп Богдон
+1708237	YANGIOBOD TUMANI	Balandchaqir a.p.	ЯНГИАБАДСКИЙ РАЙОН	нп Баландчакир
+1708401	Jizzax shahri		Город Джизак
+1710	QASHQADARYO VILOYATI	Qarshi sh.	КАШКАДАРЬИНСКАЯ ОБЛАСТЬ	г. Карши
+1710207	G`UZOR TUMANI	G`uzor sh.	ГУЗАРСКИЙ РАЙОН	г. Гузар
+1710212	DEHQONOBOD TUMANI	Karashina shaharchasi	ДЕХКАНАБАДСКИЙ РАЙОН	гп Корашина
+1710220	QAMASHI TUMANI	Qamashi sh.	КАМАШИНСКИЙ РАЙОН	г. Камаши
+1710224	QARSHI TUMANI	Beshkent sh.	КАРШИНСКИЙ РАЙОН	г. Бешкент
+1710229	KOSON TUMANI	Koson sh.	КАСАНСКИЙ РАЙОН	г. Касан
+1710232	KITOB TUMANI	Kitob sh.	КИТАБСКИЙ РАЙОН	г. Китаб
+1710233	MIRISHKOR TUMANI	Yangi Mirishkor shaharchasi	МИРИШКОРСКИЙ РАЙОН	гп Янги Миришкор
+1710234	MUBORAK TUMANI	Muborak sh.	МУБАРЕКСКИЙ РАЙОН	г. Мубарек
+1710235	NISHON TUMANI	Yangi Nishon sh.	НИШАНСКИЙ РАЙОН	г. Янги-Нишан
+1710237	KASBI TUMANI	Mug`lon shaharchasi	КАСБИНСКИЙ РАЙОН	гп Муглон
+1710242	CHIROQCHI TUMANI	Chiroqchi sh.	ЧИРАКЧИНСКИЙ РАЙОН	г. Чиракчи
+1710245	SHAHRISABZ TUMANI	Shahrisabz sh.	ШАХРИСАБЗСКИЙ РАЙОН	г. Шахрисабз
+1710250	YAKKABOG` TUMANI	Yakkabog` sh.	ЯККАБАГСКИЙ РАЙОН	г. Яккабаг
+1710401	Qarshi		Карши
+1710405	Shahrisabz		Шахрисабз
+1712	NAVOIY VILOYATI	Navoiy sh.	НАВОИЙСКАЯ ОБЛАСТЬ	г. Навои
+1712211	Konimex tumani	Konimex shaharchasi	Канимехский район	гп Канимех
+1712216	QIZILTEPA TUMANI	Qiziltepa sh.	КЫЗЫЛТЕПИНСКИЙ РАЙОН	г. Кызылтепа
+1712230	NAVBAHOR TUMANI	Beshrabot a.p.	НАВБАХОРСКИЙ РАЙОН	нп Бешрабад
+1712234	KARMANA TUMANI	Karmana shaharchasi	КАРМАНИНСКИЙ РАЙОН	гп Кармана
+1712238	NUROTA TUMANI	Nurota sh.	НУРАТИНСКИЙ РАЙОН	г. Нурата
+1712244	TOMDI TUMANI	Tomdibuloq shaharchasi	ТАМДЫНСКИЙ РАЙОН	гп Томдибулок
+1712248	UCHQUDUQ TUMANI	Uchquduq sh.	УЧКУДУКСКИЙ РАЙОН	г. Учкудук
+1712251	XATIRCHI TUMANI	Yangirabod sh.	ХАТЫРЧИНСКИЙ РАЙОН	г. Янгирабод
+1712401	Navoiy shahri		Город Навои
+1712408	Zarafshon		Заpафшан
+1714	NAMANGAN VILOYATI	Namangan sh.	НАМАНГАНСКАЯ ОБЛАСТЬ	г. Наманган
+1714204	MINGBULOQ TUMANI	Jo`masho`y shaharchasi	МИНГБУЛАКСКИЙ PАЙОН	гп Джумашуй
+1714207	KOSONSOY TUMANI	Kosonsoy sh.	КАСАНСАЙСКИЙ РАЙОН	г. Касансай
+1714212	NAMANGAN TUMANI	Toshbuloq shaharchasi	НАМАНГАНСКИЙ РАЙОН	гп Ташбулак
+1714216	NORIN TUMANI	Xaqqulobod sh.	НАРЫНСКИЙ РАЙОН	г. Хаккулабад
+1714219	POP TUMANI	Pop sh.	ПАПСКИЙ РАЙОН	г. Пап
+1714224	TO`RAQO`RG`ON TUMANI	To`raqo`rg`on sh.	ТУРАКУРГАНСКИЙ РАЙОН	г. Туракурган
+1714229	UYCHI TUMANI	Uychi shaharchasi	УЙЧИНСКИЙ РАЙОН	гп Уйчи
+1714234	UCHQO`RG`ON TUMANI	Uchqo`rg`on sh.	УЧКУРГАНСКИЙ РАЙОН	г. Учкурган
+1714236	CHORTOQ TUMANI	Chortoq sh.	ЧАРТАКСКИЙ РАЙОН	г. Чартак
+1714237	CHUST TUMANI	Chust sh.	ЧУСТСКИЙ РАЙОН	г. Чуст
+1714242	YANGIQO`RG`ON TUMANI	Yangiqo`rg`on shaharchasi	ЯНГИКУРГАНСКИЙ РАЙОН	гп Янгикурган
+1714401	Namangan shahri		Город Наманган
+1718	SAMARQAND VILOYATI	Samarqand sh.	САМАРКАНДСКАЯ ОБЛАСТЬ	г. Самарканд
+1718203	Oqdaryo tumani	Loyish shaharchasi	Акдарьинский район	гп Лаиш
+1718206	BULUNG`UR TUMANI	Bulung`ur sh.	БУЛУНГУРСКИЙ РАЙОН	г. Булунгур
+1718209	JOMBOY TUMANI	Jomboy sh.	ДЖАМБАЙСКИЙ РАЙОН	г. Джамбай
+1718212	ISHTIXON TUMANI	Ishtixon sh.	ИШТЫХАНСКИЙ РАЙОН	г. Иштыхан
+1718215	KATTAQO`RG`ON TUMANI	Payshanba shaharchasi	КАТТАКУРГАНСКИЙ РАЙОН	гп Пайшанба
+1718216	QO`SHRABOT TUMANI	Qo`shrabot shaharchasi	КОШРАБАДСКИЙ РАЙОН	гп Кушрабад
+1718218	NARPAY TUMANI	Oqtosh sh.	НАРПАЙСКИЙ РАЙОН	г. Акташ
+1718224	PAYARIQ TUMANI	Payariq sh.	ПАЙАРЫКСКИЙ РАЙОН	г.Пайаpык
+1718227	PASTDARG`OM TUMANI	Juma sh.	ПАСТДАРГОМСКИЙ РАЙОН	г. Джума
+1718230	PAXTACHI TUMANI	Ziyovuddin shaharchasi	ПАХТАЧИЙСКИЙ РАЙОН	гп Зиатдин
+1718233	SAMARQAND TUMANI	Gulobod shaharchasi	САМАРКАНДСКИЙ РАЙОН	гп Гулабад
+1718235	NUROBOD TUMANI	Nurobod sh.	НУРАБАДСКИЙ РАЙОН	г. Нурабад
+1718236	URGUT TUMANI	Urgut sh.	УРГУТСКИЙ РАЙОН	г. Ургут
+1718238	TAYLOQ TUMANI	Toyloq shaharchasi	ТАЙЛЯКСКИЙ РАЙОН	гп Тайлок
+1718401	Samarqand shahri		Город Самарканд
+1718406	Kattaqo`rg`on shahri		Город Каттакурган
+1722	SURXANDARYO VILOYATI	Termiz sh.	СУРХАНДАРЬИНСКАЯ ОБЛАСТЬ	г. Термез
+1722201	OLTINSOY TUMANI	Qorliq shaharchasi	АЛТЫНСАЙСКИЙ РАЙОН	гп Корлик
+1722202	ANGOR TUMANI	Angor shaharchasi	АНГОРСКИЙ РАЙОН	гп Ангор
+1722204	BOYSUN TUMANI	Boysun sh.	БАЙСУНСКИЙ РАЙОН	г. Байсун
+1722207	MUZRABOT TUMANI	Xalqobod shaharchasi	МУЗРАБАДСКИЙ РАЙОН	гп Халкабад
+1722210	DENOV TUMANI	Denov sh.	ДЕНАУСКИЙ РАЙОН	г. Денау
+1722212	JARQO`RG`ON TUMANI	Jarqo`rg`on sh.	ДЖАРКУРГАНСКИЙ РАЙОН	г. Джаркурган
+1722214	QUMQO`RG`ON TUMANI	Qumqo`rg`on sh.	КУМКУРГАНСКИЙ РАЙОН	г. Кумкурган
+1722215	QIZIRIQ TUMANI	Sariq shaharchasi	КИЗИРИКСКИЙ РАЙОН	гп Сарик
+1722217	SARIOSIYO TUMANI	Sariosiyo shaharchasi	САРИАСИЙСКИЙ РАЙОН	гп Сариасия
+1722220	TERMIZ TUMANI	Uchqizil shaharchasi	ТЕРМЕЗСКИЙ РАЙОН	гп Учкизил
+1722221	UZUN TUMANI	Uzun shaharchasi	УЗУНСКИЙ РАЙОН	гп Узун
+1722223	SHEROBOD TUMANI	Sherobod sh.	ШЕРАБАДСКИЙ РАЙОН	г. Шерабад
+1722226	SHO`RCHI TUMANI	Sho`rchi sh.	ШУРЧИНСКИЙ РАЙОН	г. Шурчи
+1722401	Termiz shahri		Город Термез
+1724	SIRDARYO VILOYATI	Guliston sh.	СЫРДАРЬИНСКАЯ ОБЛАСТЬ	г. Гулистан
+1724206	OQOLTIN TUMANI	Sardoba shaharchasi	АКАЛТЫНСКИЙ РАЙОН	гп Сардоба
+1724212	BOYOVUT TUMANI	Boyovut shaharchasi	БАЯУТСКИЙ РАЙОН	гп Баяут
+1724216	SAYXUNOBOD TUMANI	Sayxun shaharcha	САЙХУНАБАДСКИЙ РАЙОН	гп Сайхун
+1724220	GULISTON TUMANI	Dehqonobod shaharchasi	ГУЛИСТАНСКИЙ РАЙОН	гп Дехканабад
+1724226	SARDOBA TUMANI	Paxtaobod shaharchasi	САРДОБСКИЙ РАЙОН	гп Пахтаабад
+1724228	MIRZAOBOD TUMANI	Navro`z shaharchasi	МИРЗААБАДСКИЙ РАЙОН	гп Навруз
+1724231	SIRDARYO TUMANI	Sirdaryo sh.	СЫРДАРЬИНСКИЙ РАЙОН	г. Сырдарья
+1724235	XOVOS TUMANI	Xovos shaharchasi	ХАВАССКИЙ РАЙОН	гп Хавас
+1724401	Guliston shahri		Город Гулистан
+1724410	Shirin shahri		Город Шиpин
+1724413	Yangiyer shahri		Город Янгиеp
+1726	TOSHKENT SHAHRI		ГОРОД ТАШКЕНТ
+1726262	Uchtepa tumani		Учтепинский район
+1726264	Bektemir tumani		Бектемирский район
+1726266	Yunusobod tumani		Юнусабадский район
+1726269	Mirzo Ulug`bek tumani		Мирзо-Улугбекский район
+1726273	Mirobod tumani		Мирабадский район
+1726277	Shayxontoxur tumani		Шайхантахурский район
+1726280	Olmazor tumani		Алмазарский район
+1726283	Sirg`ali tumani		Сергелийский район
+1726287	Yakkasaroy tumani		Яккасарайский район
+1726290	Yashnobod tumani		Яшнободский район
+1726294	Chilonzor tumani		Чиланзарский район
+1727	TOSHKENT VILOYATI	Toshkent sh.	ТАШКЕНТСКАЯ ОБЛАСТЬ	г. Ташкент
+1727206	OQQO`RG`ON TUMANI	Oqqo`rg`on sh.	АККУРГАНСКИЙ РАЙОН	г. Аккурган
+1727212	OHANGARON TUMANI	Ohangaron sh.	АХАНГАРАНСКИЙ РАЙОН	г. Ахангаран
+1727220	BEKOBOD TUMANI	Zafar shaharchasi	БЕКАБАДСКИЙ РАЙОН	гп Зафар
+1727224	BO`STONLIQ TUMANI	G`azalkent sh.	БОСТАНЛЫКСКИЙ РАЙОН	г. Газалкент
+1727228	BO`KA TUMANI	Bo`ka sh.	БУКИНСКИЙ РАЙОН	г. Бука
+1727233	QIYICHIRCHIQ TUMANI	Do`stobod sh.	КУЙИЧИРЧИКСКИЙ РАЙОН	г. Дустобод
+1727237	ZANGIOTA TUMANI	Eshonguzar shaharchasi	ЗАНГИАТИНСКИЙ РАЙОН	гп Эшангузар
+1727239	YUQORICHIRCHIQ TUMANI	Yangibozor shaharchasi	ЮКОРИЧИРЧИКСКИЙ РАЙОН	гп Янгибазар
+1727248	QIBRAY TUMANI	Qibray shaharchasi	КИБРАЙСКИЙ РАЙОН	гп Кибрай
+1727249	PARKENT TUMANI	Parkent sh.	ПАРКЕНТСКИЙ РАЙОН	г. Паркент
+1727250	PSKENT TUMANI	Pskent sh.	ПСКЕНТСКИЙ РАЙОН	г. Пскент
+1727253	O`RTACHIRCHIQ TUMANI	To`ytepa sh.	УРТАЧИРЧИКСКИЙ РАЙОН	г. Тойтепа
+1727256	CHINOZ TUMANI	Chinoz sh.	ЧИНАЗСКИЙ РАЙОН	г. Чиназ
+1727259	YANGIYO`L TUMANI	Yangiyo`l sh.	ЯНГИЮЛЬСКИЙ РАЙОН	г.Янгиюль
+1727265	TOSHKENT TUMANI	Keles sh.	ТАШКЕНТСКИЙ РАЙОН	г.Келес
+1727404	Olmaliq shahri		Город Алмалык
+1727407	Angren shahri		Город Ангрен
+1727413	Bekobod shahri		Город Бекабад
+1727419	Chirchiq shahri		Город Чиpчик
+1730	FARG`ONA VILOYATI	Farg`ona sh.	ФЕРГАНСКАЯ ОБЛАСТЬ	г. Фергана
+1730203	OLTIARIQ TUMANI	Oltiariq shaharchasi	АЛТЫАРЫКСКИЙ РАЙОН	гп Алтыарык
+1730206	QO`SHTEPA TUMANI	Langar a.p.	КУШТЕПИНСКИЙ РАЙОН	нп Лангар
+1730209	BOG`DOD TUMANI	Bog`dod shaharchasi	БАГДАДСКИЙ РАЙОН	гп Багдад
+1730212	BUVAYDA TUMANI	Ibrat shaharchasi	БУВАЙДИНСКИЙ РАЙОН	гп Ибрат
+1730215	BESHARIQ TUMANI	Beshariq sh.	БЕШАРЫКСКИЙ РАЙОН	г. Бешарык
+1730218	QUVA TUMANI	Quva sh.	КУВИНСКИЙ РАЙОН	г. Кува
+1730221	UCHKO`PRIK TUMANI	Uchko`prik shaharchasi	УЧКУПРИКСКИЙ РАЙОН	гп Учкуприк
+1730224	RISHTON TUMANI	Rishton sh.	РИШТАНСКИЙ РАЙОН	г. Риштан
+1730226	SO`X TUMANI	Ravon shaharchasi	СОХСКИЙ РАЙОН	гп Равон
+1730227	TOSHLOQ TUMANI	Toshloq shaharchasi	ТАШЛАКСКИЙ РАЙОН	гп Ташлак
+1730230	O`ZBEKISTON TUMANI	Yaypan sh.	УЗБЕКИСТАНСКИЙ РАЙОН	г. Яйпан
+1730233	FARG`ONA TUMANI	Chimyon shaharchasi	ФЕРГАНСКИЙ РАЙОН	гп Чимен
+1730236	DANG`ARA TUMANI	Dang`ara shaharchasi	ДАНГАРИНСКИЙ РАЙОН	гп Дангара
+1730238	FURQAT TUMANI	Navbahor shaharchasi	ФУРКАТСКИЙ РАЙОН	гп Навбахор
+1730242	YOZYOVON TUMANI	Yozyovon shaharchasi	ЯЗЪЯВАНСКИЙ РАЙОН	гп Язъяван
+1730401	Farg`ona shahri		Город Фергана
+1730405	Qo`qon shahri		Город Коканд
+1730408	Quvasoy shahri		Город Кувасай
+1730412	Marg`ilon shahri		Город Маpгилан
+1733	XORAZM VILOYATI	Urganch sh.	ХОРЕЗМСКАЯ ОБЛАСТЬ	г. Ургенч
+1733204	BOG`OT TUMANI	Bog`ot shaharchasi	БАГАТСКИЙ РАЙОН	гп Багат
+1733208	GURLAN TUMANI	Gurlan shaharchasi	ГУРЛЕНСКИЙ РАЙОН	гп Гурлен
+1733212	QO`SHKO`PIR TUMANI	Qo`shko`pir shaharchasi	КОШКУПЫРСКИЙ РАЙОН	гп Кошкупыр
+1733217	URGANCH TUMANI	Qoroul a.p.	УРГЕНЧСКИЙ РАЙОН	нп Караул
+1733220	XAZORASP TUMANI	Xazorasp shaharchasi	ХАЗАРАСПСКИЙ РАЙОН	гп Хазарасп
+1733223	XONQA TUMANI	Xonqa shaharchasi	ХАНКИНСКИЙ РАЙОН	гп Ханка
+1733226	XIVA TUMANI	Xiva sh.	ХИВИНСКИЙ РАЙОН	г. Хива
+1733230	SHOVOT TUMANI	Shovot shaharchasi	ШАВАТСКИЙ РАЙОН	гп Шават
+1733233	YANGIARIQ TUMANI	Yangiariq shaharchasi	ЯНГИАРЫКСКИЙ РАЙОН	гп Янгиарык
+1733236	YANGIBOZOR TUMANI	Yangibozor shaharchasi	ЯНГИБАЗАРСКИЙ РАЙОН	гп Янгибазар
+1733400	Xorazm viloyatining viloyat ahamiyatiga ega shaharlari		Города областного подчинения Хорезмской области
+1733401	Urganch shahri		Город Ургенч
+1733406	Xiva shahri		Город Хива
+1735	Qoraqalpog`iston Respublikasi	Nukus sh.	Республика Каракалпакстан	г. Hукус
+1735204	AMUDARYO TUMANI	Mang`it sh.	АМУДАРЬИНСКИЙ РАЙОН	г. Мангит
+1735207	BERUNIY TUMANI	Beruniy sh.	БЕРУНИЙСКИЙ РАЙОН	г. Беруни
+1735211	QORAO`ZAK TUMANI	Qorao`zak shaharchasi	КАРАУЗЯКСКИЙ РАЙОН	гп Караузяк
+1735212	KEGEYLI TUMANI	Kegeyli shaharchasi	КЕГЕЙЛИЙСКИЙ РАЙОН	гп Кегейли
+1735215	QO`NG`IROT TUMANI	Qo`ng`irot sh.	КУНГРАДСКИЙ РАЙОН	г. Кунград
+1735218	QANLIKO`L TUMANI	Qanliko`l shaharchasi	КАНЛЫКУЛЬСКИЙ РАЙОН	гп Канлыкуль
+1735222	MO`YNOQ TUMANI	Mo`ynoq sh.	МУЙНАКСКИЙ РАЙОН	г. Муйнак
+1735225	NUKUS TUMANI	Oqmang`it shaharchasi	НУКУССКИЙ РАЙОН	гп Акмангит
+1735228	TAXIATOSH TUMANI	Taxiatosh sh.	ТАХИАТАШСКИЙ РАЙОН	г.Тахиаташ
+1735230	TAXTAKO`PIR TUMANI	Taxtako`pir shaharchasi	ТАХТАКУПЫРСКИЙ РАЙОН	гп Тахтакупыр
+1735233	TO`RTKO`L TUMANI	To`rtko`l sh.	ТУРТКУЛЬСКИЙ РАЙОН	г. Турткуль
+1735236	XO`JAYLI TUMANI	Xo`jayli sh.	ХОДЖЕЙЛИЙСКИЙ РАЙОН	г. Ходжейли
+1735240	CHIMBOY TUMANI	Chimboy sh.	ЧИМБАЙСКИЙ РАЙОН	г. Чимбай
+1735243	SHUMANAY TUMANI	Shumanay sh.	ШУМАНАЙСКИЙ РАЙОН	г. Шуманай
+1735250	ELLIKKALA TUMANI	Bo`ston sh.	ЭЛЛИККАЛИНСКИЙ РАЙОН	г. Бустан
+1735401	Nukus shahri		Город Нукус
 
 
 -- insert into region(id, soato, name_uz_uz, name_ru_ru, center_region_name_uz_uz, center_region_name_ru_ru) values (, '', '', '', null, null);
