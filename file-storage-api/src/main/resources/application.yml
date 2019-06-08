@@ -1,0 +1,46 @@
+server.port: 8091
+## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:ORCLCDB
+    username: files_tmp
+    password: files_tmp
+  ## Flyway
+  flyway:
+    url: jdbc:oracle:thin:@localhost:1521:ORCLCDB
+    schemas: FILES_TMP
+    user: files_tmp
+    password: files_tmp
+    baseline-on-migrate: true
+    baseline-version: 0
+    enabled: true
+  ## Hibernate Properties
+  jpa:
+    generate-ddl: false
+    properties.hibernate.dialect: org.hibernate.dialect.Oracle10gDialect
+    hibernate.ddl-auto: none
+  ## MULTIPART (MultipartProperties)
+  servlet.multipart:
+    enabled: true
+    file-size-threshold: 2KB
+    max-file-size: 2000MB
+    max-request-size: 2150MB
+## Hibernate Logging
+logging.level:
+  org.hibernate.SQL: DEBUG
+  org.jooq: DEBUG
+
+server:
+  tomcat:
+    max-http-post-size: 62914560
+## File Storage Properties
+storage:
+  upload-dir: ./uploads
+#  upload-url: http://localhost:8091/file-server/uploadFile
+## hashids properties
+hashids:
+  salt: "dWG8TNmWjYz8WP6DSpUgeCmFbp9SP6XjdyPg4q4BnZaEavQfC5ghdag8FkF3t9sL"
+  min-length: 64
+  alphabet: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+
