@@ -8,37 +8,37 @@ import uz.kvikk.file.model.FileResourceResult
 import uz.kvikk.file.service.FileResourceService
 
 @RestController
-@RequestMapping("/file-server")
+@RequestMapping("/")
 class FileController
 constructor(private val dBFileResourceService: FileResourceService) {
 
-    @GetMapping("/infoFile/{fileName:.+}")
+    @GetMapping("info/{fileName:.+}")
     fun infoFile(@PathVariable fileName: String): ResponseEntity<FileResourceResult> = dBFileResourceService.infoFileResource(fileName)
 
-    @PostMapping("/uploadFile")
+    @PostMapping("uploadFile")
     fun uploadFile(
             @RequestParam("clientId") clientId: String,
             @RequestParam("fileResourceType") fileResourceType: String,
             @RequestParam("file") file: MultipartFile): ResponseEntity<FileResourceResult> = dBFileResourceService.saveFileResource(clientId, fileResourceType, file)
 
-    @PostMapping("/uploadBase64")
+    @PostMapping("uploadBase64")
     fun uploadBase64(
             @RequestParam("clientId") clientId: String,
             @RequestParam("fileResourceType") fileResourceType: String,
             @RequestParam("fileName") fileName: String,
             @RequestParam("file") file: String): ResponseEntity<FileResourceResult> = dBFileResourceService.saveBase64Resource(clientId, fileResourceType, fileName, file)
 
-    @PostMapping("/updateFile")
+    @PostMapping("updateFile")
     fun updateFile(
             @RequestParam("fileName") fileName: String,
             @RequestParam("file") file: MultipartFile): ResponseEntity<FileResourceResult> = dBFileResourceService.updateFileResource(fileName, file)
 
-    @PostMapping("/trackFile/{fileName:.+}")
+    @PostMapping("trackFile/{fileName:.+}")
     fun trackFile(
             @PathVariable fileName: String,
             @RequestBody parametres: Map<String, Any>): ResponseEntity<Any> = dBFileResourceService.trackFileResource(fileName, parametres)
 
-    @GetMapping("/downloadFile/{fileName:.+}")
+    @GetMapping("downloadFile/{fileName:.+}")
     fun downloadFile(@PathVariable fileName: String): ResponseEntity<Resource> = dBFileResourceService.loadFileResource(fileName)
 
 }
