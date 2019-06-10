@@ -4,8 +4,8 @@ create table O_GROUP
 (
     ID          BIGINT       NOT NULL DEFAULT NEXTVAL('O_GROUP_SEQ'),
     PARENT_ID   BIGINT,
-    title       VARCHAR(128) NOT NULL,
-    description VARCHAR(512)
+    TITLE       VARCHAR(128) NOT NULL,
+    DESCRIPTION VARCHAR(512)
 );
 comment on table O_GROUP is 'Object group for all products, ist like a category';
 alter table O_GROUP add constraint O_GROUP_PK primary key (ID);
