@@ -6,6 +6,7 @@ import i18n from "@/plugins/i18n";
 import directives from "@/plugins/directives";
 import store from "@/plugins/store";
 import { sync } from "vuex-router-sync";
+import http from "@/service/http";
 
 /**
  * Styles imported
@@ -33,6 +34,7 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(ElementUI);
 Vue.prototype.$locale = i18n;
+Vue.prototype.$http = http;
 
 // This is a global mixin, it is applied to every vue instance
 Vue.mixin({ data: () => globals });

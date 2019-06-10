@@ -943,7 +943,17 @@
 
 <script>
 export default {
-  name: "CategoryGrid"
+  name: "CategoryGrid",
+  mounted() {
+    this.$http
+      .get("category_group/list-tree")
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
 };
 </script>
 
