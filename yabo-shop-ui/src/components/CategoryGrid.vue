@@ -25,7 +25,8 @@
                 </ul>
               </li>
 
-              <li class="breadcrumb-nav-holder">
+              <!-- todo bread crumb for group categories-->
+              <!--<li class="breadcrumb-nav-holder">
                 <ul>
                   <li class="dropdown breadcrumb-item">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
@@ -41,7 +42,7 @@
                       </li>
                     </ul>
                   </li>
-                  <!-- /.breadcrumb-item -->
+                  &lt;!&ndash; /.breadcrumb-item &ndash;&gt;
 
                   <li class="dropdown breadcrumb-item">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
@@ -57,19 +58,19 @@
                       </li>
                     </ul>
                   </li>
-                  <!-- /.breadcrumb-item -->
+                  &lt;!&ndash; /.breadcrumb-item &ndash;&gt;
 
                   <li class="breadcrumb-item">
                     <a href="#">Gaming</a>
                   </li>
-                  <!-- /.breadcrumb-item -->
+                  &lt;!&ndash; /.breadcrumb-item &ndash;&gt;
 
                   <li class="breadcrumb-item current">
                     <a href="#">VAIO Fit Laptop - Windows</a>
                   </li>
-                  <!-- /.breadcrumb-item -->
+                  &lt;!&ndash; /.breadcrumb-item &ndash;&gt;
                 </ul>
-              </li>
+              </li>-->
               <!-- /.breadcrumb-nav-holder -->
             </ul>
             <!-- /.inline -->
@@ -86,7 +87,7 @@
         <!-- ========================================= SIDEBAR ========================================= -->
         <div class="col-xs-12 col-sm-3 no-margin sidebar narrow">
           <!-- ========================================= PRODUCT FILTER ========================================= -->
-          <div class="widget">
+          <!--<div class="widget">
             <h1>Product Filters</h1>
             <div class="body bordered">
               <div class="category-filter">
@@ -115,7 +116,7 @@
                   </li>
                 </ul>
               </div>
-              <!-- /.category-filter -->
+              &lt;!&ndash; /.category-filter &ndash;&gt;
 
               <div class="price-filter">
                 <h2>Price</h2>
@@ -131,10 +132,10 @@
                   </span>
                 </div>
               </div>
-              <!-- /.price-filter -->
+              &lt;!&ndash; /.price-filter &ndash;&gt;
             </div>
-            <!-- /.body -->
-          </div>
+            &lt;!&ndash; /.body &ndash;&gt;
+          </div>-->
           <!-- /.widget -->
         </div>
         <!-- ========================================= SIDEBAR : END ========================================= -->
