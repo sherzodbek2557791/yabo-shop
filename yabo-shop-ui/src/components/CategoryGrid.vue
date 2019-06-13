@@ -947,7 +947,7 @@ export default {
   name: "CategoryGrid",
   mounted() {
     this.$http
-      .get("category_group/list-tree")
+      .get("group/list-tree")
       .then(({ data }) => {
         console.log(data);
       })

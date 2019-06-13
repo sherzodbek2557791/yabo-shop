@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController
 import uz.kvikk.yabo.service.CategoryGroupService
 
 @RestController
-@RequestMapping("/api/category_group")
-class CategoryGroupController(val categoryGroupService: CategoryGroupService) {
+@RequestMapping("/api/product")
+class ProductController(val categoryGroupService: CategoryGroupService) {
 
-    @GetMapping("/list-tree")
+    @GetMapping("/list")
     fun listTree(): ResponseEntity<Any> = ResponseEntity.ok(categoryGroupService.listTree(0))
 
 }
