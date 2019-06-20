@@ -6,7 +6,7 @@
       <transition-group name="items" tag="section" class="content">
         <app-item
           v-for="(item, index) in wProducts"
-          key="item"
+          :key="index"
           :item="item"
           :index="index"
         />

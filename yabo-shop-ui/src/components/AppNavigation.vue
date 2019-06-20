@@ -2,7 +2,7 @@
   <div class="navarea">
     <nav>
       <div class="capsule">
-        <nuxt-link exact to="/">
+        <router-link exact to="/">
           <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-labelledby="shopicon" role="presentation" width="60" height="60">
             <title id="shopicon">
               Magi Shop
@@ -12,13 +12,13 @@
               <path d="M52.74 50H30.8a1 1 0 0 0-1 1v14.59a1 1 0 0 0 1 1h21.94a1 1 0 0 0 1-1V51a1 1 0 0 0-1-1zm-1 14.63H31.8V52h19.94zM60.08 62.94h5.44a1 1 0 0 0 1-1v-2.75a1 1 0 0 0-1-1h-5.44a1 1 0 0 0-1 1v2.74a1 1 0 0 0 1 1.01zm1-2.74h3.44v.74h-3.44z"/>
             </g>
           </svg>
-        </nuxt-link>
+        </router-link>
         <ul>
-          <nuxt-link to="/women"><li>Women's</li></nuxt-link>
-          <nuxt-link to="/men"><li>Men's</li></nuxt-link>
-          <nuxt-link to="/sale"><li>Sale</li></nuxt-link>
+          <router-link to="/women"><li>Women's</li></router-link>
+          <router-link to="/men"><li>Men's</li></router-link>
+          <router-link to="/sale"><li>Sale</li></router-link>
         </ul>
-        <nuxt-link to="/cart">
+        <router-link to="/cart">
           <div class="cartitem">
             <div v-if="cartTotal > 0" class="cartcount">{{ cartTotal }}</div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-labelledby="shopicon" role="presentation" width="30" height="30">
@@ -28,7 +28,7 @@
               <path fill="black" d="M8.01 10c-1.104 0-2 .896-2 2 0 1.105.896 2 2 2h10.376l10.53 49.813c-.107 1.14.952 2.245 2.095 2.187h50c1.057.015 2.03-.943 2.03-2s-.973-2.015-2.03-2H32.637l-1.688-8H85.01c.896-.01 1.742-.69 1.938-1.562l7-30c.26-1.16-.748-2.43-1.937-2.438H23.76l-1.78-8.437c-.2-.884-1.063-1.57-1.97-1.563zm16.594 14H89.51l-6.093 26H30.104zM42.01 72c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm28 0c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm-28 4c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5zm28 0c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5z"/>
             </svg>
           </div>
-        </nuxt-link>
+        </router-link>
       </div>
     </nav>
   </div>

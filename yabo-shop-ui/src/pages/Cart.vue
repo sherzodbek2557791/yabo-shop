@@ -22,7 +22,7 @@
     <div v-else-if="cartTotal === 0 && success === false" class="empty">
       <h1>Cart</h1>
       <h3>Your cart is empty.</h3>
-      <nuxt-link exact to="/"><button>Fill er up!</button></nuxt-link>
+      <router-link exact to="/"><button>Fill er up!</button></router-link>
     </div>
 
     <div v-else>

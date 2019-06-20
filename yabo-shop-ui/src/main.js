@@ -11,6 +11,7 @@ import http from "@/service/http";
  * Styles imported
  */
 import "./assets/css/element.css";
+import "./assets/css/main.css";
 
 import routes from "./routes";
 import globals from "./globals";
