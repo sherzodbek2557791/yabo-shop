@@ -21,18 +21,18 @@ export default new Vuex.Store({
   },
   mutations: {
     setCartProduct(state, item) {
-      state.cart.count += item.count;
-      state.cart.amount += item.amount;
+      state.Cart.count += item.count;
+      state.Cart.amount += item.amount;
       let key = item.key;
-      let tmpItem = state.cart.items[key];
+      let tmpItem = state.Cart.items[key];
       if (tmpItem) {
         tmpItem.count = item.count;
         tmpItem.amount = item.amount;
       } else tmpItem = item;
-      Vue.set(state.cart.items, key, tmpItem);
+      Vue.set(state.Cart.items, key, tmpItem);
     },
     setCartClear(state) {
-      Vue.set(state, "cart", {
+      Vue.set(state, "Cart.vue", {
         count: 0,
         items: {},
         amount: 0
@@ -51,7 +51,7 @@ export default new Vuex.Store({
   plugins: [
     createPersistedState({
       key: "yabo-shop",
-      paths: ["uiState", "cart"]
+      paths: ["uiState", "Cart.vue"]
     })
   ]
 });

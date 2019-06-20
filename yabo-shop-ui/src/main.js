@@ -3,7 +3,6 @@ import App from "./App.vue";
 import VueRouter from "vue-router";
 import ElementUI from "element-ui";
 import i18n from "@/plugins/i18n";
-import directives from "@/plugins/directives";
 import store from "@/plugins/store";
 import { sync } from "vuex-router-sync";
 import http from "@/service/http";
@@ -11,20 +10,6 @@ import http from "@/service/http";
 /**
  * Styles imported
  */
-import "./assets/css/animate.min.css";
-import "./assets/css/bootstrap.min.css";
-import "./assets/css/config.css";
-import "./assets/css/font-awesome.min.css";
-import "./assets/css/owl.carousel.css";
-import "./assets/css/owl.transitions.css";
-import "./assets/css/style.css";
-import "./assets/css/colors/blue.css";
-import "./assets/css/colors/dark-green.css";
-import "./assets/css/colors/green.css";
-import "./assets/css/colors/navy.css";
-import "./assets/css/colors/orange.css";
-import "./assets/css/colors/red.css";
-
 import "./assets/css/element.css";
 
 import routes from "./routes";
@@ -38,7 +23,6 @@ Vue.prototype.$http = http;
 
 // This is a global mixin, it is applied to every vue instance
 Vue.mixin({ data: () => globals });
-directives.load();
 
 const router = new VueRouter({ mode: "history", routes });
 sync(store, router);
