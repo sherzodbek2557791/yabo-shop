@@ -2,14 +2,14 @@
   <aside>
     <div class="sidearea">
       <label for="pricerange">Highest Price: <span>${{ pricerange }}</span></label>
-      <input 
-        class="slider" 
-        id="pricerange" 
+      <input
+        class="slider"
+        id="pricerange"
         type="range"
-        :value="pricerange"  
-        :min="min" 
-        :max="max" 
-        step="0.1" 
+        :value="pricerange"
+        :min="min"
+        :max="max"
+        step="0.1"
         @input="$emit('update:pricerange', $event.target.value)"
       />
       <span class="min">${{ min }}</span>
@@ -44,7 +44,8 @@ export default {
   data() {
     return {
       min: 0,
-      max: 400
+      max: 400,
+      originalTop: 0
     };
   },
   components: {

@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <div class="wrapper">
-      <app-navigation />
+  <div class="app-wrapper">
+    <app-navigation class="app-header" />
+    <div class="app-content">
       <router-view></router-view>
-      <div class="clear"></div>
-      <div class="push"></div>
     </div>
-    <app-footer class="footer" />
+    <app-footer class="app-footer" />
   </div>
 </template>
 
@@ -26,22 +24,23 @@ export default {
 html,
 body {
   height: 100%;
+  width: 100%;
   margin: 0;
 }
 
-.clear {
-  clear: both;
+.app-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-/* sticky footer stuff */
-.wrapper {
-  min-height: 100vh;
-  margin-bottom: -60px;
+.app-header,
+.app-footer {
 }
 
-.footer,
-.push {
-  height: 50px;
-  margin-top: 10px;
+.app-content {
+  flex: 1;
+  overflow: auto;
 }
 </style>

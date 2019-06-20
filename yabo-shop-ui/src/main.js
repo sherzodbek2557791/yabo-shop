@@ -7,6 +7,7 @@ import store from "@/plugins/store";
 import { sync } from "vuex-router-sync";
 import http from "@/service/http";
 
+
 /**
  * Styles imported
  */
