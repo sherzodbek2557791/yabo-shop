@@ -122,22 +122,26 @@ export default new Vuex.Store({
   },
   mutations: {
     switchSale: state => {
-      state.sale = !state.sale
+      state.sale = !state.sale;
     },
     clearCartCount: state => {
-      state.cartTotal = 0
+      state.cartTotal = 0;
     },
     clearCartContents: state => {
-      state.cart = {}
+      state.cart = {};
+    },
+    clearCart: state => {
+      state.cartTotal = 0;
+      state.cart = {};
     },
     addItem: (state, item) => {
-      state.cartTotal++
+      state.cartTotal++;
       if (item.name in state.cart) {
-        state.cart[item.name].count++
+        state.cart[item.name].count++;
       } else {
-        let stateItem = Object.assign({}, item)
-        stateItem.count = 1
-        state.cart[item.name] = stateItem
+        let stateItem = Object.assign({}, item);
+        stateItem.count = 1;
+        state.cart[item.name] = stateItem;
       }
     },
     setCurrency(state, currency) {
@@ -153,7 +157,10 @@ export default new Vuex.Store({
   plugins: [
     createPersistedState({
       key: "yabo-shop",
-      paths: ["uiState", "Cart.vue"]
+      paths: ["uiState", "cartTotal", "cart", "sale"]
     })
   ]
 });
+
+// helper
+const filter = (array, key, value) => array.filter(item => item[key] === value);

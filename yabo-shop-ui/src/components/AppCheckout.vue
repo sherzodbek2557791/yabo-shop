@@ -1,21 +1,37 @@
 <template>
   <div>
     <transition name="fade">
-
       <div v-if="!submitted" class="payment">
         <h3>Please enter your payment details:</h3>
         <label for="email">Email</label>
-        <input id="email" type="email" v-model="stripeEmail" placeholder="name@example.com"/>
-        <label for="card">Credit Card</label>
-        <p>Test using this credit card: <span class="cc-number">4242 4242 4242 4242</span>, and enter any 5 digits for the zip code</p>
-        <card class='stripe-card'
-          id="card"
-          :class='{ complete }'
-          stripe='pk_test_5ThYi0UvX3xwoNdgxxxTxxrG'
-          :options='stripeOptions'
-          @change='complete = $event.complete'
+        <input
+          id="email"
+          type="email"
+          v-model="stripeEmail"
+          placeholder="name@example.com"
         />
-        <button class='pay-with-stripe' @click='pay' :disabled='!complete || !stripeEmail'>Pay with credit card</button>
+        <label for="card">Credit Card</label>
+        <p>
+          Test using this credit card:
+          <span class="cc-number">4242 4242 4242 4242</span>, and enter any 5
+          digits for the zip code
+        </p>
+        <el-input id="card" placeholder="Enter card code"></el-input>
+        <!--<card
+          class="stripe-card"
+          id="card"
+          :class="{ complete }"
+          stripe="pk_test_5ThYi0UvX3xwoNdgxxxTxxrG"
+          :options="stripeOptions"
+          @change="complete = $event.complete"
+        />-->
+        <button
+          class="pay-with-stripe"
+          @click="pay"
+          :disabled="!complete || !stripeEmail"
+        >
+          Pay with credit card
+        </button>
       </div>
 
       <div v-else class="statussubmit">
@@ -30,25 +46,22 @@
           <app-loader />
         </div>
       </div>
-
     </transition>
   </div>
 </template>
 
 <script>
-import { Card, createToken } from 'vue-stripe-elements-plus';
-import AppLoader from './AppLoader.vue';
-import axios from 'axios';
+import AppLoader from "./AppLoader.vue";
+import axios from "axios";
 
 export default {
   components: {
-    Card,
     AppLoader
   },
   props: {
     total: {
       type: [Number, String],
-      default: '50.00'
+      default: "50.00"
     },
     success: {
       type: Boolean,
@@ -58,58 +71,60 @@ export default {
   data() {
     return {
       submitted: false,
-      complete: false,
-      status: '',
-      response: '',
+      complete: true,
+      status: "",
+      response: "",
       stripeOptions: {
         // you can configure that cc element. I liked the default, but you can
         // see https://stripe.com/docs/stripe.js#element-options for details
       },
-      stripeEmail: ''
+      stripeEmail: ""
     };
   },
   methods: {
     pay() {
-      createToken().then(data => {
+      alert("Method not created yet!");
+      this.$store.commit("clearCart");
+      /*createToken().then(data => {
         this.submitted = true;
         console.log(data.token); //this is a token we would use for the stripeToken below
         axios
           .post(
-            'https://sdras-stripe.azurewebsites.net/api/charge?code=zWwbn6LLqMxuyvwbWpTFXdRxFd7a27KCRCEseL7zEqbM9ijAgj1c1w==',
+            "https://sdras-stripe.azurewebsites.net/api/charge?code=zWwbn6LLqMxuyvwbWpTFXdRxFd7a27KCRCEseL7zEqbM9ijAgj1c1w==",
             {
               stripeEmail: this.stripeEmail,
-              stripeToken: 'tok_visa', //testing token
+              stripeToken: "tok_visa", //testing token
               stripeAmt: this.total
             },
             {
               headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json"
               }
             }
           )
           .then(response => {
-            this.status = 'success';
-            this.$emit('successSubmit');
-            this.$store.commit('clearCartCount');
+            this.status = "success";
+            this.$emit("successSubmit");
+            this.$store.commit("clearCartCount");
 
             //console logs for you :)
             this.response = JSON.stringify(response, null, 2);
             console.log(this.response);
           })
           .catch(error => {
-            this.status = 'failure';
+            this.status = "failure";
 
             //console logs for you :)
-            this.response = 'Error: ' + JSON.stringify(error, null, 2);
+            this.response = "Error: " + JSON.stringify(error, null, 2);
             console.log(this.response);
           });
-      });
+      });*/
     },
     clearCart() {
       this.submitted = false;
-      this.status = '';
+      this.status = "";
       this.complete = false;
-      this.response = '';
+      this.response = "";
     }
   }
 };
@@ -139,7 +154,7 @@ p {
 label {
   color: black;
   margin: 15px 0 5px;
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Playfair Display", sans-serif;
 }
 button[disabled] {
   color: #ccc;

@@ -4,8 +4,8 @@
     <div v-if="cartTotal > 0">
       <h1>Cart</h1>
       <div class="cartitems"
-        v-for="item in Cart"
-        key="item">
+        v-for="(item, index) in cart"
+        :key="index">
         <div class="carttext">
           <h4>{{ item.name }}</h4>
           <p>{{ item.price | usdollar }} x {{ item.count }}</p>
@@ -50,13 +50,13 @@ export default {
   },
   computed: {
     cart() {
-      return this.$store.state.Cart;
+      return this.$store.state.cart;
     },
     cartTotal() {
       return this.$store.state.cartTotal;
     },
     total() {
-      return Object.values(this.Cart)
+      return Object.values(this.cart)
         .reduce((acc, el) => acc + (el.count * el.price), 0)
         .toFixed(2);
     }
