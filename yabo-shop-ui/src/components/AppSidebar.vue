@@ -1,7 +1,9 @@
 <template>
   <aside>
     <div class="sidearea">
-      <label for="pricerange">Highest Price: <span>${{ pricerange }}</span></label>
+      <label for="pricerange">{{ $t('asideFilter.highestPrice') }}:
+      <el-input v-model="pricerange"></el-input> сум
+      </label>
       <input
         class="slider"
         id="pricerange"
@@ -12,17 +14,17 @@
         step="0.1"
         @input="$emit('update:pricerange', $event.target.value)"
       />
-      <span class="min">${{ min }}</span>
-      <span class="max">${{ max }}</span>
+      <span class="min">{{ min }} сум</span>
+      <span class="max">{{ max }} сум</span>
     </div>
     <app-switch v-if="!sale" />
     <div class="sidearea callout">
-      <h4>Special Sale!</h4>
-      <p>Shop now because half our items are greatly reduced</p>
+      <h4>{{ $t('asideFilter.specialSale') }}</h4>
+      <p>{{ $t('asideFilter.specialSaleContent') }}</p>
     </div>
     <div class="sidearea callout">
-      <h4>Contact Us</h4>
-      <p>Questions? Call us at 1-888-555-SHOP, we're happy to be of service.</p>
+      <h4>{{ $t('asideFilter.contactUs') }}</h4>
+      <p>{{ $t('asideFilter.contactUsContent') }}</p>
     </div>
   </aside>
 </template>
@@ -44,7 +46,7 @@ export default {
   data() {
     return {
       min: 0,
-      max: 400,
+      max: 10000000,
       originalTop: 0
     };
   },

@@ -3,8 +3,14 @@ import Index from "./pages/Index.vue";
 import Men from "./pages/Men.vue";
 import Sale from "./pages/Sale.vue";
 import Women from "./pages/Women.vue";
+import Filtered from "./pages/Filtered";
 
 export default [
+  {
+    path: "/filtered",
+    component: Filtered,
+    name: "Filtered"
+  },
   {
     path: "/women",
     component: Women,

@@ -1,3 +1,4 @@
+import categories from "./reference/categories";
 import products from "./reference/products";
 
 export default {
@@ -21,8 +22,12 @@ export default {
           }
         }
       ],
+      categories,
       products,
       getters: {
+        filtered(category) {
+          return filter(products, "category", category);
+        },
         get women() {
           return filter(products, "category", "women");
         },

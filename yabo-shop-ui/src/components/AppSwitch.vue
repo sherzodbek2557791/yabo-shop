@@ -1,10 +1,10 @@
 <template>
   <div class="sidearea">
-    <h4>Only Show Sale Items</h4>
+    <h4>{{ $t('asideFilter.showSaleItems') }}</h4>
     <div class="can-toggle demo-rebrand-2">
       <input id="e" type="checkbox" v-model="trigger" @change="updateSale">
       <label for="e">
-        <div class="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+        <div class="can-toggle__switch" data-checked="Да" data-unchecked="Нет"></div>
       </label>
     </div>
   </div>
