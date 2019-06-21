@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     sProducts() {
-      return this.$store.getters.sale.filter(el => el.price < this.highprice);
+      return this.app.getters.sale.filter(el => el.price < this.highprice);
     }
   }
 };

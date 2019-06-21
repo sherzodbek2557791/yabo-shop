@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     mProducts() {
-      return this.$store.getters.men.filter(el =>
+      return this.app.getters.men.filter(el =>
         this.$store.state.sale
           ? el.price < this.highprice && el.sale
           : el.price < this.highprice

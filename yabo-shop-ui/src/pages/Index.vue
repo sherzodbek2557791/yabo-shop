@@ -5,7 +5,7 @@
       <app-sidebar :pricerange.sync="highprice"/>
       <transition-group name="items" tag="section" class="content">
         <app-item
-          v-for="(item, index) in products"
+          v-for="(item, index) in productsAll"
           :key="index"
           :item="item"
           :index="index"
@@ -32,8 +32,8 @@ export default {
     };
   },
   computed: {
-    products() {
-      return this.$store.state.products.filter(el =>
+    productsAll() {
+      return this.app.products.filter(el =>
         this.$store.state.sale
           ? el.price < this.highprice && el.sale
           : el.price < this.highprice

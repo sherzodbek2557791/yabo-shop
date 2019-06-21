@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     wProducts() {
-      return this.$store.getters.women.filter(el =>
+      return this.app.getters.women.filter(el =>
         this.$store.state.sale
           ? el.price < this.highprice && el.sale
           : el.price < this.highprice
