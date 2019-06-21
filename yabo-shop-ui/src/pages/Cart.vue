@@ -5,9 +5,9 @@
       <div class="cartitems" v-for="(item, index) in cart" :key="index">
         <div class="carttext">
           <h4>{{ item.name }}</h4>
-          <p>{{ item.price | usdollar }} x {{ item.count }}</p>
+          <p>{{ item.price | currencyFilter }} x {{ item.count }}</p>
           <p>
-            {{ $t('cart.total') }}: <strong>{{ item.price * item.count }}</strong>
+            {{ $t('cart.amount') }}: <strong>{{ item.price * item.count | currencyFilter}}</strong>
           </p>
         </div>
         <img
@@ -17,7 +17,7 @@
         />
       </div>
       <div class="total">
-        <h3>Total: {{ total | usdollar }}</h3>
+        <h3>{{ $t('cart.total') }}: {{ total | currencyFilter }}</h3>
       </div>
       <app-checkout
         :total="total"
@@ -69,6 +69,9 @@ export default {
   filters: {
     usdollar: function(value) {
       return `$${value}`;
+    },
+    currencyFilter: function(value) {
+      return `${value} сум`;
     }
   }
 };

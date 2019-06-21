@@ -45,7 +45,6 @@ export default {
       );
     },
     bkColor() {
-      console.log(this.categories);
       let defaultColor = "#e82319";
       let { category } = this.$route.query;
       if (!category) return defaultColor;

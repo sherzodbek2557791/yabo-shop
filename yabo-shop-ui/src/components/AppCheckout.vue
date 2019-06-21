@@ -2,36 +2,9 @@
   <div>
     <transition name="fade">
       <div v-if="!submitted" class="payment">
-        <h3>Please enter your payment details:</h3>
-        <label for="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          v-model="stripeEmail"
-          placeholder="name@example.com"
-        />
-        <label for="card">Credit Card</label>
-        <p>
-          Test using this credit card:
-          <span class="cc-number">4242 4242 4242 4242</span>, and enter any 5
-          digits for the zip code
-        </p>
-        <el-input id="card" placeholder="Enter card code"></el-input>
-        <!--<card
-          class="stripe-card"
-          id="card"
-          :class="{ complete }"
-          stripe="pk_test_5ThYi0UvX3xwoNdgxxxTxxrG"
-          :options="stripeOptions"
-          @change="complete = $event.complete"
-        />-->
-        <button
-          class="pay-with-stripe"
-          @click="pay"
-          :disabled="!complete || !stripeEmail"
-        >
-          Pay with credit card
-        </button>
+        <h3>{{ $t('cart.payment.details') }}:</h3>
+
+
       </div>
 
       <div v-else class="statussubmit">

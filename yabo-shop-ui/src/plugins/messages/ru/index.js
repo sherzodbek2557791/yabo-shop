@@ -22,8 +22,12 @@ export default {
   },
   cart: {
     title: "Корзина",
+    amount: "Оплата",
     total: "Итого к оплате",
-    empty: "Ваша корзина пуста"
+    empty: "Ваша корзина пуста",
+    payment: {
+      details: 'Заполните панель для оплаты'
+    }
   },
   asideFilter: {
     highestPrice: 'Максимальная цена',
