@@ -13,6 +13,9 @@ export default {
     allCategories: "Все категории",
     yourCart: "Корзинка"
   },
+  item: {
+    installmentPlan: 'Рассрочка'
+  },
   index: {
     title: "Все товары",
     addItem: "В корзину",
@@ -26,6 +29,7 @@ export default {
     amount: "Оплата",
     total: "Итого к оплате",
     empty: "Ваша корзина пуста",
+    fillUp: "Заполнить!",
     payment: {
       details: 'Заполните панель для оплаты'
     }

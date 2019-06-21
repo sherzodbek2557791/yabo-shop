@@ -1,7 +1,7 @@
 <template>
   <div class="item">
     <p>{{ item.name }}</p>
-    <span class="salepill" v-if="item.sale">Sale</span>
+    <span class="salepill" v-if="item.sale">{{ $t('item.installmentPlan') }}</span>
     <img :src="`/${item.img}`" :alt="`Image of ${item.name}`">
     <p>{{ item.price | currencyFilter }}</p>
     <button class="add" @click="addItem">{{ $t('index.addItem') }}</button>

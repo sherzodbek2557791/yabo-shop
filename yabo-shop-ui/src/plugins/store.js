@@ -41,6 +41,13 @@ export default new Vuex.Store({
         state.cart[item.name] = stateItem;
       }
     },
+    removeItem: (state, item) => {
+      let stateItem = state.cart[item.name];
+      if(!stateItem)return;
+
+      state.cartTotal -= stateItem.count;
+      delete state.cart[stateItem.name];
+    },
     setCurrency(state, currency) {
       Vue.set(state.uiState, "currency", currency);
     },

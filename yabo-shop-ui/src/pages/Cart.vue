@@ -15,6 +15,7 @@
           :src="`/${item.img}`"
           :alt="`Image of ${item.name}`"
         />
+        <el-button type="danger" class="cart-remove-btn" @click="removeItem(item)" circle size="mini" icon="el-icon-delete"></el-button>
       </div>
       <div class="total">
         <h3>{{ $t('cart.total') }}: {{ total | currencyFilter }}</h3>
@@ -28,7 +29,7 @@
     <div v-else-if="cartTotal === 0 && success === false" class="empty">
       <h1>{{ $t("cart.title") }}</h1>
       <h3>{{ $t('cart.empty') }}</h3>
-      <router-link exact to="/"><button>Fill er up!</button></router-link>
+      <router-link exact to="/"><button>{{ $t('cart.fillUp') }}</button></router-link>
     </div>
 
     <div v-else>
@@ -52,6 +53,11 @@ export default {
   components: {
     AppCheckout,
     AppSuccess
+  },
+  methods: {
+    removeItem(item){
+      this.$store.commit('removeItem', item);
+    }
   },
   computed: {
     cart() {
@@ -97,6 +103,7 @@ export default {
 }
 
 .cartitems {
+  position: relative;
   padding: 30px;
   border-bottom: 1px solid #ccc;
   width: 500px;
@@ -116,6 +123,12 @@ export default {
   width: 100px;
   border: 1px solid #ccc;
   float: right;
+}
+
+.cart-remove-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
 }
 
 .total {
