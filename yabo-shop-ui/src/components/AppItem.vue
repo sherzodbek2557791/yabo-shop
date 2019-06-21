@@ -3,8 +3,8 @@
     <p>{{ item.name }}</p>
     <span class="salepill" v-if="item.sale">Sale</span>
     <img :src="`/${item.img}`" :alt="`Image of ${item.name}`">
-    <p>{{ item.price | usdollar }}</p>
-    <button class="add" @click="addItem">Add Item</button>
+    <p>{{ item.price | currencyFilter }}</p>
+    <button class="add" @click="addItem">{{ $t('index.addItem') }}</button>
   </div>
 </template>
 
@@ -23,6 +23,9 @@ export default {
   filters: {
     usdollar: function(value) {
       return `$${value}`;
+    },
+    currencyFilter: function(value) {
+      return `${value} сум`;
     }
   },
   methods: {

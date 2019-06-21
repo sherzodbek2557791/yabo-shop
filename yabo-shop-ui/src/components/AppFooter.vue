@@ -1,6 +1,6 @@
 <template>
   <footer>
-    Made with 🎸 from <a href="https://twitter.com/sarah_edo" target="_blank">sarah_edo</a>. This project is open source, visit <a href="https://github.com/sdras/sample-vue-shop" target="_blank">the repo.</a>
+    © 2019 Creative Tim, all rights reserved. <a href="http://yabo.yz">yabo.yz</a>
   </footer>
 </template>
 

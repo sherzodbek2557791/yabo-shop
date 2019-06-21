@@ -15,6 +15,7 @@ export default {
   },
   index: {
     title: "Все товары",
+    addItem: "В корзину",
     allDepartments: "Все разделы"
   },
   filtered: {

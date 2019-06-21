@@ -1,12 +1,14 @@
 export default [
   {
-    title: "Women's",
+    title: "Телевизоры",
     color: "#7b184d",
-    name: "women"
+    name: "women",
+    headerImg: "bk-sale.png"
   },
   {
-    title: "Men",
+    title: "Холодильники",
     color: "#47227b",
-    name: "men"
+    name: "men",
+    headerImg: "banner-ppl.png"
   }
 ];

@@ -1,6 +1,6 @@
 <template>
   <main class="capsule">
-    <app-masthead img="banner-ppl-women" :title="title" :bkcolor="bkColor" />
+    <app-masthead :img="`/${headerImage}`" :title="title" :bkcolor="bkColor" />
     <div class="contain">
       <app-sidebar :pricerange.sync="highprice" />
       <transition-group name="items" tag="section" class="content">
@@ -59,6 +59,12 @@ export default {
 
       let item = this.app.categories.find(x => x.name === category);
       return item.title || defaultColor;
+    },
+    headerImage(){
+      let { category } = this.$route.query;
+      if (!category) return null;
+      let item = this.app.categories.find(x => x.name === category);
+      return item.headerImg;
     }
   }
 };
