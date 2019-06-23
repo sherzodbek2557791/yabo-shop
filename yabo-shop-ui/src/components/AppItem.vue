@@ -1,8 +1,15 @@
 <template>
   <div class="item">
+   <!-- code
+    title
+    description
+    price
+    currency
+    image
+    start_date-->
     <p>{{ item.name }}</p>
-    <span class="salepill" v-if="item.sale">{{ $t('item.installmentPlan') }}</span>
-    <img :src="`/${item.img}`" :alt="`Image of ${item.name}`">
+    <span class="salepill" v-if="item.description">{{ $t('item.installmentPlan') }}</span>
+    <img :src="`/${item.image}`" :alt="`Image of ${item.title}`">
     <p>{{ item.price | currencyFilter }}</p>
     <button class="add" @click="addItem">{{ $t('index.addItem') }}</button>
   </div>

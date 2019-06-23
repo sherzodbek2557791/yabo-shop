@@ -16,6 +16,16 @@ export default {
   components: {
     AppNavigation,
     AppFooter
+  },
+  mounted() {
+    let container = this.$el.querySelector(".app-content");
+    if (!container) return;
+    this.$on("scroll-to-bottom", () => {
+      let { scrollTop, scrollHeight, clientHeight } = container;
+      if (scrollHeight - scrollTop !== clientHeight) {
+        container.scrollTop = container.scrollHeight;
+      }
+    });
   }
 };
 </script>

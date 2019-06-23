@@ -2,9 +2,12 @@
   <div class="navarea">
     <nav>
       <div class="capsule">
-        <router-link exact to="/">
+        <router-link to="/" v-if="$route.path !== '/'">
           <img src="../assets/img/logo.png" alt="" class="logo" />
         </router-link>
+        <a href="/" v-else>
+          <img src="../assets/img/logo.png" alt="" class="logo" />
+        </a>
         <ul v-loading="loading">
           <template v-for="item in app.categories">
             <router-link :to="`/filtered?category=${item.code}`">
@@ -24,7 +27,7 @@
               height="30"
             >
               <title id="cart">
-                {{ $t('cart.title') }}
+                {{ $t("cart.title") }}
               </title>
               <path
                 fill="black"
@@ -42,8 +45,7 @@
 export default {
   data() {
     return {
-      loading: false,
-      categories: []
+      loading: false
     };
   },
   methods: {

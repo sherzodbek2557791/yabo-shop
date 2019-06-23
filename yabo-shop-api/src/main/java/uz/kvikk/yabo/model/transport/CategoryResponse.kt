@@ -17,6 +17,6 @@ data class CategoryResponse(
         val color: String,
 
         @Column(name = "HEADER_IMG")
-        val header_img: String
+        val headerImg: String
 
 )
