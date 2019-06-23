@@ -5,9 +5,11 @@
         <router-link exact to="/">
           <img src="../assets/img/logo.png" alt="" class="logo" />
         </router-link>
-        <ul>
+        <ul v-loading="loading">
           <template v-for="item in app.categories">
-            <router-link :to="`/filtered?category=${item.name}`" ><li>{{item.title}}</li></router-link>
+            <router-link :to="`/filtered?category=${item.code}`">
+              <li>{{ item.title }}</li>
+            </router-link>
           </template>
         </ul>
         <router-link to="/cart">
@@ -22,7 +24,7 @@
               height="30"
             >
               <title id="cart">
-                Shopping Cart
+                {{ $t('cart.title') }}
               </title>
               <path
                 fill="black"
@@ -38,10 +40,35 @@
 
 <script>
 export default {
+  data() {
+    return {
+      loading: false,
+      categories: []
+    };
+  },
+  methods: {
+    loadList() {
+      this.loading = true;
+      this.$http
+        .get("category/list")
+        .then(({ data: categoryData }) => {
+          this.app.categories = categoryData;
+          this.loading = false;
+          console.log(categoryData);
+        })
+        .catch(error => {
+          this.loading = false;
+          console.log(error);
+        });
+    }
+  },
   computed: {
     cartTotal() {
       return this.$store.state.cartTotal;
     }
+  },
+  mounted() {
+    this.loadList();
   }
 };
 </script>
