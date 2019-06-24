@@ -10,7 +10,7 @@
         </a>
         <ul v-loading="loading">
           <template v-for="item in app.categories">
-            <router-link :to="`/filtered?category=${item.code}`">
+            <router-link :to="`/filtered?category=${item.code}`" :key="item.code">
               <li>{{ item.title }}</li>
             </router-link>
           </template>
@@ -59,7 +59,7 @@ export default {
         })
         .catch(error => {
           this.loading = false;
-          console.log(error);
+          console.error(error);
         });
     }
   },
