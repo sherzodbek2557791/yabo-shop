@@ -46,6 +46,9 @@ export default {
       fillError: 'Пожалуйста заполните все поля правильно!',
     }
   },
+  general:{
+    fillField: 'Заполните поле!'
+  },
   asideFilter: {
     highestPrice: 'Максимальная цена',
     showSaleItems: 'Только товары срочной продажи',

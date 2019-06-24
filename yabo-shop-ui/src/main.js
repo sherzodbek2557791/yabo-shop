@@ -6,7 +6,7 @@ import i18n from "@/plugins/i18n";
 import store from "@/plugins/store";
 import { sync } from "vuex-router-sync";
 import http from "@/service/http";
-
+import regex from "@/plugins/directives/regex";
 
 /**
  * Styles imported
@@ -28,6 +28,8 @@ Vue.mixin({ data: () => globals });
 
 const router = new VueRouter({ mode: "history", routes });
 sync(store, router);
+
+Vue.directive("regex", regex);
 
 new Vue({
   i18n: i18n.plugin,

@@ -14,6 +14,8 @@
             prop="phoneNumber"
             :label="$t('cart.form.phoneNumber')"
             :rules="rules.phoneNumber"
+            :placeholder="$t('general.fillField')"
+            v-regex="'^\\+998\\d{9}$'"
             required
           >
             <el-input v-model="form.phoneNumber"></el-input>
@@ -125,7 +127,19 @@ export default {
         message: null
       },
       rules: {
-        phoneNumber: [],
+        phoneNumber: [
+          {
+            validator: (rule, value, callback) => {
+              let res = value.replace(/\D/g, "");
+              if (res.length !== 12) {
+                callback(new Error("Please input the valid phone number"));
+              } else {
+                callback();
+              }
+            },
+            trigger: "change"
+          }
+        ],
         email: [],
         firstName: [],
         lastName: [],
@@ -186,53 +200,13 @@ export default {
               type: "success"
             });
             this.$store.commit("setForm", this.form);
-
-            //console logs for you :)
-            // this.response = JSON.stringify(response, null, 2);
             console.log(data);
           })
           .catch(error => {
             this.status = "failure";
-
-            //console logs for you :)
-            // this.response = "Error: " + JSON.stringify(error, null, 2);
             console.error(error);
           });
       });
-      /*createToken().then(data => {
-        this.submitted = true;
-        console.log(data.token); //this is a token we would use for the stripeToken below
-        axios
-          .post(
-            "https://sdras-stripe.azurewebsites.net/api/charge?code=zWwbn6LLqMxuyvwbWpTFXdRxFd7a27KCRCEseL7zEqbM9ijAgj1c1w==",
-            {
-              stripeEmail: this.stripeEmail,
-              stripeToken: "tok_visa", //testing token
-              stripeAmt: this.total
-            },
-            {
-              headers: {
-                "Content-Type": "application/json"
-              }
-            }
-          )
-          .then(response => {
-            this.status = "success";
-            this.$emit("successSubmit");
-            this.$store.commit("clearCartCount");
-
-            //console logs for you :)
-            this.response = JSON.stringify(response, null, 2);
-            console.log(this.response);
-          })
-          .catch(error => {
-            this.status = "failure";
-
-            //console logs for you :)
-            this.response = "Error: " + JSON.stringify(error, null, 2);
-            console.log(this.response);
-          });
-      });*/
     },
     clearCart() {
       this.submitted = false;
