@@ -8,8 +8,12 @@
     />
     <div class="contain">
       <app-sidebar :pricerange.sync="highprice" />
-      <transition-group name="items" tag="section" class="content"
-                        @after-enter="afterEnter">
+      <transition-group
+        name="items"
+        tag="section"
+        class="content"
+        @after-enter="afterEnter"
+      >
         <app-item
           v-for="(item, index) in table.data"
           :key="index"
@@ -22,7 +26,7 @@
           key="next-btn"
           :loading="table.loading"
           v-if="hasNext"
-          @click="loadNext"
+          @click="loadNext(category['code'])"
           round
           >{{ $t("index.next") }}</el-button
         >
@@ -53,7 +57,7 @@ export default {
         paging: {
           current: 0,
           total: 0,
-          size: 9
+          size: 6
         }
       }
     };

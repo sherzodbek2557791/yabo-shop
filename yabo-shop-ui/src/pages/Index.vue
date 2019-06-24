@@ -50,7 +50,7 @@ export default {
         paging: {
           current: 0,
           total: 0,
-          size: 9
+          size: 6
         }
       }
     };
