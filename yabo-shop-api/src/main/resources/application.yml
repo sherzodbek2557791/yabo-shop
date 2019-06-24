@@ -40,3 +40,9 @@ hashids:
   salt: "eYKM+jt6N!^LZ#au*?Eav$@YJdhSx=kt"
   minLength: 4
   alphabet: abcdef0123456789
+
+bot:
+  channel: "-1001447900531" # private variant
+#  channel: "@yabo_channel" # public variant
+  username: yabo_uz_bot
+  apitoken: 871039692:AAH3H22AnmxLDyEAFPyAhR3Vn_kje1olcos

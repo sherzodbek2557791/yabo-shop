@@ -56,7 +56,6 @@ export default {
         .then(({ data: categoryData }) => {
           this.app.categories = categoryData;
           this.loading = false;
-          console.log(categoryData);
         })
         .catch(error => {
           this.loading = false;

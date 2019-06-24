@@ -68,7 +68,6 @@ export default {
           size: this.table.paging.size
         })
         .then(({ data }) => {
-          console.log(data);
           const { content, totalElements } = data;
           this.table.loading = false;
           this.table.data.push(...content);
