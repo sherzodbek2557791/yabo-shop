@@ -12,7 +12,7 @@
         </div>
         <img
           class="cartimg"
-          :src="`/${item.img}`"
+          :src="`/${item.image}`"
           :alt="`Image of ${item.name}`"
         />
         <el-button type="danger" class="cart-remove-btn" @click="removeItem(item)" circle size="mini" icon="el-icon-delete"></el-button>

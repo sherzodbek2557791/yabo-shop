@@ -15,6 +15,7 @@ export default new Vuex.Store({
     },
     cartTotal: 0,
     cart: {},
+    form: {},
     sale: false
   },
   mutations: {
@@ -30,6 +31,12 @@ export default new Vuex.Store({
     clearCart: state => {
       state.cartTotal = 0;
       state.cart = {};
+    },
+    setForm: (state, form) => {
+      state.form = form;
+    },
+    clearForm: state => {
+      state.form = {};
     },
     addItem: (state, item) => {
       state.cartTotal++;
@@ -61,7 +68,7 @@ export default new Vuex.Store({
   plugins: [
     createPersistedState({
       key: "yabo-shop",
-      paths: ["uiState", "cartTotal", "cart", "sale"]
+      paths: ["uiState", "cartTotal", "cart", "form", "sale"]
     })
   ]
 });

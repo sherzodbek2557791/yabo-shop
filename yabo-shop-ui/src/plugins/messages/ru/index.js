@@ -33,6 +33,17 @@ export default {
     fillUp: "Заполнить!",
     payment: {
       details: 'Заполните панель для оплаты'
+    },
+    form:{
+      phoneNumber: 'Телефон номер',
+      email: 'Электроная почта',
+      firstName: 'Имя',
+      lastName: 'Фамилия',
+      message: 'Сообщения',
+      submit: 'Оформить',
+      cancel: 'Отменить',
+      success: 'Ваша заявка успешно отправлено!',
+      fillError: 'Пожалуйста заполните все поля правильно!',
     }
   },
   asideFilter: {

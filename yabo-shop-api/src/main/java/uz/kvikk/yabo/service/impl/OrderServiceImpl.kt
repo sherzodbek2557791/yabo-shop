@@ -9,16 +9,32 @@ import org.springframework.util.StringUtils
 import uz.kvikk.yabo.model.transport.OrderRequest
 import uz.kvikk.yabo.model.transport.OrderResponse
 import uz.kvikk.yabo.model.transport.ProductResponse
+import uz.kvikk.yabo.service.BotService
 import uz.kvikk.yabo.service.OrderService
 import uz.kvikk.yabo.service.ProductService
 import uz.kvikk.yabo.utils.TripleFunction
 
 @Service
-class OrderServiceImpl(val dsl: DSLContext) : OrderService {
+class OrderServiceImpl(val dsl: DSLContext, val botService: BotService) : OrderService {
 
 
     override fun create(orderRequest: OrderRequest): OrderResponse {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+        botService.sendOrder("""
+            Tel: ${orderRequest.phoneNumber}
+            e-mail: ${orderRequest.email}
+            FIO: ${orderRequest.firstName} ${orderRequest.lastName}
+            Message: ${orderRequest.message}
+        """.trimIndent())
+
+        return OrderResponse(
+                orderRequest.phoneNumber,
+                orderRequest.email,
+                orderRequest.firstName,
+                orderRequest.lastName,
+                orderRequest.message,
+                orderRequest.orderItems
+        )
     }
 
 
