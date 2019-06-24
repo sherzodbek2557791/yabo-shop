@@ -19,6 +19,6 @@ class ProductController(val productService: ProductService) {
     @GetMapping("/list-paging-filtered")
     fun listPagingFiltered(pageable: Pageable,
                            @RequestParam(required = false) category: String): ResponseEntity<Any> =
-            ResponseEntity.ok(productService.listPaging(pageable, "ACTIVE"))
+            ResponseEntity.ok(productService.listPagingFiltered(pageable, "ACTIVE", category))
 
 }

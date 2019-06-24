@@ -5,67 +5,72 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageImpl
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
-import uz.kvikk.yabo.model.transport.ProductListResponse
+import org.springframework.util.StringUtils
 import uz.kvikk.yabo.model.transport.ProductResponse
 import uz.kvikk.yabo.service.ProductService
-import java.util.*
+import uz.kvikk.yabo.utils.TripleFunction
 
 @Service
 class ProductServiceImpl(val dsl: DSLContext) : ProductService {
-    override fun listPagingFiltered(pageable: Pageable, productStatus: String, filters: Map<String, Any>): Page<ProductResponse> {
-        var params = Collections.emptyList<Any>()
-        var select = "$SELECT and p.product_status = {0} "
-        var i = 1
-        filters.forEach { (k, v) ->
-            select += """
-                and p.$k = {${i++}}
-            """.trimIndent()
-            params.add(v)
-        }
 
-        select += " OFFSET {${i++}} ROWS FETCH NEXT {${i++}} ROWS ONLY "
-        params.add(pageable.offset)
-        params.add(pageable.pageSize)
+    override fun listPagingFiltered(pageable: Pageable, productStatus: String, categoryCode: String?): Page<ProductResponse> {
+        return this.pageFiltered(pageable, mapOf<TripleFunction<MutableList<Any>, MutableList<Any>, Int, String>, Any>(
+                TripleFunction { selectParams: MutableList<Any>,
+                                 countParams: MutableList<Any>,
+                                 i: Int ->
+                    selectParams.add(productStatus)
+                    countParams.add(productStatus)
+                    return@TripleFunction "and p.product_status = {$i}"
+                } to productStatus,
+                TripleFunction { selectParams: MutableList<Any>,
+                                 countParams: MutableList<Any>,
+                                 i: Int ->
+                    if (StringUtils.isEmpty(categoryCode!!)) return@TripleFunction ""
+                    selectParams.add(categoryCode)
+                    countParams.add(categoryCode)
 
-        val list = dsl.fetch(select, params).into(ProductResponse::class.java)
-
-        val total = dsl.fetchOne("""
-            $TOTAL
-            and p.product_status = {0}
-            OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY 
-        """.trimMargin(), productStatus).into(Long::class.java)
-        return PageImpl(list, pageable, total)
+                    return@TripleFunction """
+                        and p.id in (select cp.product_id from category c
+                            left join category_product cp on c.id = cp.category_id where c.code={$i})
+                    """.trimIndent()
+                } to categoryCode!!
+        ))
     }
 
     override fun listPaging(pageable: Pageable, productStatus: String): Page<ProductResponse> {
-        val list = dsl.fetch("""
-            $SELECT
-            and p.product_status = {0}
-            OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY 
-        """.trimMargin(),
-                productStatus,
-                pageable.offset,
-                pageable.pageSize
-        ).into(ProductResponse::class.java)
-
-        val total = dsl.fetchOne("""
-            $TOTAL
-            and p.product_status = {0}
-        """.trimMargin(), productStatus).into(Long::class.java)
-        return PageImpl(list, pageable, total)
+        return this.pageFiltered(pageable, mapOf<TripleFunction<MutableList<Any>, MutableList<Any>, Int, String>, Any>(
+                TripleFunction { selectParams: MutableList<Any>,
+                                 countParams: MutableList<Any>,
+                                 i: Int ->
+                    selectParams.add(productStatus)
+                    countParams.add(productStatus)
+                    return@TripleFunction "and p.product_status = {$i}"
+                } to productStatus
+        ))
     }
 
+    override fun pageFiltered(pageable: Pageable, filters: Map<TripleFunction<MutableList<Any>, MutableList<Any>, Int, String>, Any>): Page<ProductResponse> {
+        var selectParams = mutableListOf<Any>()
+        var countParams = mutableListOf<Any>()
+        var select = "$SELECT "
+        var count = "$TOTAL "
+        var i = 0
+        for (filter in filters) {
+            var function = filter.key
+            val condition = function.apply(selectParams, countParams, i++)
+            if (StringUtils.isEmpty(condition)) continue
 
-    override fun list(): List<ProductListResponse> {
-        return dsl.fetch("""
-            select
-               g.id,
-               g.parent_id,
-               g.title,
-               g.description
-            from O_GROUP g
-            where g.parent_id is null
-        """.trimIndent()).into(ProductListResponse::class.java)
+            select += condition
+            count += condition
+        }
+
+        select += " OFFSET {${i++}} ROWS FETCH NEXT {${i++}} ROWS ONLY "
+        selectParams.add(pageable.offset)
+        selectParams.add(pageable.pageSize)
+
+        val list = dsl.fetch(select, *selectParams.toTypedArray()).into(ProductResponse::class.java)
+        val total = dsl.fetchOne(count, *countParams.toTypedArray()).into(Long::class.java)
+        return PageImpl(list, pageable, total)
     }
 
     companion object {
