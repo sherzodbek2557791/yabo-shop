@@ -2,7 +2,7 @@
   <div class="item">
     <p>{{ item.title }}</p>
     <span class="salepill" v-if="item.description">{{ $t('item.installmentPlan') }}</span>
-    <img :src="`/${item.image}`" :alt="`Image of ${item.title}`">
+    <img class="img-product" :src="`/${item.image}`" :alt="`Image of ${item.title}`">
     <p>{{ item.price | currencyFilter }}</p>
     <button class="add" @click="addItem">{{ $t('index.addItem') }}</button>
   </div>

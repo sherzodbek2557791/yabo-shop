@@ -173,6 +173,11 @@ aside {
   opacity: 0;
 }
 
+.img-product{
+  width: 200px;
+  max-height: 200px;
+}
+
 /* --- range --- */
 
 input[type="range"].slider {

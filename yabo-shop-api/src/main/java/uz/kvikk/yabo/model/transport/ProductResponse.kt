@@ -11,7 +11,7 @@ data class ProductResponse(
         val title: String,
 
         @Column(name = "DESCRIPTION")
-        val description: String,
+        val description: String?,
 
         @Column(name = "PRICE")
         val price: Double,
