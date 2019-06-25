@@ -212,9 +212,11 @@ export default {
           });
           return false;
         }
-        //this.$store.state.cart
+
+        let { cart } = this.$store.state;
+        let orderItems = Object.keys(cart).map(k => cart[k]);
         let form = { ...this.form };
-        let request = Object.assign(form, { orderItems: [] });
+        let request = Object.assign(form, { orderItems });
 
         console.log(request);
 
@@ -267,8 +269,8 @@ export default {
     }
   },
   mounted() {
-    this.loadForm();
     this.resetForm();
+    this.loadForm();
   }
 };
 </script>

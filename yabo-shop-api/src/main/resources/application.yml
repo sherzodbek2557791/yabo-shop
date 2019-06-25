@@ -37,9 +37,9 @@ logging:
     org.jooq.tools.LoggerListener: DEBUG
 #Hashids
 hashids:
-  salt: "eYKM+jt6N!^LZ#au*?Eav$@YJdhSx=kt"
-  minLength: 4
-  alphabet: abcdef0123456789
+  salt: "P6XjdyPg4q4BnZaEavQfC5ghdag8FkF3t9sLdWG8TNmWjYz8WP6DSpUgeCmFbp9S"
+  min-length: 6
+  alphabet: 0123456789abcdefghijklmnopqrstuvwxyz
 
 bot:
   channel: "-1001447900531" # private variant
