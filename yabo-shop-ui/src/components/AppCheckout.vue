@@ -218,8 +218,6 @@ export default {
         let form = { ...this.form };
         let request = Object.assign(form, { orderItems });
 
-        console.log(request);
-
         this.$http
           .post("order/create", request)
           .then(({ data }) => {
@@ -232,7 +230,6 @@ export default {
               type: "success"
             });
             this.$store.commit("setForm", this.form);
-            console.log(data);
           })
           .catch(error => {
             this.status = "failure";
