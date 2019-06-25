@@ -1,13 +1,6 @@
 <template>
   <div class="item">
-   <!-- code
-    title
-    description
-    price
-    currency
-    image
-    start_date-->
-    <p>{{ item.name }}</p>
+    <p>{{ item.title }}</p>
     <span class="salepill" v-if="item.description">{{ $t('item.installmentPlan') }}</span>
     <img :src="`/${item.image}`" :alt="`Image of ${item.title}`">
     <p>{{ item.price | currencyFilter }}</p>

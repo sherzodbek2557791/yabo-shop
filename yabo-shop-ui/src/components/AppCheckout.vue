@@ -16,7 +16,7 @@
             :rules="rules.phoneNumber"
             :placeholder="$t('general.fillField')"
             v-regex="'^\\+998\\d{9}$'"
-            required
+            ref="formPhoneNumber"
           >
             <el-input v-model="form.phoneNumber"></el-input>
           </el-form-item>
@@ -25,7 +25,7 @@
             prop="email"
             :label="$t('cart.form.email')"
             :rules="rules.email"
-            required
+            ref="formEmail"
           >
             <el-input v-model="form.email"></el-input>
           </el-form-item>
@@ -35,7 +35,8 @@
               <el-form-item
                 prop="firstName"
                 :label="$t('cart.form.firstName')"
-                required
+                :rules="rules.firstName"
+                ref="formFirstName"
               >
                 <el-input v-model="form.firstName"></el-input>
               </el-form-item>
@@ -47,7 +48,8 @@
               <el-form-item
                 prop="lastName"
                 :label="$t('cart.form.lastName')"
-                required
+                :rules="rules.lastName"
+                ref="formLastName"
               >
                 <el-input v-model="form.lastName"></el-input>
               </el-form-item>
@@ -57,7 +59,7 @@
           <el-form-item
             prop="message"
             :label="$t('cart.form.message')"
-            required
+            ref="formMessage"
           >
             <el-input
               type="textarea"
@@ -129,10 +131,15 @@ export default {
       rules: {
         phoneNumber: [
           {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "change"
+          },
+          {
             validator: (rule, value, callback) => {
               let res = value.replace(/\D/g, "");
               if (res.length !== 12) {
-                callback(new Error("Please input the valid phone number"));
+                callback(new Error(this.$t("cart.form.fillValidPhoneNumber")));
               } else {
                 callback();
               }
@@ -140,9 +147,32 @@ export default {
             trigger: "change"
           }
         ],
-        email: [],
-        firstName: [],
-        lastName: [],
+        email: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "change"
+          },
+          {
+            type: "email",
+            message: this.$t("cart.form.fillValidEmail"),
+            trigger: ["blur", "change"]
+          }
+        ],
+        firstName: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "change"
+          }
+        ],
+        lastName: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "change"
+          }
+        ],
         message: []
       }
     };
@@ -150,11 +180,11 @@ export default {
   methods: {
     cancelOrder() {
       this.$confirm(
-        "This will permanently delete the items. Continue?",
-        "Warning",
+        this.$t("cart.form.attentionRemoveAllOrders"),
+        this.$t("general.attention"),
         {
-          confirmButtonText: "OK",
-          cancelButtonText: "Cancel",
+          confirmButtonText: this.$t("general.ok"),
+          cancelButtonText: this.$t("general.cancel"),
           type: "warning"
         }
       )
@@ -213,14 +243,32 @@ export default {
       this.status = "";
       this.complete = false;
       this.response = "";
+    },
+    loadForm() {
+      let {
+        phoneNumber,
+        email,
+        firstName,
+        lastName,
+        message
+      } = this.$store.state.form;
+      this.form.phoneNumber = phoneNumber;
+      this.form.email = email;
+      this.form.firstName = firstName;
+      this.form.lastName = lastName;
+      this.form.message = message;
+    },
+    resetForm() {
+      this.$refs["formPhoneNumber"].resetField();
+      this.$refs["formEmail"].resetField();
+      this.$refs["formFirstName"].resetField();
+      this.$refs["formLastName"].resetField();
+      this.$refs["formMessage"].resetField();
     }
   },
   mounted() {
-    this.form.phoneNumber = this.$store.state.form.phoneNumber;
-    this.form.email = this.$store.state.form.email;
-    this.form.firstName = this.$store.state.form.firstName;
-    this.form.lastName = this.$store.state.form.lastName;
-    this.form.message = this.$store.state.form.message;
+    this.loadForm();
+    this.resetForm();
   }
 };
 </script>
@@ -274,7 +322,7 @@ label {
 }
 
 /deep/ .el-form-item {
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 
 /deep/ .el-form--label-top .el-form-item__label {

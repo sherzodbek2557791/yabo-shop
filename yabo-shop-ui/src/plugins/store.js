@@ -40,20 +40,20 @@ export default new Vuex.Store({
     },
     addItem: (state, item) => {
       state.cartTotal++;
-      if (item.name in state.cart) {
-        state.cart[item.name].count++;
+      if (item.code in state.cart) {
+        state.cart[item.code].count++;
       } else {
         let stateItem = Object.assign({}, item);
         stateItem.count = 1;
-        state.cart[item.name] = stateItem;
+        state.cart[item.code] = stateItem;
       }
     },
     removeItem: (state, item) => {
-      let stateItem = state.cart[item.name];
+      let stateItem = state.cart[item.code];
       if(!stateItem)return;
 
       state.cartTotal -= stateItem.count;
-      delete state.cart[stateItem.name];
+      delete state.cart[stateItem.code];
     },
     setCurrency(state, currency) {
       Vue.set(state.uiState, "currency", currency);

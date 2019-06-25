@@ -1,6 +1,6 @@
 <template>
   <footer>
-    © 2019 Creative Tim, all rights reserved. <a href="http://yabo.yz">yabo.yz</a>
+    © 2019 Creative team, all rights reserved. <a href="http://yabo.uz">yabo.uz</a>
   </footer>
 </template>
 

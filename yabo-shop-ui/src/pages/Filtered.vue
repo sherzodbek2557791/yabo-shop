@@ -16,7 +16,7 @@
       >
         <app-item
           v-for="(item, index) in table.data"
-          :key="index"
+          :key="`key-${index}`"
           :item="item"
           :index="index"
         />

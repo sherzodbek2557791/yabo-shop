@@ -4,7 +4,7 @@
       <h1>{{ $t("cart.title") }}</h1>
       <div class="cartitems" v-for="(item, index) in cart" :key="index">
         <div class="carttext">
-          <h4>{{ item.name }}</h4>
+          <h4>{{ item.title }}</h4>
           <p>{{ item.price | currencyFilter }} x {{ item.count }}</p>
           <p>
             {{ $t('cart.amount') }}: <strong>{{ item.price * item.count | currencyFilter}}</strong>
@@ -13,7 +13,7 @@
         <img
           class="cartimg"
           :src="`/${item.image}`"
-          :alt="`Image of ${item.name}`"
+          :alt="`Image of ${item.title}`"
         />
         <el-button type="danger" class="cart-remove-btn" @click="removeItem(item)" circle size="mini" icon="el-icon-delete"></el-button>
       </div>
