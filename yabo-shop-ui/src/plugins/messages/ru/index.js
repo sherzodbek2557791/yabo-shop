@@ -62,6 +62,6 @@ export default {
     specialSaleContent: "Shop now because half our items are greatly reduced",
     contactUs: "Свяжитесь с нами",
     contactUsContent:
-      "Questions? Call us at 1-888-555-SHOP, we're happy to be of service."
+      "Возникли вопросы? Позвоните на номер +998 97 922 50 00, будем рады обслужить."
   }
 };

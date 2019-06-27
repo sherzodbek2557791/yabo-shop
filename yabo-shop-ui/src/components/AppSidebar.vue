@@ -1,6 +1,6 @@
 <template>
   <aside>
-    <div class="sidearea">
+    <!--<div class="sidearea">
       <label for="pricerange">{{ $t('asideFilter.highestPrice') }}:
       <el-input v-model="pricerange"></el-input> сум
       </label>
@@ -21,7 +21,7 @@
     <div class="sidearea callout">
       <h4>{{ $t('asideFilter.specialSale') }}</h4>
       <p>{{ $t('asideFilter.specialSaleContent') }}</p>
-    </div>
+    </div>-->
     <div class="sidearea callout">
       <h4>{{ $t('asideFilter.contactUs') }}</h4>
       <p>{{ $t('asideFilter.contactUsContent') }}</p>
