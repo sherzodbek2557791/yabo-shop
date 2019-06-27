@@ -8,11 +8,13 @@ import { sync } from "vuex-router-sync";
 import http from "@/service/http";
 import regex from "@/plugins/directives/regex";
 
+
 /**
  * Styles imported
  */
 import "./assets/css/element.css";
 import "./assets/css/main.css";
+import "./assets/css/w3.css";
 
 import routes from "./routes";
 import globals from "./globals";

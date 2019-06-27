@@ -298,7 +298,7 @@ input[type="range"].slider:focus::-ms-fill-upper {
   }
 
   nav .capsule {
-    justify-content: space-around !important;
+    /*justify-content: space-around !important;*/
   }
 
   .cartitems {
