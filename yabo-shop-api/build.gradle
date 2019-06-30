@@ -19,6 +19,7 @@ configurations {
 
 repositories {
     mavenCentral()
+    jcenter()
     maven { url 'https://repo.spring.io/snapshot' }
     maven { url 'https://repo.spring.io/milestone' }
 }
@@ -36,6 +37,7 @@ dependencies {
     implementation 'org.hashids:hashids:1.0.3'
     implementation "org.telegram:telegrambots:4.3.1"
     implementation 'commons-io:commons-io:2.5'
+    implementation 'com.github.azihsoyn.ktformat:ktformat:0.1.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

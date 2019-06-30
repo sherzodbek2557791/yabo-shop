@@ -9,6 +9,7 @@ import org.springframework.util.StringUtils
 import uz.kvikk.yabo.model.transport.ProductResponse
 import uz.kvikk.yabo.service.ProductService
 import uz.kvikk.yabo.utils.TripleFunction
+import com.github.azihsoyn.ktformat.format
 
 @Service
 class ProductServiceImpl(val dsl: DSLContext) : ProductService {
@@ -52,7 +53,7 @@ class ProductServiceImpl(val dsl: DSLContext) : ProductService {
     override fun pageFiltered(pageable: Pageable, filters: Map<TripleFunction<MutableList<Any>, MutableList<Any>, Int, String>, Any>): Page<ProductResponse> {
         var selectParams = mutableListOf<Any>()
         var countParams = mutableListOf<Any>()
-        var select = "$SELECT "
+        var conditions = "" //""$SELECT "
         var count = "$TOTAL "
         var i = 0
         for (filter in filters) {
@@ -60,15 +61,20 @@ class ProductServiceImpl(val dsl: DSLContext) : ProductService {
             val condition = function.apply(selectParams, countParams, i++)
             if (StringUtils.isEmpty(condition)) continue
 
-            select += condition
+            conditions += condition
             count += condition
         }
 
-        select += " OFFSET {${i++}} ROWS FETCH NEXT {${i++}} ROWS ONLY "
+        val offset = " OFFSET {${i++}} ROWS FETCH NEXT {${i++}} ROWS ONLY "
         selectParams.add(pageable.offset)
         selectParams.add(pageable.pageSize)
 
-        val list = dsl.fetch(select, *selectParams.toTypedArray()).into(ProductResponse::class.java)
+        val formatted = SELECT.format(mapOf(
+                "beforeOrder" to conditions,
+                "afterOrder" to offset
+        ))
+
+        val list = dsl.fetch(formatted, *selectParams.toTypedArray()).into(ProductResponse::class.java)
         val total = dsl.fetchOne(count, *countParams.toTypedArray()).into(Long::class.java)
         return PageImpl(list, pageable, total)
     }
@@ -84,6 +90,9 @@ class ProductServiceImpl(val dsl: DSLContext) : ProductService {
                    p.start_date
             from product p
             where 1=1
+            {beforeOrder}
+            order by p.start_date desc
+            {afterOrder}
         """.trimIndent()
 
         var TOTAL: String = """
