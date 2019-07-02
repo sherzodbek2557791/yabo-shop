@@ -65,7 +65,7 @@ class ProductServiceImpl(val dsl: DSLContext) : ProductService {
             count += condition
         }
 
-        val offset = " OFFSET {${i++}} ROWS FETCH NEXT {${i++}} ROWS ONLY "
+        val offset = " OFFSET {${i++}} ROWS FETCH NEXT {$i} ROWS ONLY "
         selectParams.add(pageable.offset)
         selectParams.add(pageable.pageSize)
 

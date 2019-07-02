@@ -106,7 +106,7 @@ class OrderServiceImpl(val hashids: Hashids, val dsl: DSLContext, val botService
             where 1=1
         """.trimIndent()
 
-        val ORDERS_SEQ = DSL.sequence("ORDERS_SEQ")!!
+        val ORDERS_SEQ = DSL.sequence(DSL.name("ORDERS_SEQ"))!!
         val ORDERS = DSL.table("ORDERS")!!
         val ORDERS_ID = DSL.field("ID", SQLDataType.BIGINT)!!
         val ORDERS_CODE = DSL.field("CODE", SQLDataType.VARCHAR)!!
@@ -118,7 +118,7 @@ class OrderServiceImpl(val hashids: Hashids, val dsl: DSLContext, val botService
         val ORDERS_MESSAGE = DSL.field("MESSAGE", SQLDataType.VARCHAR)!!
         val ORDERS_CREATED_DATE = DSL.field("CREATED_DATE", SQLDataType.DATE.asConvertedDataType(DateConverter()))!!
 
-        val ORDER_ITEM_SEQ = DSL.sequence("ORDER_ITEM_SEQ")!!
+        val ORDER_ITEM_SEQ = DSL.sequence(DSL.name("ORDER_ITEM_SEQ"))!!
         val ORDER_ITEM = DSL.table("ORDER_ITEM")!!
         val ORDER_ITEM_ID = DSL.field("ID", SQLDataType.BIGINT)!!
         val ORDER_ITEM_ORDER_ID = DSL.field("ORDER_ID", SQLDataType.BIGINT)!!
