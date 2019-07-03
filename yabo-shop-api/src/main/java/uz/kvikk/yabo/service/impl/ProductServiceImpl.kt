@@ -1,5 +1,6 @@
 package uz.kvikk.yabo.service.impl
 
+import com.github.azihsoyn.ktformat.format
 import org.jooq.DSLContext
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageImpl
@@ -9,7 +10,6 @@ import org.springframework.util.StringUtils
 import uz.kvikk.yabo.model.transport.ProductResponse
 import uz.kvikk.yabo.service.ProductService
 import uz.kvikk.yabo.utils.TripleFunction
-import com.github.azihsoyn.ktformat.format
 
 @Service
 class ProductServiceImpl(val dsl: DSLContext) : ProductService {
@@ -51,9 +51,9 @@ class ProductServiceImpl(val dsl: DSLContext) : ProductService {
     }
 
     override fun pageFiltered(pageable: Pageable, filters: Map<TripleFunction<MutableList<Any>, MutableList<Any>, Int, String>, Any>): Page<ProductResponse> {
-        var selectParams = mutableListOf<Any>()
-        var countParams = mutableListOf<Any>()
-        var conditions = "" //""$SELECT "
+        val selectParams = mutableListOf<Any>()
+        val countParams = mutableListOf<Any>()
+        var conditions = ""
         var count = "$TOTAL "
         var i = 0
         for (filter in filters) {
@@ -74,13 +74,13 @@ class ProductServiceImpl(val dsl: DSLContext) : ProductService {
                 "afterOrder" to offset
         ))
 
-        val list = dsl.fetch(formatted, *selectParams.toTypedArray()).into(ProductResponse::class.java)
-        val total = dsl.fetchOne(count, *countParams.toTypedArray()).into(Long::class.java)
+        val list: List<ProductResponse> = dsl.fetch(formatted, *selectParams.toTypedArray()).into(ProductResponse::class.java)
+        val total: Long = dsl.fetchOne(count, *countParams.toTypedArray()).into(Long::class.java)
         return PageImpl(list, pageable, total)
     }
 
     companion object {
-        var SELECT: String = """
+        val SELECT: String = """
            select p.code,
                    p.title,
                    p.description,
@@ -95,7 +95,7 @@ class ProductServiceImpl(val dsl: DSLContext) : ProductService {
             {afterOrder}
         """.trimIndent()
 
-        var TOTAL: String = """
+        val TOTAL: String = """
             select count(p.id)
             from product p
             where 1=1
