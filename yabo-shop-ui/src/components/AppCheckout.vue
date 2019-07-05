@@ -1,4 +1,20 @@
 <template>
+
+  <!--
+  region_soato
+  area_soato
+  full_name
+  phone_number
+  payment_type
+  PAYMENT_DETAILS ->
+  payer_passport_front
+  payer_passport_back
+  payer_salary_report
+  guarantor_passport_front
+  guarantor_passport_back
+  guarantor_salary_report
+ -->
+
   <div>
     <transition name="fade">
       <div v-if="!submitted" class="payment">
@@ -11,62 +27,69 @@
           size="small"
         >
           <el-form-item
+            prop="regionSoato"
+            :label="$t('cart.form.regionSoato')"
+            :rules="rules.regionSoato"
+            :placeholder="$t('general.fillField')"
+            ref="formRegionSoato"
+          >
+            <el-select v-model="form.regionSoato" placeholder="" no-data-text="No data" clearable>
+              <el-option
+                      v-for="item in regionList"
+                      :key="item['soato']"
+                      :label="item['name']"
+                      :value="item['soato']">
+              </el-option>
+            </el-select>
+          </el-form-item>
+          <el-form-item
+            prop="regionSoato"
+            :label="$t('cart.form.areaSoato')"
+            :rules="rules.areaSoato"
+            :placeholder="$t('general.fillField')"
+            ref="formAreaSoato"
+          >
+            <el-select v-model="form.areaSoato" placeholder="" no-data-text="No data" clearable>
+              <el-option
+                      v-for="item in areaList"
+                      :key="item['soato']"
+                      :label="item['name']"
+                      :value="item['soato']">
+              </el-option>
+            </el-select>
+          </el-form-item>
+          <el-form-item
+            prop="fullName"
+            :label="$t('cart.form.fullName')"
+            :rules="rules.fullName"
+            :placeholder="$t('general.fillField')"
+            ref="formFullName"
+          >
+            <el-input v-model="form.fullName" clearable></el-input>
+          </el-form-item>
+          <el-form-item
             prop="phoneNumber"
             :label="$t('cart.form.phoneNumber')"
             :rules="rules.phoneNumber"
             :placeholder="$t('general.fillField')"
             v-regex="'^\\+998\\d{9}$'"
+            clearable
             ref="formPhoneNumber"
           >
             <el-input v-model="form.phoneNumber"></el-input>
           </el-form-item>
-
           <el-form-item
-            prop="email"
-            :label="$t('cart.form.email')"
-            :rules="rules.email"
-            ref="formEmail"
+                  prop="paymentType"
+                  :label="$t('cart.form.paymentType')"
+                  :rules="rules.paymentType"
+                  :placeholder="$t('general.fillField')"
+                  ref="formPaymentType"
           >
-            <el-input v-model="form.email"></el-input>
-          </el-form-item>
-
-          <el-form-item>
-            <el-col :span="11">
-              <el-form-item
-                prop="firstName"
-                :label="$t('cart.form.firstName')"
-                :rules="rules.firstName"
-                ref="formFirstName"
-              >
-                <el-input v-model="form.firstName"></el-input>
-              </el-form-item>
-            </el-col>
-            <el-col :span="2">
-              <div style="padding-bottom: 1px;"></div>
-            </el-col>
-            <el-col :span="11">
-              <el-form-item
-                prop="lastName"
-                :label="$t('cart.form.lastName')"
-                :rules="rules.lastName"
-                ref="formLastName"
-              >
-                <el-input v-model="form.lastName"></el-input>
-              </el-form-item>
-            </el-col>
-          </el-form-item>
-
-          <el-form-item
-            prop="message"
-            :label="$t('cart.form.message')"
-            ref="formMessage"
-          >
-            <el-input
-              type="textarea"
-              :autosize="{ minRows: 2, maxRows: 4 }"
-              v-model="form.message"
-            >
-            </el-input>
+            <el-radio-group v-model="form.paymentType">
+              <el-radio label="CASH">{{ $t('cart.form.paymentTypes.CASH') }}</el-radio>
+              <el-radio label="CLICK">{{ $t('cart.form.paymentTypes.CLICK') }}</el-radio>
+              <el-radio label="INSTALLMENT_PLAN">{{ $t('cart.form.paymentTypes.INSTALLMENT_PLAN') }}</el-radio>
+            </el-radio-group>
           </el-form-item>
 
           <el-form-item style="text-align: center; margin-top: 10px;">
@@ -122,13 +145,34 @@ export default {
       stripeOptions: {},
       stripeEmail: "",
       form: {
+        regionSoato: null,
+        areaSoato: null,
+        fullName: null,
         phoneNumber: null,
-        email: null,
-        firstName: null,
-        lastName: null,
-        message: null
+        paymentType: null,
       },
       rules: {
+        regionSoato: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "change"
+          }
+        ],
+        areaSoato: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "change"
+          }
+        ],
+        fullName: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "change"
+          }
+        ],
         phoneNumber: [
           {
             required: true,
@@ -147,34 +191,16 @@ export default {
             trigger: "change"
           }
         ],
-        email: [
-          {
-            required: true,
-            message: this.$t("general.fillField"),
-            trigger: "change"
-          },
-          {
-            type: "email",
-            message: this.$t("cart.form.fillValidEmail"),
-            trigger: ["blur", "change"]
-          }
-        ],
-        firstName: [
+        paymentType: [
           {
             required: true,
             message: this.$t("general.fillField"),
             trigger: "change"
           }
-        ],
-        lastName: [
-          {
-            required: true,
-            message: this.$t("general.fillField"),
-            trigger: "change"
-          }
-        ],
-        message: []
-      }
+        ]
+      },
+      regionList: [],
+      areaList: [],
     };
   },
   methods: {
@@ -258,7 +284,11 @@ export default {
       this.form.message = message;
     },
     resetForm() {
+      this.$refs["formRegionSoato"].resetField();
+      this.$refs["formAreaSoato"].resetField();
+      this.$refs["formFullName"].resetField();
       this.$refs["formPhoneNumber"].resetField();
+      //todo remove
       this.$refs["formEmail"].resetField();
       this.$refs["formFirstName"].resetField();
       this.$refs["formLastName"].resetField();
@@ -330,5 +360,11 @@ label {
 
 /deep/ .el-form {
   text-align: left;
+}
+/deep/ .el-input, .el-select {
+  width: 100%;
+}
+/deep/ .el-radio-group {
+  display: grid;
 }
 </style>

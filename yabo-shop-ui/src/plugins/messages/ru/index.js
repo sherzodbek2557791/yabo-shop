@@ -35,10 +35,16 @@ export default {
       details: "Заполните панель для оплаты"
     },
     form: {
+      regionSoato: "Область",
+      areaSoato: "Город/Район",
+      fullName: "Имя получателя",
       phoneNumber: "Телефон номер",
-      email: "Электроная почта",
-      firstName: "Имя",
-      lastName: "Фамилия",
+      paymentType: "Способ оплаты",
+      paymentTypes: {
+        CASH: "Наличными или терминал",
+        CLICK: "Click",
+        INSTALLMENT_PLAN: "Рассрочка"
+      },
       message: "Сообщения",
       submit: "Оформить",
       cancel: "Отменить",

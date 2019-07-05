@@ -12,7 +12,7 @@ import regex from "@/plugins/directives/regex";
 /**
  * Styles imported
  */
-import "./assets/css/element.css";
+import "./assets/css/element-variables.scss";
 import "./assets/css/main.css";
 import "./assets/css/w3.css";
 

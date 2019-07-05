@@ -1,20 +1,5 @@
 <template>
 
-<!--
-  region_soato
-  area_soato
-  full_name
-  phone_number
-  payment_type
-  PAYMENT_DETAILS ->
-  payer_passport_front
-  payer_passport_back
-  payer_salary_report
-  guarantor_passport_front
-  guarantor_passport_back
-  guarantor_salary_report
- -->
-
   <div class="capsule cart">
     <div v-if="cartTotal > 0">
       <h1>{{ $t("cart.title") }}</h1>
