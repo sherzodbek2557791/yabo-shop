@@ -10,7 +10,7 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: black;
+  background: #1d1f36;
   color: white;
   text-align: center;
   letter-spacing: 0.03em;

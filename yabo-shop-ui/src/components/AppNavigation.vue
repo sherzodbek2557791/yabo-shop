@@ -193,11 +193,14 @@ export default {
 nav {
   width: 100vw;
   height: 60px;
-  background: white;
+  background: #1d1f36;
+  /*border: 1px solid #00bcd4;*/
+  box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.1);
 }
 
 ul {
-  padding-left: 0;
+  padding: 0px;
+  margin: 0px;
   display: flex;
   list-style: none outside none;
   justify-content: center;
@@ -205,14 +208,22 @@ ul {
 }
 
 li {
-  padding: 0 50px;
+  display: flex;
+  padding: 0 0px;
+
+
+}
+
+.w3-bar .w3-button{
+  white-space: nowrap;
+
 }
 
 a,
 a:visited,
 a:active {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .cartitem {
@@ -223,7 +234,7 @@ a:active {
 .cartcount {
   font-family: "Barlow", sans-serif;
   position: absolute;
-  background: #ff2211;
+  background: #3a86ff;
   color: white;
   text-align: center;
   padding-top: 4px;
@@ -236,8 +247,9 @@ a:active {
 }
 
 .logo {
-  height: 45px;
-  margin: 0px;
+  height: 35px;
+  margin: 0px 0px;
+
 }
 
 .navigation-menu {
@@ -286,4 +298,13 @@ a:active {
   background: #ededed;
   border: 1px solid #dcdfe633;
 }
+
+.w3-button:hover {
+  color: #000 !important;
+  background-color: #a5ff96d9 !important;
+  border-radius: 30px;
+}
+
+
+
 </style>

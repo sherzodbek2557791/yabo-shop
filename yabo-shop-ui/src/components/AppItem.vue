@@ -46,6 +46,7 @@ export default {
   justify-content: center;
   align-items: center;
   position: relative;
+  box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.1)
 }
 
 .salepill {

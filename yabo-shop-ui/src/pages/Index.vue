@@ -98,6 +98,7 @@ export default {
 aside {
   float: left;
   width: 19.1489%;
+  box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.1)
 }
 
 .content {
