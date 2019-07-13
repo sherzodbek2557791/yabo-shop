@@ -16,7 +16,7 @@
         </a>
         <template v-for="(item, index) in app.categories">
           <router-link
-            class="w3-bar-item w3-button w3-hide-small"
+            :class="`w3-bar-item w3-button w3-hide-small ${isCurrentCategory(item.code) ? 'w3-button-active' : ''}`"
             :to="`/filtered?category=${item.code}`"
             :key="`key-${index}`"
           >
@@ -25,85 +25,13 @@
         </template>
 
         <div style="flex-grow: 1;">
-          <router-link to="/cart">
-            <div class="cartitem w3-bar-item w3-button w3-right">
-              <div v-if="cartTotal > 0" class="cartcount">{{ cartTotal }}</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 100 100"
-                aria-labelledby="shopicon"
-                role="presentation"
-                width="30"
-                height="30"
-              >
-                <title id="cart">
-                  {{ $t("cart.title") }}
-                </title>
-                <path
-                  fill="black"
-                  d="M8.01 10c-1.104 0-2 .896-2 2 0 1.105.896 2 2 2h10.376l10.53 49.813c-.107 1.14.952 2.245 2.095 2.187h50c1.057.015 2.03-.943 2.03-2s-.973-2.015-2.03-2H32.637l-1.688-8H85.01c.896-.01 1.742-.69 1.938-1.562l7-30c.26-1.16-.748-2.43-1.937-2.438H23.76l-1.78-8.437c-.2-.884-1.063-1.57-1.97-1.563zm16.594 14H89.51l-6.093 26H30.104zM42.01 72c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm28 0c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm-28 4c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5zm28 0c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5z"
-                />
-              </svg>
-            </div>
+          <router-link to="/cart" style="position: relative; float: right; padding-right: 25px; padding-left: 5px;">
+            <el-badge :value="cartTotal" :hidden="cartTotal < 1" class="item">
+              <i class="fas fa-shopping-cart" style="font-size: 18pt;"></i>
+            </el-badge>
           </router-link>
         </div>
       </div>
-
-      <!--<div class="capsule">
-        <router-link to="/" v-if="$route.path !== '/'">
-          <img src="../assets/img/logo.png" alt="" class="logo" />
-        </router-link>
-        <a href="/" v-else>
-          <img src="../assets/img/logo.png" alt="" class="logo" />
-        </a>
-        <ul v-loading="loading">
-          <template v-for="item in app.categories">
-            <router-link
-              :to="`/filtered?category=${item.code}`"
-              :key="item.code"
-            >
-              <li>{{ item.title }}</li>
-            </router-link>
-          </template>
-          <template v-for="item in app.categories">
-            <router-link
-                    :to="`/filtered?category=${item.code}`"
-                    :key="`key1-${item.code}`"
-            >
-              <li>{{ item.title }}</li>
-            </router-link>
-          </template>
-          <template v-for="item in app.categories">
-            <router-link
-                    :to="`/filtered?category=${item.code}`"
-                    :key="`key2-${item.code}`"
-            >
-              <li>{{ item.title }}</li>
-            </router-link>
-          </template>
-        </ul>
-        <router-link to="/cart">
-          <div class="cartitem">
-            <div v-if="cartTotal > 0" class="cartcount">{{ cartTotal }}</div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 100 100"
-              aria-labelledby="shopicon"
-              role="presentation"
-              width="30"
-              height="30"
-            >
-              <title id="cart">
-                {{ $t("cart.title") }}
-              </title>
-              <path
-                fill="black"
-                d="M8.01 10c-1.104 0-2 .896-2 2 0 1.105.896 2 2 2h10.376l10.53 49.813c-.107 1.14.952 2.245 2.095 2.187h50c1.057.015 2.03-.943 2.03-2s-.973-2.015-2.03-2H32.637l-1.688-8H85.01c.896-.01 1.742-.69 1.938-1.562l7-30c.26-1.16-.748-2.43-1.937-2.438H23.76l-1.78-8.437c-.2-.884-1.063-1.57-1.97-1.563zm16.594 14H89.51l-6.093 26H30.104zM42.01 72c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm28 0c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm-28 4c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5zm28 0c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5z"
-              />
-            </svg>
-          </div>
-        </router-link>
-      </div>-->
     </nav>
     <div
       @click="isNavMenuShow = false"
@@ -149,6 +77,10 @@ export default {
     };
   },
   methods: {
+    isCurrentCategory(code){
+      let { category } = this.$route.query;
+      return code === category;
+    },
     loadList() {
       this.loading = true;
       this.$http
@@ -184,17 +116,15 @@ export default {
 
 .capsule {
   display: flex;
-  /*justify-content: space-between;*/
   align-items: center;
-  /*width: 50vw;*/
   margin: 0 auto;
+  height: 100%;
 }
 
 nav {
   width: 100vw;
   height: 60px;
-  background: #1d1f36;
-  /*border: 1px solid #00bcd4;*/
+  background: #0078ff;
   box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.1);
 }
 
@@ -234,7 +164,7 @@ a:active {
 .cartcount {
   font-family: "Barlow", sans-serif;
   position: absolute;
-  background: #3a86ff;
+  background: #ff2211;
   color: white;
   text-align: center;
   padding-top: 4px;
@@ -299,11 +229,15 @@ a:active {
   border: 1px solid #dcdfe633;
 }
 
-.w3-button:hover {
+.w3-button:hover, .w3-button-active {
   color: #000 !important;
-  background-color: #a5ff96d9 !important;
+  background-color: #fff !important;
   border-radius: 30px;
 }
+
+  /deep/ .el-badge__content{
+    background-color: #ff2211;
+  }
 
 
 
