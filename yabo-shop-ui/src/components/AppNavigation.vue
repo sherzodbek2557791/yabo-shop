@@ -16,7 +16,11 @@
         </a>
         <template v-for="(item, index) in app.categories">
           <router-link
-            :class="`w3-bar-item w3-button w3-hide-small ${isCurrentCategory(item.code) ? 'w3-button-active' : ''}`"
+            :class="
+              `w3-bar-item w3-button w3-hide-small ${
+                isCurrentCategory(item.code) ? 'w3-button-active' : ''
+              }`
+            "
             :to="`/filtered?category=${item.code}`"
             :key="`key-${index}`"
           >
@@ -25,8 +29,16 @@
         </template>
 
         <div style="flex-grow: 1;">
-          <router-link to="/cart" style="position: relative; float: right; padding-right: 25px; padding-left: 5px;">
-            <el-badge :value="cartTotal" :hidden="cartTotal < 1" class="item">
+          <router-link
+            to="/cart"
+            style="position: relative; float: right; padding-right: 25px; padding-left: 5px;"
+          >
+            <el-badge
+              :value="cartTotal"
+              :class="`cart ${isPath('/cart') ? 'cart-active' : ''}`"
+              :hidden="cartTotal < 1"
+              class="item"
+            >
               <i class="fas fa-shopping-cart" style="font-size: 18pt;"></i>
             </el-badge>
           </router-link>
@@ -77,7 +89,11 @@ export default {
     };
   },
   methods: {
-    isCurrentCategory(code){
+    isPath(val) {
+      let { path } = this.$route;
+      return val === path;
+    },
+    isCurrentCategory(code) {
       let { category } = this.$route.query;
       return code === category;
     },
@@ -125,7 +141,7 @@ nav {
   width: 100vw;
   height: 60px;
   background: #0078ff;
-  box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
 ul {
@@ -140,13 +156,10 @@ ul {
 li {
   display: flex;
   padding: 0 0px;
-
-
 }
 
-.w3-bar .w3-button{
+.w3-bar .w3-button {
   white-space: nowrap;
-
 }
 
 a,
@@ -179,7 +192,6 @@ a:active {
 .logo {
   height: 35px;
   margin: 0px 0px;
-
 }
 
 .navigation-menu {
@@ -229,16 +241,19 @@ a:active {
   border: 1px solid #dcdfe633;
 }
 
-.w3-button:hover, .w3-button-active {
+.w3-button:hover,
+.w3-button-active {
   color: #000 !important;
   background-color: #fff !important;
   border-radius: 30px;
 }
 
-  /deep/ .el-badge__content{
-    background-color: #ff2211;
-  }
+.cart:hover,
+.cart-active {
+  color: #00ff8d;
+}
 
-
-
+/deep/ .el-badge__content {
+  background-color: #ff2211;
+}
 </style>

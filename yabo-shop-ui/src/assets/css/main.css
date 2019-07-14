@@ -178,6 +178,11 @@ aside {
   max-height: 200px;
   object-fit: contain;
 }
+.img-product-big{
+  width: 300px;
+  max-height: 300px;
+  object-fit: contain;
+}
 /* --- range --- */
 
 input[type="range"].slider {

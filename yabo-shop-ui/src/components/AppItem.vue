@@ -3,41 +3,40 @@
     <div class="item" @click="showImages">
       <p>{{ item.title }}</p>
       <span class="salepill" v-if="item.description">{{
-      $t("item.installmentPlan")
-    }}</span>
+        $t("item.installmentPlan")
+      }}</span>
       <img
-              class="img-product"
-              :src="`/${item.image}`"
-              :alt="`Image of ${item.title}`"
+        class="img-product"
+        :src="`/${item.image}`"
+        :alt="`Image of ${item.title}`"
       />
       <p>{{ item.price | currencyFilter }}</p>
       <el-button
-              @click.stop="addItem"
-              icon="fas fa-shopping-cart"
-              type="danger"
-              round
+        @click.stop="addItem"
+        icon="fas fa-shopping-cart"
+        type="danger"
+        round
       >
         {{ $t("index.addItem") }}
       </el-button>
     </div>
-    <el-dialog
-            :title="item.title"
-            :visible.sync="dialogVisible"
-    >
-      <span class="salepill" v-if="item.description">{{
-        $t("item.installmentPlan")
-      }}</span>
-      <img
-              class="img-product"
-              :src="`/${item.image}`"
-              :alt="`Image of ${item.title}`"
-      />
+    <el-dialog :title="item.title" :visible.sync="dialogVisible">
+      <el-carousel arrow="always">
+        <el-carousel-item>
+          <img
+            class="img-product-big"
+            :src="`/${item.image}`"
+            :alt="`Image of ${item.title}`"
+          />
+        </el-carousel-item>
+      </el-carousel>
+
       <p>{{ item.price | currencyFilter }}</p>
       <el-button
-              @click.stop="addItem"
-              icon="fas fa-shopping-cart"
-              type="danger"
-              round
+        @click.stop="addItem"
+        icon="fas fa-shopping-cart"
+        type="danger"
+        round
       >
         {{ $t("index.addItem") }}
       </el-button>
@@ -129,5 +128,10 @@ p {
   background: #f78989;
   border-color: #f78989;
   color: #ffffff;
+}
+
+/deep/ .el-dialog__body,
+.el-carousel__item {
+  text-align: center;
 }
 </style>
