@@ -1,5 +1,4 @@
 <template>
-
   <!--
   region_soato
   area_soato
@@ -33,12 +32,19 @@
             :placeholder="$t('general.fillField')"
             ref="formRegionSoato"
           >
-            <el-select v-model="form.regionSoato" placeholder="" no-data-text="No data" clearable>
+            <el-select
+              v-model="form.regionSoato"
+              placeholder=""
+              no-data-text="No data"
+              @change="onChangeRegion"
+              clearable
+            >
               <el-option
-                      v-for="item in regionList"
-                      :key="item['soato']"
-                      :label="item['name']"
-                      :value="item['soato']">
+                v-for="item in regionList"
+                :key="item['soato']"
+                :label="item['nameRuRu']"
+                :value="item['soato']"
+              >
               </el-option>
             </el-select>
           </el-form-item>
@@ -49,12 +55,18 @@
             :placeholder="$t('general.fillField')"
             ref="formAreaSoato"
           >
-            <el-select v-model="form.areaSoato" placeholder="" no-data-text="No data" clearable>
+            <el-select
+              v-model="form.areaSoato"
+              placeholder=""
+              no-data-text="No data"
+              clearable
+            >
               <el-option
-                      v-for="item in areaList"
-                      :key="item['soato']"
-                      :label="item['name']"
-                      :value="item['soato']">
+                v-for="item in areaList"
+                :key="item['soato']"
+                :label="item['nameRuRu']"
+                :value="item['soato']"
+              >
               </el-option>
             </el-select>
           </el-form-item>
@@ -79,16 +91,22 @@
             <el-input v-model="form.phoneNumber"></el-input>
           </el-form-item>
           <el-form-item
-                  prop="paymentType"
-                  :label="$t('cart.form.paymentType')"
-                  :rules="rules.paymentType"
-                  :placeholder="$t('general.fillField')"
-                  ref="formPaymentType"
+            prop="paymentType"
+            :label="$t('cart.form.paymentType')"
+            :rules="rules.paymentType"
+            :placeholder="$t('general.fillField')"
+            ref="formPaymentType"
           >
             <el-radio-group v-model="form.paymentType">
-              <el-radio label="CASH">{{ $t('cart.form.paymentTypes.CASH') }}</el-radio>
-              <el-radio label="CLICK">{{ $t('cart.form.paymentTypes.CLICK') }}</el-radio>
-              <el-radio label="INSTALLMENT_PLAN">{{ $t('cart.form.paymentTypes.INSTALLMENT_PLAN') }}</el-radio>
+              <el-radio label="CASH">{{
+                $t("cart.form.paymentTypes.CASH")
+              }}</el-radio>
+              <el-radio label="CLICK">{{
+                $t("cart.form.paymentTypes.CLICK")
+              }}</el-radio>
+              <el-radio label="INSTALLMENT_PLAN">{{
+                $t("cart.form.paymentTypes.INSTALLMENT_PLAN")
+              }}</el-radio>
             </el-radio-group>
           </el-form-item>
 
@@ -149,7 +167,7 @@ export default {
         areaSoato: null,
         fullName: null,
         phoneNumber: null,
-        paymentType: null,
+        paymentType: null
       },
       rules: {
         regionSoato: [
@@ -200,10 +218,31 @@ export default {
         ]
       },
       regionList: [],
-      areaList: [],
+      areaList: []
     };
   },
   methods: {
+    onChangeRegion(val) {
+      this.form.areaSoato = null;
+      if (val) this.loadAreas(val);
+      else this.areaList = [];
+    },
+    loadRegions() {
+      this.$http
+        .get("region/list-region")
+        .then(({ data }) => {
+          this.regionList = data;
+        })
+        .catch(error => console.error(error));
+    },
+    loadAreas(parentSoato) {
+      this.$http
+        .get("region/list-area", { parentSoato })
+        .then(({ data }) => {
+          this.areaList = data;
+        })
+        .catch(error => console.error(error));
+    },
     cancelOrder() {
       this.$confirm(
         this.$t("cart.form.attentionRemoveAllOrders"),
@@ -289,15 +328,16 @@ export default {
       this.$refs["formFullName"].resetField();
       this.$refs["formPhoneNumber"].resetField();
       //todo remove
-      this.$refs["formEmail"].resetField();
-      this.$refs["formFirstName"].resetField();
-      this.$refs["formLastName"].resetField();
-      this.$refs["formMessage"].resetField();
+      // this.$refs["formEmail"].resetField();
+      // this.$refs["formFirstName"].resetField();
+      // this.$refs["formLastName"].resetField();
+      // this.$refs["formMessage"].resetField();
     }
   },
   mounted() {
     this.resetForm();
     this.loadForm();
+    this.loadRegions();
   }
 };
 </script>
@@ -361,7 +401,8 @@ label {
 /deep/ .el-form {
   text-align: left;
 }
-/deep/ .el-input, .el-select {
+/deep/ .el-input,
+.el-select {
   width: 100%;
 }
 /deep/ .el-radio-group {
