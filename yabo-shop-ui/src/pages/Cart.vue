@@ -2,7 +2,7 @@
 
   <div class="capsule cart">
     <div v-if="cartTotal > 0">
-      <h1>{{ $t("cart.title") }}</h1>
+      <h1><i class="fas fa-shopping-cart" style="font-size: 18pt;"></i> {{ $t("cart.title") }}</h1>
       <div class="cartitems" v-for="(item, index) in cart" :key="index">
         <div class="carttext">
           <h4>{{ item.title }}</h4>

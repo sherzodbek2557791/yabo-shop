@@ -98,20 +98,38 @@
             ref="formPaymentType"
           >
             <el-radio-group v-model="form.paymentType">
-              <el-radio label="CASH">{{
+              <el-radio :label="PaymentType.CASH">{{
                 $t("cart.form.paymentTypes.CASH")
               }}</el-radio>
-              <el-radio label="CLICK">{{
+              <el-radio :label="PaymentType.CLICK">{{
                 $t("cart.form.paymentTypes.CLICK")
               }}</el-radio>
-              <el-radio label="INSTALLMENT_PLAN">{{
+              <el-radio :label="PaymentType.INSTALLMENT_PLAN">{{
                 $t("cart.form.paymentTypes.INSTALLMENT_PLAN")
               }}</el-radio>
             </el-radio-group>
           </el-form-item>
+          <el-form-item
+            v-if="form.paymentType === PaymentType.INSTALLMENT_PLAN"
+            style="padding-left: 35px;"
+            prop="paymentType"
+            :rules="rules.paymentType"
+          >
+            <el-radio-group v-model="form.installmentPlan">
+              <el-radio label="4">{{ Utils.stringFormat($t('cart.minMonth'), 4, 1900, 'сум') }}</el-radio>
+              <el-radio label="6">{{ Utils.stringFormat($t('cart.minMonth'), 6, 1901, 'сум') }}</el-radio>
+              <el-radio label="8">{{ Utils.stringFormat($t('cart.minMonth'), 8, 1902, 'сум') }}</el-radio>
+              <el-radio label="10">{{ Utils.stringFormat($t('cart.minMonth'), 10, 1903, 'сум') }}</el-radio>
+              <el-radio label="12">{{ Utils.stringFormat($t('cart.minMonth'), 12, 1904, 'сум') }}</el-radio>
+            </el-radio-group>
+          </el-form-item>
+
+          <el-row v-if="form.step === Step.SECOND">
+            <h1>here will be other documents</h1>
+          </el-row>
 
           <el-form-item style="text-align: center; margin-top: 10px;">
-            <el-button type="success" @click="sendOrder" round>{{
+            <el-button type="success" @click="confirmOrder" round>{{
               $t("cart.form.submit")
             }}</el-button>
             <el-button type="info" @click="cancelOrder" round>{{
@@ -139,6 +157,18 @@
 
 <script>
 import AppLoader from "./AppLoader.vue";
+import Utils from "../util/Utils";
+
+const PaymentType = Object.freeze({
+  CASH: Symbol("CASH"),
+  CLICK: Symbol("CLICK"),
+  INSTALLMENT_PLAN: Symbol("INSTALLMENT_PLAN")
+});
+
+const Step = Object.freeze({
+  FIRST: Symbol("first"),
+  SECOND: Symbol("second")
+});
 
 export default {
   components: {
@@ -156,6 +186,9 @@ export default {
   },
   data() {
     return {
+      PaymentType,
+      Step,
+      Utils,
       submitted: false,
       complete: true,
       status: "",
@@ -163,39 +196,41 @@ export default {
       stripeOptions: {},
       stripeEmail: "",
       form: {
+        step: Step.FIRST,
         regionSoato: null,
         areaSoato: null,
         fullName: null,
         phoneNumber: null,
-        paymentType: null
+        paymentType: null,
+        installmentPlan: null
       },
       rules: {
         regionSoato: [
           {
             required: true,
             message: this.$t("general.fillField"),
-            trigger: "change"
+            trigger: "blur"
           }
         ],
         areaSoato: [
           {
             required: true,
             message: this.$t("general.fillField"),
-            trigger: "change"
+            trigger: "blur"
           }
         ],
         fullName: [
           {
             required: true,
             message: this.$t("general.fillField"),
-            trigger: "change"
+            trigger: "blur"
           }
         ],
         phoneNumber: [
           {
             required: true,
             message: this.$t("general.fillField"),
-            trigger: "change"
+            trigger: "blur"
           },
           {
             validator: (rule, value, callback) => {
@@ -206,7 +241,7 @@ export default {
                 callback();
               }
             },
-            trigger: "change"
+            trigger: "blur"
           }
         ],
         paymentType: [
@@ -267,7 +302,7 @@ export default {
           });
         });
     },
-    sendOrder() {
+    confirmOrder() {
       this.$refs["form"].validate(valid => {
         if (!valid) {
           this.$message({
@@ -278,29 +313,52 @@ export default {
           return false;
         }
 
-        let { cart } = this.$store.state;
-        let orderItems = Object.keys(cart).map(k => cart[k]);
-        let form = { ...this.form };
-        let request = Object.assign(form, { orderItems });
+        let { step, paymentType } = this.form;
 
-        this.$http
-          .post("order/create", request)
-          .then(({ data }) => {
-            this.status = "success";
-            this.$emit("successSubmit");
-            this.$store.commit("clearCart");
-            this.$message({
-              showClose: true,
-              message: this.$t("cart.form.success"),
-              type: "success"
-            });
-            this.$store.commit("setForm", this.form);
-          })
-          .catch(error => {
-            this.status = "failure";
-            console.error(error);
-          });
+        switch (paymentType) {
+          case PaymentType.CASH:
+            this.sendOrder();
+            break;
+          case PaymentType.CLICK:
+            alert("sorry click not working yet!");
+            break;
+          case PaymentType.INSTALLMENT_PLAN:
+            switch (step) {
+              case Step.FIRST:
+                this.$set(this.form, "step", Step.SECOND);
+                break;
+              case Step.SECOND:
+                this.sendOrder();
+                break;
+            }
+            break;
+        }
       });
+    },
+
+    sendOrder() {
+      let { cart } = this.$store.state;
+      let orderItems = Object.keys(cart).map(k => cart[k]);
+      let form = { ...this.form };
+      let request = Object.assign(form, { orderItems });
+
+      this.$http
+        .post("order/create", request)
+        .then(({ data }) => {
+          this.status = "success";
+          this.$emit("successSubmit");
+          this.$store.commit("clearCart");
+          this.$message({
+            showClose: true,
+            message: this.$t("cart.form.success"),
+            type: "success"
+          });
+          this.$store.commit("setForm", this.form);
+        })
+        .catch(error => {
+          this.status = "failure";
+          console.error(error);
+        });
     },
     clearCart() {
       this.submitted = false;

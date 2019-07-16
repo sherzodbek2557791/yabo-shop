@@ -31,6 +31,7 @@ export default {
     total: "Итого к оплате",
     empty: "Ваша корзина пуста",
     fillUp: "Заполнить!",
+    minMonth: "{0}x мес.: {1} {2}",
     payment: {
       details: "Заполните панель для оплаты"
     },
