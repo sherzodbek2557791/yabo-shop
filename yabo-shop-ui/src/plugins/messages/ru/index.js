@@ -46,6 +46,7 @@ export default {
         CLICK: "Click",
         INSTALLMENT_PLAN: "Рассрочка"
       },
+      installmentPlanVariants: "Варианты рассрочки",
       uploadPayerData: 'Выберите файл паспорта покупателя',
       uploadGuarantorData: 'Выберите файл паспорта поручателя',
       passportFront: 'Пасспорт лицевая сторона',

@@ -111,9 +111,10 @@
           </el-form-item>
           <el-form-item
             v-if="form.paymentType === PaymentType.INSTALLMENT_PLAN"
+            :label="$t('cart.form.installmentPlanVariants')"
             style="padding-left: 35px;"
             prop="paymentType"
-            :rules="rules.paymentType"
+            :rules="rules.installmentPlan"
           >
             <el-radio-group v-model="form.installmentPlan">
               <el-radio label="4">{{
@@ -139,29 +140,18 @@
               <legend>{{ $t("cart.form.uploadPayerData") }}</legend>
               <el-row :gutter="20">
                 <el-col :span="8">
-                  <!-- <el-upload
-                    class="avatar-uploader"
-                    action="https://jsonplaceholder.typicode.com/posts/"
-                    :show-file-list="false"
-                    :on-success="handleAvatarSuccess"
-                    :before-upload="beforeAvatarUpload"
-                  >
-                    <img v-if="imageUrl" :src="imageUrl" class="avatar" />
-                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-                  </el-upload>-->
                   <el-form-item
                     :label="$t('cart.form.passportFront')"
-                    prop="paymentType"
+                    prop="payerPassportFront"
                     size="small"
-                    :rules="rules.paymentType"
+                    :rules="rules.payerPassportFront"
                   >
                     <el-upload
                       class="avatar-uploader"
-                      action="http://localhost:8091/file-server/uploadFile"
-                      :data="{
-                        clientId: 'yabo-shop-ui',
-                        fileResourceType: FileResourceType.PAYER_PASSPORT_FRONT
-                      }"
+                      :action="getUploadUrl"
+                      :data="
+                        getUploadParams(FileResourceType.PAYER_PASSPORT_FRONT)
+                      "
                       :show-file-list="false"
                       :on-success="
                         (r, f) =>
@@ -181,30 +171,56 @@
                 <el-col :span="8">
                   <el-form-item
                     :label="$t('cart.form.passportBack')"
-                    prop="paymentType"
-                    :rules="rules.paymentType"
+                    prop="payerPassportBack"
+                    :rules="rules.payerPassportBack"
                   >
                     <el-upload
                       class="avatar-uploader"
-                      action="http://localhost:8091/file-server/uploadFile"
+                      :action="getUploadUrl"
+                      :data="
+                        getUploadParams(FileResourceType.PAYER_PASSPORT_BACK)
+                      "
                       :show-file-list="false"
+                      :on-success="
+                        (r, f) =>
+                          imageHandleSuccess(r, f, form, 'payerPassportBack')
+                      "
+                      :before-upload="beforeUpload"
                     >
-                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                      <img
+                        v-if="form.payerPassportBack"
+                        :src="form.payerPassportBack"
+                        class="avatar"
+                      />
+                      <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
                   </el-form-item>
                 </el-col>
                 <el-col :span="8">
                   <el-form-item
                     :label="$t('cart.form.salaryReport')"
-                    prop="paymentType"
-                    :rules="rules.paymentType"
+                    prop="payerSalaryReport"
+                    :rules="rules.payerSalaryReport"
                   >
                     <el-upload
                       class="avatar-uploader"
-                      action="https://jsonplaceholder.typicode.com/posts/"
+                      :action="getUploadUrl"
+                      :data="
+                        getUploadParams(FileResourceType.PAYER_SALARY_REPORT)
+                      "
                       :show-file-list="false"
+                      :on-success="
+                        (r, f) =>
+                          imageHandleSuccess(r, f, form, 'payerSalaryReport')
+                      "
+                      :before-upload="beforeUpload"
                     >
-                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                      <img
+                        v-if="form.payerSalaryReport"
+                        :src="form.payerSalaryReport"
+                        class="avatar"
+                      />
+                      <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
                   </el-form-item>
                 </el-col>
@@ -214,58 +230,108 @@
               <legend>{{ $t("cart.form.uploadGuarantorData") }}</legend>
               <el-row :gutter="20">
                 <el-col :span="8">
-                  <!-- <el-upload
-                    class="avatar-uploader"
-                    action="https://jsonplaceholder.typicode.com/posts/"
-                    :show-file-list="false"
-                    :on-success="handleAvatarSuccess"
-                    :before-upload="beforeAvatarUpload"
-                  >
-                    <img v-if="imageUrl" :src="imageUrl" class="avatar" />
-                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-                  </el-upload>-->
                   <el-form-item
                     :label="$t('cart.form.passportFront')"
-                    prop="paymentType"
+                    prop="guarantorPassportFront"
                     size="small"
-                    :rules="rules.paymentType"
+                    :rules="rules.guarantorPassportFront"
                   >
                     <el-upload
                       class="avatar-uploader"
-                      action="https://jsonplaceholder.typicode.com/posts/"
+                      :action="getUploadUrl"
+                      :data="
+                        getUploadParams(
+                          FileResourceType.GUARANTOR_PASSPORT_FRONT
+                        )
+                      "
                       :show-file-list="false"
+                      :on-success="
+                        (r, f) =>
+                          imageHandleSuccess(
+                            r,
+                            f,
+                            form,
+                            'guarantorPassportFront'
+                          )
+                      "
+                      :before-upload="beforeUpload"
                     >
-                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                      <img
+                        v-if="form.guarantorPassportFront"
+                        :src="form.guarantorPassportFront"
+                        class="avatar"
+                      />
+                      <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
                   </el-form-item>
                 </el-col>
                 <el-col :span="8">
                   <el-form-item
                     :label="$t('cart.form.passportBack')"
-                    prop="paymentType"
-                    :rules="rules.paymentType"
+                    prop="guarantorPassportBack"
+                    :rules="rules.guarantorPassportBack"
                   >
                     <el-upload
                       class="avatar-uploader"
-                      action="https://jsonplaceholder.typicode.com/posts/"
+                      :action="getUploadUrl"
+                      :data="
+                        getUploadParams(
+                          FileResourceType.GUARANTOR_PASSPORT_BACK
+                        )
+                      "
                       :show-file-list="false"
+                      :on-success="
+                        (r, f) =>
+                          imageHandleSuccess(
+                            r,
+                            f,
+                            form,
+                            'guarantorPassportBack'
+                          )
+                      "
+                      :before-upload="beforeUpload"
                     >
-                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                      <img
+                        v-if="form.guarantorPassportBack"
+                        :src="form.guarantorPassportBack"
+                        class="avatar"
+                      />
+                      <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
                   </el-form-item>
                 </el-col>
                 <el-col :span="8">
                   <el-form-item
                     :label="$t('cart.form.salaryReport')"
-                    prop="paymentType"
-                    :rules="rules.paymentType"
+                    prop="guarantorSalaryReport"
+                    :rules="rules.guarantorSalaryReport"
                   >
                     <el-upload
                       class="avatar-uploader"
-                      action="https://jsonplaceholder.typicode.com/posts/"
+                      :action="getUploadUrl"
+                      :data="
+                        getUploadParams(
+                          FileResourceType.GUARANTOR_SALARY_REPORT
+                        )
+                      "
                       :show-file-list="false"
+                      :on-success="
+                        (r, f) =>
+                          imageHandleSuccess(
+                            r,
+                            f,
+                            form,
+                            'guarantorSalaryReport'
+                          )
+                      "
+                      :before-upload="beforeUpload"
                     >
-                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                      <img
+                        v-if="form.guarantorSalaryReport"
+                        :src="form.guarantorSalaryReport"
+                        class="avatar"
+                      />
+                      <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
                   </el-form-item>
                 </el-col>
@@ -305,9 +371,9 @@ import AppLoader from "./AppLoader.vue";
 import Utils from "../util/Utils";
 
 const PaymentType = Object.freeze({
-  CASH: Symbol("CASH"),
-  CLICK: Symbol("CLICK"),
-  INSTALLMENT_PLAN: Symbol("INSTALLMENT_PLAN")
+  CASH: "CASH",
+  CLICK: "CLICK",
+  INSTALLMENT_PLAN: "INSTALLMENT_PLAN"
 });
 
 const Step = Object.freeze({
@@ -358,7 +424,12 @@ export default {
         phoneNumber: null,
         paymentType: null,
         installmentPlan: null,
-        payerPassportFront: null
+        payerPassportFront: null,
+        payerPassportBack: null,
+        payerSalaryReport: null,
+        guarantorPassportFront: null,
+        guarantorPassportBack: null,
+        guarantorSalaryReport: null
       },
       rules: {
         regionSoato: [
@@ -404,7 +475,56 @@ export default {
           {
             required: true,
             message: this.$t("general.fillField"),
-            trigger: "change"
+            trigger: "blur"
+          }
+        ],
+        installmentPlan: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "blur"
+          }
+        ],
+        payerPassportFront: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "blur"
+          }
+        ],
+        payerPassportBack: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "blur"
+          }
+        ],
+        payerSalaryReport: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "blur"
+          }
+        ],
+        guarantorPassportFront: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "blur"
+          }
+        ],
+        guarantorPassportBack: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "blur"
+          }
+        ],
+        guarantorSalaryReport: [
+          {
+            required: true,
+            message: this.$t("general.fillField"),
+            trigger: "blur"
           }
         ]
       },
@@ -425,10 +545,17 @@ export default {
       }
       return isJPG && isLt2M;
     },
+    getUploadParams(fileResourceType) {
+      return {
+        clientId: "yabo-shop-ui",
+        fileResourceType
+      };
+    },
     imageHandleSuccess(res, file, fields, key) {
       console.log(res, file);
-      this.$set(fields, key, URL.createObjectURL(file.raw));
-      //todo this.imageUrl = URL.createObjectURL(file.raw);
+      let { fileResourceUrl } = res;
+      if (!fileResourceUrl) return;
+      this.$set(fields, key, fileResourceUrl);
     },
     onChangeRegion(val) {
       this.form.areaSoato = null;
@@ -565,6 +692,11 @@ export default {
       // this.$refs["formMessage"].resetField();
     }
   },
+  computed: {
+    getUploadUrl() {
+      return "http://localhost:8091/file-server/uploadFile";
+    }
+  },
   mounted() {
     this.resetForm();
     this.loadForm();
@@ -691,5 +823,10 @@ label {
 }
 .buyer-fieldset /deep/ .el-form-item__content {
   flex-grow: 1;
+}
+.buyer-fieldset /deep/ .el-form-item__error {
+  position: unset;
+  text-align: left;
+  font-style: italic;
 }
 </style>

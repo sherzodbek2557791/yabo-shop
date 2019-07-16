@@ -25,21 +25,19 @@ class OrderServiceImpl(val hashids: Hashids, val dsl: DSLContext, val botService
                 ORDERS_ID,
                 ORDERS_CODE,
                 ORDERS_PHONE_NUMBER,
-                ORDERS_EMAIL,
-                ORDERS_FIRST_NAME,
-                ORDERS_LAST_NAME,
+//                ORDERS_EMAIL,
+//                ORDERS_FIRST_NAME,
+//                ORDERS_LAST_NAME,
                 ORDERS_ORDER_STATUS,
-                ORDERS_MESSAGE,
                 ORDERS_CREATED_DATE
         ).values(
                 orderId,
                 hashids.encode(orderId),
                 orderRequest.phoneNumber,
-                orderRequest.email,
-                orderRequest.firstName,
-                orderRequest.lastName,
+//                orderRequest.email,
+//                orderRequest.firstName,
+//                orderRequest.lastName,
                 OrderStatus.NEW.name,
-                orderRequest.message,
                 Date()
         ).execute()
 
@@ -62,9 +60,19 @@ class OrderServiceImpl(val hashids: Hashids, val dsl: DSLContext, val botService
         }
 
         var message = """
+            This is a test content
+            Region: ${orderRequest.regionSoato}
+            Area: ${orderRequest.areaSoato}
             Tel: ${orderRequest.phoneNumber}
-            e-mail: ${orderRequest.email}
-            FIO: ${orderRequest.firstName} ${orderRequest.lastName}
+            FIO: ${orderRequest.fullName}
+            paymentType: ${orderRequest.paymentType}
+            installmentPlan: ${orderRequest.installmentPlan}
+            payerPassportBack: ${orderRequest.payerPassportBack}
+            payerPassportFront: ${orderRequest.payerPassportFront}
+            payerSalaryReport: ${orderRequest.payerSalaryReport}
+            guarantorPassportBack: ${orderRequest.guarantorPassportBack}
+            guarantorPassportFront: ${orderRequest.guarantorPassportFront}
+            guarantorSalaryReport: ${orderRequest.guarantorSalaryReport}
             Message: ${orderRequest.message}
         """.trimIndent()
 
@@ -77,12 +85,20 @@ class OrderServiceImpl(val hashids: Hashids, val dsl: DSLContext, val botService
         botService.sendOrder(message)
 
         return OrderResponse(
+                orderRequest.orderItems,
+                orderRequest.regionSoato,
+                orderRequest.areaSoato,
+                orderRequest.fullName,
                 orderRequest.phoneNumber,
-                orderRequest.email,
-                orderRequest.firstName,
-                orderRequest.lastName,
-                orderRequest.message,
-                orderRequest.orderItems
+                orderRequest.paymentType,
+                orderRequest.installmentPlan,
+                orderRequest.payerPassportBack,
+                orderRequest.payerPassportFront,
+                orderRequest.payerSalaryReport,
+                orderRequest.guarantorPassportBack,
+                orderRequest.guarantorPassportFront,
+                orderRequest.guarantorSalaryReport,
+                orderRequest.message
         )
     }
 
@@ -106,7 +122,7 @@ class OrderServiceImpl(val hashids: Hashids, val dsl: DSLContext, val botService
             where 1=1
         """.trimIndent()
 
-        val ORDERS_SEQ = DSL.sequence(DSL.name("ORDERS_SEQ"))!!
+        val ORDERS_SEQ = DSL.sequence("ORDERS_SEQ")!!
         val ORDERS = DSL.table("ORDERS")!!
         val ORDERS_ID = DSL.field("ID", SQLDataType.BIGINT)!!
         val ORDERS_CODE = DSL.field("CODE", SQLDataType.VARCHAR)!!
@@ -118,7 +134,7 @@ class OrderServiceImpl(val hashids: Hashids, val dsl: DSLContext, val botService
         val ORDERS_MESSAGE = DSL.field("MESSAGE", SQLDataType.VARCHAR)!!
         val ORDERS_CREATED_DATE = DSL.field("CREATED_DATE", SQLDataType.DATE.asConvertedDataType(DateConverter()))!!
 
-        val ORDER_ITEM_SEQ = DSL.sequence(DSL.name("ORDER_ITEM_SEQ"))!!
+        val ORDER_ITEM_SEQ = DSL.sequence("ORDER_ITEM_SEQ")!!
         val ORDER_ITEM = DSL.table("ORDER_ITEM")!!
         val ORDER_ITEM_ID = DSL.field("ID", SQLDataType.BIGINT)!!
         val ORDER_ITEM_ORDER_ID = DSL.field("ORDER_ID", SQLDataType.BIGINT)!!
