@@ -159,8 +159,14 @@
                       class="avatar-uploader"
                       action="https://jsonplaceholder.typicode.com/posts/"
                       :show-file-list="false"
+                      :on-success="
+                        (r, f) =>
+                          imageHandleSuccess(r, f, form, 'payerPassportFront')
+                      "
+                      :before-upload="beforeUpload"
                     >
-                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                      <img v-if="form.payerPassportFront" :src="form.payerPassportFront" class="avatar" />
+                      <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
                   </el-form-item>
                 </el-col>
@@ -333,7 +339,8 @@ export default {
         fullName: null,
         phoneNumber: null,
         paymentType: null,
-        installmentPlan: null
+        installmentPlan: null,
+        payerPassportFront: null
       },
       rules: {
         regionSoato: [
@@ -388,6 +395,23 @@ export default {
     };
   },
   methods: {
+    beforeUpload(file) {
+      const isJPG = file.type === 'image/jpeg';
+      const isLt2M = file.size / 1024 / 1024 < 2;
+
+      if (!isJPG) {
+        this.$message.error('Avatar picture must be JPG format!');
+      }
+      if (!isLt2M) {
+        this.$message.error('Avatar picture size can not exceed 2MB!');
+      }
+      return isJPG && isLt2M;
+    },
+    imageHandleSuccess(res, file, fields, key) {
+      console.log(res, file);
+      this.$set(fields, key, URL.createObjectURL(file.raw));
+      //todo this.imageUrl = URL.createObjectURL(file.raw);
+    },
     onChangeRegion(val) {
       this.form.areaSoato = null;
       if (val) this.loadAreas(val);
