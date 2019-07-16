@@ -46,6 +46,11 @@ export default {
         CLICK: "Click",
         INSTALLMENT_PLAN: "Рассрочка"
       },
+      uploadPayerData: 'Выберите файл паспорта покупателя',
+      uploadGuarantorData: 'Выберите файл паспорта поручателя',
+      passportFront: 'Пасспорт лицевая сторона',
+      passportBack: 'Пасспорт прописка',
+      salaryReport: 'Справка о доходах',
       message: "Сообщения",
       submit: "Оформить",
       cancel: "Отменить",

@@ -116,16 +116,147 @@
             :rules="rules.paymentType"
           >
             <el-radio-group v-model="form.installmentPlan">
-              <el-radio label="4">{{ Utils.stringFormat($t('cart.minMonth'), 4, 1900, 'сум') }}</el-radio>
-              <el-radio label="6">{{ Utils.stringFormat($t('cart.minMonth'), 6, 1901, 'сум') }}</el-radio>
-              <el-radio label="8">{{ Utils.stringFormat($t('cart.minMonth'), 8, 1902, 'сум') }}</el-radio>
-              <el-radio label="10">{{ Utils.stringFormat($t('cart.minMonth'), 10, 1903, 'сум') }}</el-radio>
-              <el-radio label="12">{{ Utils.stringFormat($t('cart.minMonth'), 12, 1904, 'сум') }}</el-radio>
+              <el-radio label="4">{{
+                Utils.stringFormat($t("cart.minMonth"), 4, 1900, "сум")
+              }}</el-radio>
+              <el-radio label="6">{{
+                Utils.stringFormat($t("cart.minMonth"), 6, 1901, "сум")
+              }}</el-radio>
+              <el-radio label="8">{{
+                Utils.stringFormat($t("cart.minMonth"), 8, 1902, "сум")
+              }}</el-radio>
+              <el-radio label="10">{{
+                Utils.stringFormat($t("cart.minMonth"), 10, 1903, "сум")
+              }}</el-radio>
+              <el-radio label="12">{{
+                Utils.stringFormat($t("cart.minMonth"), 12, 1904, "сум")
+              }}</el-radio>
             </el-radio-group>
           </el-form-item>
 
           <el-row v-if="form.step === Step.SECOND">
-            <h1>here will be other documents</h1>
+            <fieldset class="buyer-fieldset">
+              <legend>{{ $t("cart.form.uploadPayerData") }}</legend>
+              <el-row :gutter="20">
+                <el-col :span="8">
+                  <!-- <el-upload
+                    class="avatar-uploader"
+                    action="https://jsonplaceholder.typicode.com/posts/"
+                    :show-file-list="false"
+                    :on-success="handleAvatarSuccess"
+                    :before-upload="beforeAvatarUpload"
+                  >
+                    <img v-if="imageUrl" :src="imageUrl" class="avatar" />
+                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                  </el-upload>-->
+                  <el-form-item
+                    :label="$t('cart.form.passportFront')"
+                    prop="paymentType"
+                    size="small"
+                    :rules="rules.paymentType"
+                  >
+                    <el-upload
+                      class="avatar-uploader"
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      :show-file-list="false"
+                    >
+                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                    </el-upload>
+                  </el-form-item>
+                </el-col>
+                <el-col :span="8">
+                  <el-form-item
+                    :label="$t('cart.form.passportBack')"
+                    prop="paymentType"
+                    :rules="rules.paymentType"
+                  >
+                    <el-upload
+                      class="avatar-uploader"
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      :show-file-list="false"
+                    >
+                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                    </el-upload>
+                  </el-form-item>
+                </el-col>
+                <el-col :span="8">
+                  <el-form-item
+                    :label="$t('cart.form.salaryReport')"
+                    prop="paymentType"
+                    :rules="rules.paymentType"
+                  >
+                    <el-upload
+                      class="avatar-uploader"
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      :show-file-list="false"
+                    >
+                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                    </el-upload>
+                  </el-form-item>
+                </el-col>
+              </el-row>
+            </fieldset>
+            <fieldset class="buyer-fieldset" style="margin-top: 10px;">
+              <legend>{{ $t("cart.form.uploadGuarantorData") }}</legend>
+              <el-row :gutter="20">
+                <el-col :span="8">
+                  <!-- <el-upload
+                    class="avatar-uploader"
+                    action="https://jsonplaceholder.typicode.com/posts/"
+                    :show-file-list="false"
+                    :on-success="handleAvatarSuccess"
+                    :before-upload="beforeAvatarUpload"
+                  >
+                    <img v-if="imageUrl" :src="imageUrl" class="avatar" />
+                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                  </el-upload>-->
+                  <el-form-item
+                    :label="$t('cart.form.passportFront')"
+                    prop="paymentType"
+                    size="small"
+                    :rules="rules.paymentType"
+                  >
+                    <el-upload
+                      class="avatar-uploader"
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      :show-file-list="false"
+                    >
+                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                    </el-upload>
+                  </el-form-item>
+                </el-col>
+                <el-col :span="8">
+                  <el-form-item
+                    :label="$t('cart.form.passportBack')"
+                    prop="paymentType"
+                    :rules="rules.paymentType"
+                  >
+                    <el-upload
+                      class="avatar-uploader"
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      :show-file-list="false"
+                    >
+                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                    </el-upload>
+                  </el-form-item>
+                </el-col>
+                <el-col :span="8">
+                  <el-form-item
+                    :label="$t('cart.form.salaryReport')"
+                    prop="paymentType"
+                    :rules="rules.paymentType"
+                  >
+                    <el-upload
+                      class="avatar-uploader"
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      :show-file-list="false"
+                    >
+                      <i class="el-icon-plus avatar-uploader-icon"></i>
+                    </el-upload>
+                  </el-form-item>
+                </el-col>
+              </el-row>
+            </fieldset>
           </el-row>
 
           <el-form-item style="text-align: center; margin-top: 10px;">
@@ -465,5 +596,58 @@ label {
 }
 /deep/ .el-radio-group {
   display: grid;
+}
+
+.avatar-uploader /deep/ .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.avatar-uploader /deep/ .el-upload:hover {
+  border-color: #409eff;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  /*width: 100px;*/
+  /*height: 100px;*/
+  line-height: 100px;
+  text-align: center;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+.buyer-fieldset {
+  border: 1px dashed #cccccc;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  font-size: 10pt;
+}
+
+.buyer-fieldset /deep/ .el-col {
+  text-align: center;
+}
+.buyer-fieldset /deep/ .el-row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.buyer-fieldset /deep/ .el-form-item {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.buyer-fieldset /deep/ .el-form-item__label {
+  line-height: 15px;
+  font-size: 9pt;
+  font-style: italic;
+}
+.buyer-fieldset /deep/ .el-form-item__content {
+  flex-grow: 1;
 }
 </style>
