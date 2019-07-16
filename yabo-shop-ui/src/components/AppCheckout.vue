@@ -157,7 +157,11 @@
                   >
                     <el-upload
                       class="avatar-uploader"
-                      action="https://jsonplaceholder.typicode.com/posts/"
+                      action="http://localhost:8091/file-server/uploadFile"
+                      :data="{
+                        clientId: 'yabo-shop-ui',
+                        fileResourceType: FileResourceType.PAYER_PASSPORT_FRONT
+                      }"
                       :show-file-list="false"
                       :on-success="
                         (r, f) =>
@@ -165,7 +169,11 @@
                       "
                       :before-upload="beforeUpload"
                     >
-                      <img v-if="form.payerPassportFront" :src="form.payerPassportFront" class="avatar" />
+                      <img
+                        v-if="form.payerPassportFront"
+                        :src="form.payerPassportFront"
+                        class="avatar"
+                      />
                       <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
                   </el-form-item>
@@ -178,7 +186,7 @@
                   >
                     <el-upload
                       class="avatar-uploader"
-                      action="https://jsonplaceholder.typicode.com/posts/"
+                      action="http://localhost:8091/file-server/uploadFile"
                       :show-file-list="false"
                     >
                       <i class="el-icon-plus avatar-uploader-icon"></i>
@@ -307,6 +315,15 @@ const Step = Object.freeze({
   SECOND: Symbol("second")
 });
 
+const FileResourceType = Object.freeze({
+  PAYER_PASSPORT_FRONT: "PAYER_PASSPORT_FRONT",
+  PAYER_PASSPORT_BACK: "PAYER_PASSPORT_BACK",
+  PAYER_SALARY_REPORT: "PAYER_SALARY_REPORT",
+  GUARANTOR_PASSPORT_FRONT: "GUARANTOR_PASSPORT_FRONT",
+  GUARANTOR_PASSPORT_BACK: "GUARANTOR_PASSPORT_BACK",
+  GUARANTOR_SALARY_REPORT: "GUARANTOR_SALARY_REPORT"
+});
+
 export default {
   components: {
     AppLoader
@@ -326,6 +343,7 @@ export default {
       PaymentType,
       Step,
       Utils,
+      FileResourceType,
       submitted: false,
       complete: true,
       status: "",
@@ -396,14 +414,14 @@ export default {
   },
   methods: {
     beforeUpload(file) {
-      const isJPG = file.type === 'image/jpeg';
+      const isJPG = file.type === "image/jpeg";
       const isLt2M = file.size / 1024 / 1024 < 2;
 
       if (!isJPG) {
-        this.$message.error('Avatar picture must be JPG format!');
+        this.$message.error("Avatar picture must be JPG format!");
       }
       if (!isLt2M) {
-        this.$message.error('Avatar picture size can not exceed 2MB!');
+        this.$message.error("Avatar picture size can not exceed 2MB!");
       }
       return isJPG && isLt2M;
     },

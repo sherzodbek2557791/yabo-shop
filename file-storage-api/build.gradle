@@ -35,6 +35,8 @@ dependencies {
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.hashids:hashids:1.0.3'
     implementation 'commons-io:commons-io:2.5'
+    implementation 'com.sun.activation:javax.activation:1.2.0'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

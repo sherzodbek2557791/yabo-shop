@@ -13,6 +13,8 @@ import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import org.springframework.util.Base64Utils
+import org.springframework.util.MimeType
+import org.springframework.util.MimeTypeUtils
 import org.springframework.util.StringUtils
 import org.springframework.web.context.request.RequestContextHolder
 import org.springframework.web.context.request.ServletRequestAttributes
@@ -77,7 +79,7 @@ class FileResourceServiceImpl(
     val currentDate: String = SimpleDateFormat("yyyy/MM/dd").format(Date())
     val localPath: String = "$clientId/$currentDate/$fileResourceType/"
 
-    val id = dsl.select(ENTITY_SEQ.nextval()).from("dual").fetchOne().into(Long::class.java)
+    val id = dsl.select(ENTITY_SEQ.nextval()).fetchOne().into(Long::class.java)
     val storedName = hashids.encode(id)
     val fileResourcePath: Path = this.rootLocation!!.resolve(localPath)
     val bytes = Base64.getMimeDecoder().decode(base64File)
@@ -283,7 +285,7 @@ class FileResourceServiceImpl(
     val currentDate: String = SimpleDateFormat("yyyy/MM/dd").format(Date())
     val localPath: String = "$clientId/$currentDate/$fileResourceType/"
 
-    val id = dsl.select(ENTITY_SEQ.nextval()).from("dual").fetchOne().into(Long::class.java)
+    val id = dsl.select(ENTITY_SEQ.nextval()).fetchOne().into(Long::class.java)
     val storedName = hashids.encode(id)
     val uploadedName = FilenameUtils.getBaseName(multipartFile.originalFilename)
     val extension = FilenameUtils.getExtension(multipartFile.originalFilename)
@@ -376,24 +378,24 @@ class FileResourceServiceImpl(
   }
 
   companion object {
-    val ENTITY_SEQ: Sequence<BigInteger> = DSL.sequence(DSL.name("FILE_RESOURCE_SEQ"))
-    val ENTITY: Table<Record> = DSL.table(DSL.name("FILE_RESOURCE"))
-    val VIEW: Table<Record> = DSL.table(DSL.name("FILE_RESOURCE_VIEW"))
-    val ID: Field<String> = DSL.field(DSL.name("ID"), SQLDataType.VARCHAR)
-    val ORDERED: Field<Long> = DSL.field(DSL.name("ORDERED"), SQLDataType.BIGINT)
-    val FILE_RESOURCE_VERSION: Field<Long> = DSL.field(DSL.name("FILE_RESOURCE_VERSION"), SQLDataType.BIGINT)
-    val CREATED_DATE: Field<Date> = DSL.field(DSL.name("CREATED_DATE"), SQLDataType.DATE.asConvertedDataType(DateConverter()))
-    val CLIENT_ID: Field<String> = DSL.field(DSL.name("CLIENT_ID"), SQLDataType.VARCHAR)
-    val STORED_NAME: Field<String> = DSL.field(DSL.name("STORED_NAME"), SQLDataType.VARCHAR)
-    val UPLOADED_NAME: Field<String> = DSL.field(DSL.name("UPLOADED_NAME"), SQLDataType.VARCHAR)
-    val FILE_RESOURCE_TYPE: Field<String> = DSL.field(DSL.name("FILE_RESOURCE_TYPE"), SQLDataType.VARCHAR)
-    val FILE_RESOURCE_PATH: Field<String> = DSL.field(DSL.name("FILE_RESOURCE_PATH"), SQLDataType.VARCHAR)
-    val FILE_RESOURCE_SIZE: Field<Long> = DSL.field(DSL.name("FILE_RESOURCE_SIZE"), SQLDataType.BIGINT)
-    val EXTENSION: Field<String> = DSL.field(DSL.name("EXTENSION"), SQLDataType.VARCHAR)
-    val DELIMITER: Field<String> = DSL.field(DSL.name("DELIMITER"), SQLDataType.CHAR)
-    val STORED_FULL_NAME: Field<String> = DSL.field(DSL.name("STORED_FULL_NAME"), SQLDataType.VARCHAR)
-    val UPLOADED_FULL_NAME: Field<String> = DSL.field(DSL.name("UPLOADED_FULL_NAME"), SQLDataType.VARCHAR)
-    val ABSOLUTE_FILE: Field<String> = DSL.field(DSL.name("ABSOLUTE_FILE"), SQLDataType.VARCHAR)
+    val ENTITY_SEQ: Sequence<BigInteger> = DSL.sequence("FILE_RESOURCE_SEQ")
+    val ENTITY: Table<Record> = DSL.table("FILE_RESOURCE")
+    val VIEW: Table<Record> = DSL.table("FILE_RESOURCE_VIEW")
+    val ID: Field<String> = DSL.field("ID", SQLDataType.VARCHAR)
+    val ORDERED: Field<Long> = DSL.field("ORDERED", SQLDataType.BIGINT)
+    val FILE_RESOURCE_VERSION: Field<Long> = DSL.field("FILE_RESOURCE_VERSION", SQLDataType.BIGINT)
+    val CREATED_DATE: Field<Date> = DSL.field("CREATED_DATE", SQLDataType.DATE.asConvertedDataType(DateConverter()))
+    val CLIENT_ID: Field<String> = DSL.field("CLIENT_ID", SQLDataType.VARCHAR)
+    val STORED_NAME: Field<String> = DSL.field("STORED_NAME", SQLDataType.VARCHAR)
+    val UPLOADED_NAME: Field<String> = DSL.field("UPLOADED_NAME", SQLDataType.VARCHAR)
+    val FILE_RESOURCE_TYPE: Field<String> = DSL.field("FILE_RESOURCE_TYPE", SQLDataType.VARCHAR)
+    val FILE_RESOURCE_PATH: Field<String> = DSL.field("FILE_RESOURCE_PATH", SQLDataType.VARCHAR)
+    val FILE_RESOURCE_SIZE: Field<Long> = DSL.field("FILE_RESOURCE_SIZE", SQLDataType.BIGINT)
+    val EXTENSION: Field<String> = DSL.field("EXTENSION", SQLDataType.VARCHAR)
+    val DELIMITER: Field<String> = DSL.field("DELIMITER", SQLDataType.CHAR)
+    val STORED_FULL_NAME: Field<String> = DSL.field("STORED_FULL_NAME", SQLDataType.VARCHAR)
+    val UPLOADED_FULL_NAME: Field<String> = DSL.field("UPLOADED_FULL_NAME", SQLDataType.VARCHAR)
+    val ABSOLUTE_FILE: Field<String> = DSL.field("ABSOLUTE_FILE", SQLDataType.VARCHAR)
     private val log = LoggerFactory.getLogger(FileResourceServiceImpl::class.java)
   }
 

@@ -8,7 +8,7 @@ import uz.kvikk.file.model.FileResourceResult
 import uz.kvikk.file.service.FileResourceService
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/file-server/")
 class FileController
 constructor(private val dBFileResourceService: FileResourceService) {
 
