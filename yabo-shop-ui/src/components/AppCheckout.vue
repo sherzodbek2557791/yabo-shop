@@ -694,7 +694,8 @@ export default {
   },
   computed: {
     getUploadUrl() {
-      return "http://localhost:8091/file-server/uploadFile";
+      // todo local return "http://localhost:8091/file-server/uploadFile";
+      return "https://file.yabo.uz/file-server/uploadFile";
     }
   },
   mounted() {
