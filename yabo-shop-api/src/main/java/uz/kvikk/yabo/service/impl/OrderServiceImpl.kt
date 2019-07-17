@@ -7,6 +7,7 @@ import org.jooq.impl.SQLDataType
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import uz.kvikk.yabo.model.enums.OrderStatus
+import uz.kvikk.yabo.model.model.PersonalInfo
 import uz.kvikk.yabo.model.model.Product
 import uz.kvikk.yabo.model.transport.OrderDTO
 import uz.kvikk.yabo.model.transport.OrderItemRequest
@@ -35,13 +36,6 @@ class OrderServiceImpl(val hashids: Hashids, val dsl: DSLContext, val botService
             FIO: ${orderRequest.fullName}
             Payment type: ${orderRequest.paymentType}
             Installment plan: ${orderRequest.installmentPlan}
-            Payer passport back: ${orderRequest.payerPassportBack}
-            Payer passport front: ${orderRequest.payerPassportFront}
-            Payer salary report: ${orderRequest.payerSalaryReport}
-            Guarantor passport back: ${orderRequest.guarantorPassportBack}
-            Guarantor passport front: ${orderRequest.guarantorPassportFront}
-            Guarantor salary report: ${orderRequest.guarantorSalaryReport}
-            Message: ${orderRequest.message}
         """.trimIndent()
 
         for ((index, item) in orderRequest.orderItems.withIndex()) {
@@ -50,7 +44,19 @@ class OrderServiceImpl(val hashids: Hashids, val dsl: DSLContext, val botService
                     ${item.title}
             """.trimIndent()
         }
-        botService.sendOrder(message)
+
+
+        val payer = if(orderRequest.paymentType == "INSTALLMENT_PLAN") PersonalInfo(
+                orderRequest.payerPassportFront!!,
+                orderRequest.payerPassportBack!!,
+                orderRequest.payerSalaryReport!!) else null
+
+        val guarantor = if(orderRequest.paymentType == "INSTALLMENT_PLAN") PersonalInfo(
+                orderRequest.guarantorPassportFront!!,
+                orderRequest.guarantorPassportBack!!,
+                orderRequest.guarantorSalaryReport!!) else null
+
+        botService.sendOrderWithPersonalInfo(message, payer, guarantor)
 
         return OrderResponse(
                 orderRequest.orderItems,
@@ -165,6 +171,7 @@ class OrderServiceImpl(val hashids: Hashids, val dsl: DSLContext, val botService
     }
 
 
+    @Suppress("DEPRECATION")
     companion object {
         val SELECT: String = """
            select p.code,
