@@ -3,8 +3,9 @@
     <app-navigation class="app-header" />
     <div class="app-content">
       <router-view></router-view>
+      <app-footer class="app-footer" />
     </div>
-    <app-footer class="app-footer" />
+
   </div>
 </template>
 

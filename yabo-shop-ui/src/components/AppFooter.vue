@@ -1,11 +1,21 @@
 <template>
   <footer>
-    © 2019 Creative team, all rights reserved. <a href="http://yabo.uz">yabo.uz</a>
+    <span class="footer-text">
+      © 2019 Creative team, all rights reserved. <a href="http://yabo.uz">yabo.uz</a>
+    </span>
   </footer>
 </template>
 
 <style scoped>
 footer {
+  display: flex;
+  flex-direction: column-reverse;
+  /*background: #9dee00;*/
+  width: 100%;
+  /*height: -webkit-fill-available;*/
+}
+
+.footer-text{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +24,7 @@ footer {
   color: white;
   text-align: center;
   letter-spacing: 0.03em;
-  margin-top: 10px;
+  margin-top: 18px;
   width: 100%;
   height: 50px;
 }
