@@ -135,7 +135,7 @@
             </el-radio-group>
           </el-form-item>
 
-          <el-row v-if="form.step === Step.SECOND">
+          <el-row v-if="form.step === $root.Step.SECOND">
             <fieldset class="buyer-fieldset">
               <legend>{{ $t("cart.form.uploadPayerData") }}</legend>
               <el-row :gutter="20">
@@ -376,10 +376,10 @@ const PaymentType = Object.freeze({
   INSTALLMENT_PLAN: "INSTALLMENT_PLAN"
 });
 
-const Step = Object.freeze({
+/*const Step = Object.freeze({
   FIRST: Symbol("first"),
   SECOND: Symbol("second")
-});
+});*/
 
 const FileResourceType = Object.freeze({
   PAYER_PASSPORT_FRONT: "PAYER_PASSPORT_FRONT",
@@ -407,7 +407,7 @@ export default {
   data() {
     return {
       PaymentType,
-      Step,
+      // Step,
       Utils,
       FileResourceType,
       submitted: false,
@@ -417,7 +417,7 @@ export default {
       stripeOptions: {},
       stripeEmail: "",
       form: {
-        step: Step.FIRST,
+        step: this.$root.Step.FIRST,
         regionSoato: null,
         areaSoato: null,
         fullName: null,
@@ -624,10 +624,10 @@ export default {
             break;
           case PaymentType.INSTALLMENT_PLAN:
             switch (step) {
-              case Step.FIRST:
-                this.$set(this.form, "step", Step.SECOND);
+              case this.$root.Step.FIRST:
+                this.$set(this.form, "step", this.$root.Step.SECOND);
                 break;
-              case Step.SECOND:
+              case this.$root.Step.SECOND:
                 this.sendOrder();
                 break;
             }

@@ -7,7 +7,7 @@ import store from "@/plugins/store";
 import { sync } from "vuex-router-sync";
 import http from "@/service/http";
 import regex from "@/plugins/directives/regex";
-
+import enums from "./util/enums";
 
 /**
  * Styles imported
@@ -38,5 +38,6 @@ new Vue({
   i18n: i18n.plugin,
   router,
   store,
+  data: Object.assign(enums),
   render: h => h(App)
 }).$mount("#app");
