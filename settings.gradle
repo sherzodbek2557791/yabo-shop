@@ -4,4 +4,4 @@ rootProject.name = 'yabo-shop'
  * Many modules are separated
  * */
 
-include 'yabo-shop-ui', 'yabo-shop-api', 'file-storage-api'
+include 'yabo-shop-ui', 'yabo-shop-admin', 'yabo-shop-api', 'file-storage-api'
