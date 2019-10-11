@@ -133,6 +133,8 @@ export default {
     } else if (this.loginForm.password === '') {
       this.$refs.password.focus()
     }
+
+    this.autoLogin()
   },
   destroyed() {
     // window.removeEventListener('storage', this.afterQRScan)
@@ -161,6 +163,24 @@ export default {
       })
     },
     handleLogin() {
+      this.$refs.loginForm.validate(valid => {
+        if (valid) {
+          this.loading = true
+          this.$store.dispatch('user/login', this.loginForm)
+            .then(() => {
+              this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
+              this.loading = false
+            })
+            .catch(() => {
+              this.loading = false
+            })
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
+    },
+    autoLogin() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
